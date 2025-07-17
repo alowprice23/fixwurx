@@ -1,0 +1,72 @@
+{
+    "cache_capacity": 150,
+    "history_size": 50,
+    "window_size": 20,
+    "confidence_threshold": 0.75,
+    "distribution_threshold": 0.8,
+    "neural_training_batch_size": 50,
+    "neural_training_frequency": 100,
+    "performance_tracking": {
+        "enabled": true,
+        "tracking_window": 1000,
+        "metrics": ["hits", "misses", "classification_time", "agent_selection_time"]
+    },
+    "specialist_intents": {
+        "code_analysis": ["bug_fix", "refactoring", "code_optimization"],
+        "system_maintenance": ["performance_monitoring", "resource_optimization"],
+        "security": ["security_audit", "vulnerability_assessment"]
+    },
+    "fallback_mapping": {
+        "analyst": ["verifier", "planner"],
+        "executor": ["command_handler", "file_handler"],
+        "security_agent": ["auditor", "verifier"]
+    },
+    "execution_paths": {
+        "direct": {
+            "default_agents": ["executor", "file_handler"],
+            "timeout": 2.0
+        },
+        "agent_collaboration": {
+            "default_agents": ["coordinator", "analyzer", "executor"],
+            "timeout": 5.0
+        },
+        "planning": {
+            "default_agents": ["planner", "executor"],
+            "timeout": 10.0
+        }
+    },
+    "triangulum": {
+        "job_priority": 1,
+        "timeout": 2.0,
+        "retry_count": 1
+    },
+    "intent_patterns": {
+        "file_access": [
+            "^(?:show|display|view|read|open|get)\\s+(?:the\\s+)?(?:content\\s+of\\s+)?(?:file|text|document)\\s+(.+)$",
+            "^(?:show|display|view|read|open|get)\\s+(.+\\.\\w+)$"
+        ],
+        "command_execution": [
+            "^(?:run|execute|launch)\\s+(?:command|script|program|application)?\\s*(.+)$",
+            "^(?:start|invoke)\\s+(?:command|script|program|application)?\\s*(.+)$"
+        ],
+        "file_modification": [
+            "^(?:change|modify|update|edit|write\\s+to)\\s+(?:file|text|document)\\s+(.+)$",
+            "^(?:change|modify|update|edit)\\s+(.+\\.\\w+)$"
+        ],
+        "bug_fix": [
+            "^(?:fix|repair|debug)\\s+(?:the\\s+)?(?:bug|issue|error|problem)\\s+in\\s+(.+)$",
+            "^(?:fix|repair|debug)\\s+(.+\\.\\w+)$"
+        ],
+        "system_debugging": [
+            "^(?:debug|troubleshoot)\\s+(?:the\\s+)?(?:system|application|program)$",
+            "^(?:find|identify)\\s+(?:the\\s+)?(?:bug|issue|error|problem)\\s+in\\s+(?:the\\s+)?(?:system|application|program)$"
+        ]
+    },
+    "semantic_keywords": {
+        "file_access": ["read", "show", "display", "view", "open", "get", "file", "content", "text", "document"],
+        "command_execution": ["run", "execute", "launch", "start", "invoke", "command", "script", "program", "application"],
+        "file_modification": ["change", "modify", "update", "edit", "write", "save", "file", "text", "document"],
+        "bug_fix": ["fix", "repair", "debug", "bug", "issue", "error", "problem"],
+        "system_debugging": ["debug", "troubleshoot", "system", "application", "program"]
+    }
+}

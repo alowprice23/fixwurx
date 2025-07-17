@@ -1,0 +1,25 @@
+affected_components:
+- resource_manager.py
+- load_balancer.py
+category: COMPLETENESS
+description: Required obligation(s) not implemented in codebase
+error_id: ERR-20250712-847ae0ac
+historical_context:
+  common_components:
+  - resource_manager.py
+  - load_balancer.py
+  frequency: Second occurrence
+  last_occurrence: 0 hours ago
+  related_errors:
+  - ERR-20250712-84f28d1e
+metrics:
+  missing:
+  - goal3
+  - goal1
+  - goal2
+recommended_actions:
+- Implement missing obligations
+- Verify obligation mapping
+severity: CRITICAL
+subcategory: MISSING_OBLIGATION
+timestamp: '2025-07-12T23:48:34.378319'

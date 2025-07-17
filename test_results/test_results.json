@@ -1,0 +1,95 @@
+{
+  "tests": [
+    {
+      "test_id": "B1",
+      "file_path": "calculator/operations/basic_operations.py",
+      "function": "subtract",
+      "description": "Incorrect order of operands (b - a instead of a - b)",
+      "command": "python fixwurx.py --analyze calculator/operations/basic_operations.py --focus subtract",
+      "test_path": "calculator/tests/test_basic_operations.py::TestBasicOperations::test_subtract",
+      "success": false,
+      "start_time": "2025-07-12 20:05:06",
+      "end_time": "2025-07-12 20:13:01",
+      "duration_seconds": 475.2051,
+      "notes": ""
+    },
+    {
+      "test_id": "B2",
+      "file_path": "calculator/operations/basic_operations.py",
+      "function": "multiply",
+      "description": "Using addition instead of multiplication",
+      "command": "python fixwurx.py --analyze calculator/operations/basic_operations.py --focus multiply",
+      "test_path": "calculator/tests/test_basic_operations.py::TestBasicOperations::test_multiply",
+      "success": false,
+      "start_time": "2025-07-12 20:13:01",
+      "end_time": "2025-07-12 20:13:19",
+      "duration_seconds": 18.262226,
+      "notes": ""
+    },
+    {
+      "test_id": "B3",
+      "file_path": "calculator/operations/basic_operations.py",
+      "function": "divide",
+      "description": "No zero division check",
+      "command": "python fixwurx.py --analyze calculator/operations/basic_operations.py --focus divide",
+      "test_path": "calculator/tests/test_basic_operations.py::TestBasicOperations::test_divide",
+      "success": false,
+      "start_time": "2025-07-12 20:13:19",
+      "end_time": "2025-07-12 20:13:49",
+      "duration_seconds": 29.806215,
+      "notes": ""
+    },
+    {
+      "test_id": "B4",
+      "file_path": "calculator/operations/basic_operations.py",
+      "function": "power",
+      "description": "Incorrect implementation (using a * b instead of a ** b)",
+      "command": "python fixwurx.py --analyze calculator/operations/basic_operations.py --focus power",
+      "test_path": "calculator/tests/test_basic_operations.py::TestBasicOperations::test_power",
+      "success": false,
+      "start_time": "2025-07-12 20:13:49",
+      "end_time": "2025-07-12 20:14:14",
+      "duration_seconds": 25.192798,
+      "notes": ""
+    },
+    {
+      "test_id": "A1_A6",
+      "file_path": "calculator/operations/advanced_operations.py",
+      "function": "random_operation",
+      "description": "Missing random import and using undefined 'random' module",
+      "command": "python fixwurx.py --analyze calculator/operations/advanced_operations.py --focus random_operation",
+      "test_path": "calculator/tests/test_advanced_operations.py::TestAdvancedOperations::test_random_operation",
+      "success": false,
+      "start_time": "2025-07-12 20:14:14",
+      "end_time": "2025-07-12 20:14:37",
+      "duration_seconds": 22.812431,
+      "notes": ""
+    },
+    {
+      "test_id": "A2",
+      "file_path": "calculator/operations/advanced_operations.py",
+      "function": "square_root",
+      "description": "No negative number check",
+      "command": "python fixwurx.py --analyze calculator/operations/advanced_operations.py --focus square_root",
+      "test_path": "calculator/tests/test_advanced_operations.py::TestAdvancedOperations::test_square_root",
+      "success": false,
+      "start_time": "2025-07-12 20:14:37",
+      "end_time": "2025-07-12 20:15:09",
+      "duration_seconds": 32.549293,
+      "notes": ""
+    },
+    {
+      "test_id": "I1",
+      "file_path": "['calculator/ui/cli.py', 'calculator/operations/advanced_operations.py']",
+      "function": "N/A",
+      "description": "CLI and Operations Interdependencies",
+      "command": "python fixwurx.py --analyze calculator/ui/cli.py calculator/operations/advanced_operations.py",
+      "test_path": "calculator/tests/test_cli.py::TestCalculatorCLI::test_initialization calculator/tests/test_advanced_operations.py::TestAdvancedOperations::test_random_operation",
+      "success": false,
+      "start_time": "2025-07-12 20:15:10",
+      "end_time": "2025-07-12 20:16:43",
+      "duration_seconds": 93.496058,
+      "notes": ""
+    }
+  ]
+}

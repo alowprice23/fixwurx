@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-07-13T04:12:00.274262",
+  "session_id": "benchmark-20250713041159-DataProcessing",
+  "metrics": {
+    "bug_detection_recall": 0.85,
+    "bug_fix_yield": 0.9249999999999999,
+    "test_pass_ratio": 0.9800000000000001,
+    "energy_reduction_pct": 0.4625,
+    "mttd": 5.0,
+    "mttr": 10.600000000000001,
+    "aggregate_confidence_score": 0.94
+  }
+}

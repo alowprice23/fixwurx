@@ -1,0 +1,59 @@
+{
+  "name": "benchmark_SensorRegistry",
+  "description": "Benchmark results for SensorRegistry",
+  "unit": "various",
+  "points": [
+    {
+      "timestamp": "2025-07-13T02:21:49.608759",
+      "values": {
+        "collected_count_mean": 21,
+        "collected_count_min": 16,
+        "collected_count_max": 30,
+        "execution_time_mean": 0.03679957389831543,
+        "execution_time_min": 0.026999235153198242,
+        "execution_time_max": 0.04700040817260742,
+        "sensor_count_mean": 4,
+        "sensor_count_min": 4,
+        "sensor_count_max": 4,
+        "throughput_mean": 2430.3375532536775,
+        "throughput_min": 1818.2741952964127,
+        "throughput_max": 3200.292995574546,
+        "memory_usage_mean": 0.02265625,
+        "memory_usage_min": 0.01171875,
+        "memory_usage_max": 0.0390625,
+        "error_count_mean": 80,
+        "error_count_min": 80,
+        "error_count_max": 80,
+        "cpu_usage_mean": 40.84,
+        "cpu_usage_min": 21.7,
+        "cpu_usage_max": 61.1
+      }
+    },
+    {
+      "timestamp": "2025-07-13T02:23:16.214342",
+      "values": {
+        "throughput_mean": 2714.4737269190096,
+        "throughput_min": 2285.6619710634586,
+        "throughput_max": 3076.7510865777845,
+        "error_count_mean": 80,
+        "error_count_min": 80,
+        "error_count_max": 80,
+        "sensor_count_mean": 4,
+        "sensor_count_min": 4,
+        "sensor_count_max": 4,
+        "memory_usage_mean": 0.009375,
+        "memory_usage_min": 0.0,
+        "memory_usage_max": 0.015625,
+        "cpu_usage_mean": 31.259999999999998,
+        "cpu_usage_min": 11.1,
+        "cpu_usage_max": 50.0,
+        "execution_time_mean": 0.031368350982666014,
+        "execution_time_min": 0.028000593185424805,
+        "execution_time_max": 0.03600025177001953,
+        "collected_count_mean": 21.6,
+        "collected_count_min": 18,
+        "collected_count_max": 27
+      }
+    }
+  ]
+}

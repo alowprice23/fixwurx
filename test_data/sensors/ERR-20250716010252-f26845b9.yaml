@@ -1,0 +1,13 @@
+component_name: MockComponent
+context:
+  source: test_sensor_integration.py
+details:
+  message: Mock error detected
+error_id: ERR-20250716010252-f26845b9
+error_type: MOCK_ERROR
+recommendations: []
+related_errors: []
+sensor_id: mock_sensor
+severity: CRITICAL
+status: OPEN
+timestamp: '2025-07-16T01:02:52.330968'

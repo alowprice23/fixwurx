@@ -1,0 +1,44 @@
+{
+  "file": "calculator/operations/basic_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "subtract() returns b - a instead of a - b.",
+        "reason": "Swapping the operands reverses the mathematical meaning of subtraction, producing incorrect results and breaking any code that depends on the function.",
+        "fix": "Change `return b - a` to `return a - b`."
+      },
+      {
+        "description": "multiply() uses addition rather than multiplication.",
+        "reason": "The function currently computes the sum of a and b, not their product, yielding wrong results and undermining trust in the library.",
+        "fix": "Replace `return a + b` with `return a * b`."
+      },
+      {
+        "description": "divide() lacks a zero-division guard.",
+        "reason": "Calling divide(a, 0) will raise a ZeroDivisionError that is less informative than a deliberate, user-friendly check. It also violates defensive-coding practices.",
+        "fix": "Add an explicit check: if b == 0: raise ZeroDivisionError('Division by zero is undefined.')."
+      },
+      {
+        "description": "power() performs multiplication instead of exponentiation.",
+        "reason": "Using `a * b` returns the product, not a raised to the power of b, producing incorrect results.",
+        "fix": "Replace `return a * b` with `return a ** b`."
+      },
+      {
+        "description": "No input-type validation for numeric functions.",
+        "reason": "Passing non-numeric values (e.g., strings, lists) will raise cryptic TypeErrors deep inside the arithmetic operation, rather than a clear, early failure. Consistent validation improves robustness and debuggability.",
+        "fix": "Introduce a private helper _validate_numbers(*args) that checks isinstance(arg, (int, float)) for every operand and raises a descriptive TypeError if validation fails. Call this helper at the top of every public arithmetic function."
+      },
+      {
+        "description": "modulus() (and divide()) allow modulus/division by zero.",
+        "reason": "Although Python will raise ZeroDivisionError automatically, an explicit check allows a clearer, more consistent error message across the API.",
+        "fix": "Add a zero-check in modulus() similar to divide()."
+      },
+      {
+        "description": "Code structure: repeated validation logic across functions.",
+        "reason": "Duplicated code is harder to maintain. Consolidating shared validation in a single helper adheres to DRY and improves readability.",
+        "fix": "Factor common validation into a single helper (_validate_numbers)."
+      }
+    ],
+    "fixed_code": " \"\"\"\n Basic arithmetic operations for the calculator application.\n Now contains corrected implementations and basic input validation.\n \"\"\"\n \n from typing import Union\n \n Number = Union[int, float]\n \n \n def _validate_numbers(*args: Number) -> None:\n     \"\"\"Ensure all supplied arguments are int or float.\"\"\"\n     for arg in args:\n         if not isinstance(arg, (int, float)):\n             raise TypeError(\n                 f\"Operands must be int or float, got {type(arg).__name__}.\"\n             )\n \n \n def add(a: Number, b: Number) -> Number:\n     \"\"\"Add two numbers and return the result.\"\"\"\n     _validate_numbers(a, b)\n     return a + b\n \n \n def subtract(a: Number, b: Number) -> Number:\n     \"\"\"Subtract b from a and return the result.\"\"\"\n     _validate_numbers(a, b)\n     return a - b\n \n \n def multiply(a: Number, b: Number) -> Number:\n     \"\"\"Multiply two numbers and return the result.\"\"\"\n     _validate_numbers(a, b)\n     return a * b\n \n \n def divide(a: Number, b: Number) -> Number:\n     \"\"\"Divide a by b and return the result.\n \n     Raises\n     ------\n     ZeroDivisionError\n         If *b* is 0.\n     \"\"\"\n     _validate_numbers(a, b)\n     if b == 0:\n         raise ZeroDivisionError(\"Division by zero is undefined.\")\n     return a / b\n \n \n def power(a: Number, b: Number) -> Number:\n     \"\"\"Return *a* raised to the power of *b*.\"\"\"\n     _validate_numbers(a, b)\n     return a ** b\n \n \n def modulus(a: Number, b: Number) -> Number:\n     \"\"\"Return the remainder of *a* divided by *b*.\n \n     Raises\n     ------\n     ZeroDivisionError\n         If *b* is 0.\n     \"\"\"\n     _validate_numbers(a, b)\n     if b == 0:\n         raise ZeroDivisionError(\"Modulus by zero is undefined.\")\n     return a % b\n "
+  },
+  "time_taken": 16.5945303440094
+}

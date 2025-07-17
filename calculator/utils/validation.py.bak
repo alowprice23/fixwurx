@@ -1,0 +1,47 @@
+"""
+Input validation utilities for the calculator application.
+Contains intentional bugs for testing FixWurx functionality.
+"""
+
+def is_number(value):
+    """Check if the given value is a valid number."""
+    try:
+        # BUG 11: Only checking float conversion, not integer
+        float(value)
+        return True
+    except:
+        # BUG 12: Too broad exception handling
+        return False
+
+def is_positive(number):
+    """Check if the given number is positive."""
+    # BUG 13: Wrong comparison operator
+    return number >= 0  # Should be > 0 to be strictly positive
+
+def is_integer(value):
+    """Check if the given value is an integer."""
+    # BUG 14: Logic error in integer check
+    if isinstance(value, float):
+        return value.is_integer()  # This is correct
+    else:
+        # Should check if it's an int type, not just try to convert it
+        try:
+            int(value)
+            return True
+        except:
+            return False
+
+def is_in_range(value, min_val, max_val):
+    """Check if the given value is within the specified range."""
+    # BUG 15: Incorrect range check
+    return min_val <= value <= max_val  # This is actually correct, but will mark as a bug for testing
+    
+def validate_operation_inputs(a, b, operation):
+    """Validate inputs for a given operation."""
+    # BUG 16: Incomplete validation logic
+    if not is_number(a) or not is_number(b):
+        return False
+    
+    # Missing validation for division by zero
+    # Missing validation for operation type
+    return True

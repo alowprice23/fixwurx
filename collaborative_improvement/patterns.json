@@ -1,0 +1,43 @@
+{
+  "pattern_53627887": {
+    "id": "pattern_53627887",
+    "commands": [
+      "ls -la",
+      "grep 'error' log.txt"
+    ],
+    "occurrences": 2,
+    "created": 1752620782.5851922,
+    "user_id": "test_user",
+    "proposed": true,
+    "approved": true,
+    "committed": true,
+    "script_id": "script_1752621984_25318724"
+  },
+  "pattern_6488929a": {
+    "id": "pattern_6488929a",
+    "commands": [
+      "grep 'error' log.txt",
+      "cat log.txt | grep 'error' > errors.txt"
+    ],
+    "occurrences": 2,
+    "created": 1752620782.5871923,
+    "user_id": "test_user",
+    "proposed": false,
+    "approved": false,
+    "committed": false
+  },
+  "pattern_3834b6f9": {
+    "id": "pattern_3834b6f9",
+    "commands": [
+      "ls -la",
+      "grep 'error' log.txt",
+      "cat log.txt | grep 'error' > errors.txt"
+    ],
+    "occurrences": 2,
+    "created": 1752620782.5881894,
+    "user_id": "test_user",
+    "proposed": false,
+    "approved": false,
+    "committed": false
+  }
+}

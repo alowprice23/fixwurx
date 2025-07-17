@@ -1,0 +1,40 @@
+{
+  "neural_matrix": {
+    "model_path": "neural_matrix/models/default",
+    "embedding_dimension": 768,
+    "context_window": 4096,
+    "enable_visualization": true
+  },
+  "script_library": {
+    "library_path": "script_library",
+    "git_enabled": true
+  },
+  "conversation_logger": {
+    "logs_path": "conversation_logs",
+    "max_conversation_size": 100,
+    "compression_enabled": true,
+    "retention_days": 90
+  },
+  "planning_engine": {
+    "command_lexicon_path": "fixwurx_shell_commands.md",
+    "scripting_guide_path": "fixwurx_scripting_guide.md",
+    "enable_goal_deconstruction": true
+  },
+  "command_executor": {
+    "timeout_seconds": 60,
+    "blacklist_path": "security/command_blacklist.json",
+    "enable_confirmation": true
+  },
+  "conversational_interface": {
+    "default_verbosity": "standard",
+    "history_size": 50,
+    "enable_streaming": true
+  },
+  "launchpad": {
+    "shell_prompt": "fx> ",
+    "enable_llm_startup": true,
+    "startup_script_path": "startup.fx",
+    "enable_agent_system": true,
+    "enable_auditor": true
+  }
+}

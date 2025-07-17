@@ -1,0 +1,143 @@
+from calculator.operations import basic_operations, advanced_operations
+from calculator.utils import validation, memory
+
+
+class CalculatorCLI:
+    """Command-line interface for the calculator."""
+
+    # Operations that take exactly one numeric argument
+    SINGLE_ARG_OPERATIONS = {"sqrt", "factorial", "sin"}
+
+    def __init__(self):
+        """Initialise a new calculator CLI instance with its own history."""
+        self.history = memory.CalculationHistory()
+        self.operations = {
+            "add": basic_operations.add,
+            "subtract": basic_operations.subtract,
+            "multiply": basic_operations.multiply,
+            "divide": basic_operations.divide,
+            "power": basic_operations.power,
+            "modulus": basic_operations.modulus,
+            "sqrt": advanced_operations.square_root,
+            "factorial": advanced_operations.factorial,
+            "log": advanced_operations.logarithm,
+            "sin": advanced_operations.sine,
+            "random": advanced_operations.random_operation,  # newly exposed
+        }
+
+    # ------------------------------------------------------------------
+    # Internal helpers
+    # ------------------------------------------------------------------
+    def get_operation(self, operation_name):
+        """Return the function associated with *operation_name*.
+
+        Raises
+        ------
+        ValueError
+            If the operation name is not recognised.
+        """
+        try:
+            return self.operations[operation_name]
+        except KeyError as exc:
+            raise ValueError(f"Unsupported operation '{operation_name}'.") from exc
+
+    def _validate_operands(self, op_name, a, b):
+        """Validate and return a tuple of operands suitable for *op_name*."""
+        if op_name in self.SINGLE_ARG_OPERATIONS:
+            # Single-value operations
+            if not validation.is_number(a):
+                raise ValueError("Operand must be a valid number")
+            return (a,)
+
+        # All other operations need exactly two numeric operands
+        if b is None:
+            raise ValueError(f"Operation '{op_name}' requires two operands.")
+        
+        # Check if both operands are valid numbers
+        if not validation.is_number(a):
+            raise ValueError("First operand must be a valid number")
+        if not validation.is_number(b):
+            raise ValueError("Second operand must be a valid number")
+            
+        # Special case for division by zero
+        if op_name == 'divide' and b == 0:
+            raise ValueError("Cannot divide by zero")
+            
+        return (a, b)
+
+    # ------------------------------------------------------------------
+    # Public API
+    # ------------------------------------------------------------------
+    def calculate(self, operation_name, a, b=None):
+        """Perform *operation_name* on the supplied operands and store the result.
+
+        Returns the numeric result or an error message if something goes wrong.
+        """
+        try:
+            operation = self.get_operation(operation_name)
+            operands = self._validate_operands(operation_name, a, b)
+
+            # The actual calculation
+            result = operation(*operands)
+
+            # Record every calculation uniformly
+            if len(operands) == 1:
+                self.history.add_calculation(operation_name, operands[0], None, result)
+            else:
+                self.history.add_calculation(operation_name, operands[0], operands[1], result)
+                
+            return result
+        except Exception as e:
+            return f"Error: {str(e)}"
+
+    # ------------------------------------------------------------------
+    # User-facing helpers
+    # ------------------------------------------------------------------
+    def display_menu(self):
+        """Print a friendly help/usage screen to the console."""
+        print("=== Calculator Menu ===")
+        print("Enter commands in the following format:\n")
+        print("    <operation> <number1> [<number2>]\n")
+        print("Examples:")
+        print("    add 5 10        → 15")
+        print("    sqrt 9          → 3\n")
+        print("Available operations:")
+        for op in sorted(self.operations):
+            req = "1 arg" if op in self.SINGLE_ARG_OPERATIONS else "2 args"
+            print(f" - {op:<10} ({req})")
+
+    def parse_input(self, user_input):
+        """Parse *user_input* and return *(operation, a, b)*.
+
+        Raises
+        ------
+        ValueError
+            For any syntactic or semantic problem in the input string.
+        """
+        parts = user_input.strip().split()
+        if not parts:
+            raise ValueError("Empty input.")
+
+        operation = parts[0].lower()
+        if operation not in self.operations:
+            raise ValueError(f"Unsupported operation '{operation}'.")
+
+        # First operand ---------------------------------------------------
+        try:
+            a = float(parts[1])
+        except IndexError:
+            raise ValueError("Missing first operand.")
+        except ValueError as exc:
+            raise ValueError("First operand is not a valid number.") from exc
+
+        # Second operand (if required) ------------------------------------
+        b = None
+        if operation not in self.SINGLE_ARG_OPERATIONS:
+            try:
+                b = float(parts[2])
+            except IndexError:
+                raise ValueError(f"Operation '{operation}' requires two operands.")
+            except ValueError as exc:
+                raise ValueError("Second operand is not a valid number.") from exc
+
+        return operation, a, b

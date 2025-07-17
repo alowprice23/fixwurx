@@ -1,0 +1,13 @@
+component_name: ObligationLedger
+context:
+  rules_count: 0
+details:
+  message: "No \u0394-rules found in ledger"
+error_id: ERR-20250713023704-19099e7a
+error_type: EMPTY_DELTA_RULES
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: HIGH
+status: OPEN
+timestamp: '2025-07-13T02:37:04.810435'

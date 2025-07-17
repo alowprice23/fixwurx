@@ -1,0 +1,15 @@
+{
+  "name": "benchmark_EnergyCalculator",
+  "description": "Benchmark results for EnergyCalculator",
+  "unit": "various",
+  "points": [
+    {
+      "timestamp": "2025-07-13T02:21:49.357757",
+      "values": {}
+    },
+    {
+      "timestamp": "2025-07-13T02:23:15.991500",
+      "values": {}
+    }
+  ]
+}

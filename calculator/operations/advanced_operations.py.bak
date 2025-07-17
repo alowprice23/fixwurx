@@ -1,0 +1,90 @@
+"""
+Advanced mathematical operations for the calculator application.
+"""
+from __future__ import annotations
+
+import math
+import random
+from typing import Union
+
+Number = Union[int, float]
+
+def square_root(x: Number) -> float:
+    """Calculate the square root of a non-negative number.
+
+    Parameters
+    ----------
+    x : int | float
+        The value whose square root will be computed.
+
+    Returns
+    -------
+    float
+        The non-negative square root of *x*.
+
+    Raises
+    ------
+    TypeError
+        If *x* is not a real number.
+    ValueError
+        If *x* is negative.
+    """
+    if not isinstance(x, (int, float)):
+        raise TypeError("Input must be a real number (int or float).")
+    if x < 0:
+        raise ValueError("Cannot compute the square root of a negative number.")
+    return math.sqrt(x)
+
+def factorial(n: int) -> int:
+    """Return *n*! for non-negative integer *n*.
+
+    Raises
+    ------
+    TypeError
+        If *n* is not an integer.
+    ValueError
+        If *n* is negative.
+    """
+    if not isinstance(n, int):
+        raise TypeError("n must be an integer.")
+    if n < 0:
+        raise ValueError("n must be non-negative.")
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+def logarithm(x: Number, base: Number = 10) -> float:
+    """Compute log_base(x).
+
+    Raises
+    ------
+    ValueError
+        If *x* ≤ 0, or the base is ≤ 0 or 1.
+    """
+    if x <= 0:
+        raise ValueError("x must be positive for logarithm.")
+    if base <= 0 or base == 1:
+        raise ValueError("base must be positive and not equal to 1.")
+    return math.log(x, base)
+
+def sine(angle_degrees: Number) -> float:
+    """Return the sine of *angle_degrees*."""
+    angle_radians = math.radians(angle_degrees)
+    return math.sin(angle_radians)
+
+def random_operation(min_val: int, max_val: int) -> int:
+    """Return a random integer N such that min_val ≤ N ≤ max_val.
+
+    Raises
+    ------
+    TypeError
+        If arguments are not integers.
+    ValueError
+        If min_val > max_val.
+    """
+    if not isinstance(min_val, int) or not isinstance(max_val, int):
+        raise TypeError("min_val and max_val must be integers.")
+    if min_val > max_val:
+        raise ValueError("min_val cannot be greater than max_val.")
+    return random.randint(min_val, max_val)

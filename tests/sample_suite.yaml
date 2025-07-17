@@ -1,0 +1,29 @@
+component: core
+description: Tests for core system functionality
+name: Core Functionality Tests
+suite_id: test-suite-1
+tags:
+- core
+- critical
+test_cases:
+- category: behavioral
+  component: auth
+  description: Test user authentication flow
+  expected_outputs:
+    success: true
+    user_id: '12345'
+  inputs:
+    password: password123
+    username: test_user
+  name: User Authentication
+  test_id: test-1
+- category: behavioral
+  component: database
+  description: Test data storage functionality
+  expected_outputs:
+    success: true
+  inputs:
+    key: test_key
+    value: test_value
+  name: Data Storage
+  test_id: test-2

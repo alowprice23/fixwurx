@@ -1,0 +1,138 @@
+benchmark_id: BENCH-20250713022149-6c1c9e3e
+config:
+  benchmark_type: PERFORMANCE
+  environment: {}
+  function_args:
+    point_count: 500
+  has_function: true
+  iterations: 3
+  metrics:
+  - execution_time
+  - cpu_usage
+  - memory_usage
+  - throughput
+  name: time_series_benchmark_500
+  target: TimeSeriesDatabase
+  test_scenario: Generate and analyze 500 time series points
+  timeout_seconds: 60
+  warmup_iterations: 1
+duration_seconds: 12.247845
+end_time: '2025-07-13T02:22:01.864602'
+error: null
+measurements:
+- cpu_usage: 20.1
+  execution_time: 3.0836026668548584
+  function_result: '{''metrics'': {''point_count'': 500, ''trend'': ''STABLE'', ''slope'':
+    np.float64(-1.890779514225429e-07), ''throughput'': 162.93887166211243}}'
+  iteration: iteration-1
+  memory_usage: 0.33203125
+  point_count: 500
+  slope: !!python/object/apply:numpy._core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    fAfJP6tgib4=
+  throughput: 162.93887166211243
+  timestamp: '2025-07-13T02:21:52.773616'
+  trend: STABLE
+- cpu_usage: 18.3
+  execution_time: 3.0254180431365967
+  function_result: '{''metrics'': {''point_count'': 500, ''trend'': ''STABLE'', ''slope'':
+    np.float64(1.5904562138053572e-06), ''throughput'': 166.198697102995}}'
+  iteration: iteration-1
+  memory_usage: 0.203125
+  point_count: 500
+  slope: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    gXy9GfWuuj4=
+  throughput: 166.198697102995
+  timestamp: '2025-07-13T02:21:55.857219'
+  trend: STABLE
+- cpu_usage: 16.0
+  execution_time: 2.9819648265838623
+  function_result: '{''metrics'': {''point_count'': 500, ''trend'': ''STABLE'', ''slope'':
+    np.float64(4.3858311976206795e-06), ''throughput'': 168.8073949827671}}'
+  iteration: iteration-1
+  memory_usage: 0.203125
+  point_count: 500
+  slope: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    70GNGUBl0j4=
+  throughput: 168.8073949827671
+  timestamp: '2025-07-13T02:21:58.882637'
+  trend: STABLE
+start_time: '2025-07-13T02:21:49.616757'
+statistics:
+  cpu_usage:
+    max: 20.1
+    mean: 18.133333333333333
+    median: 18.3
+    min: 16.0
+    stdev: 2.0550750189064475
+  execution_time:
+    max: 3.0836026668548584
+    mean: 3.0303285121917725
+    median: 3.0254180431365967
+    min: 2.9819648265838623
+    stdev: 0.05099654079929842
+  memory_usage:
+    max: 0.33203125
+    mean: 0.24609375
+    median: 0.203125
+    min: 0.203125
+    stdev: 0.0744240581377252
+  point_count:
+    max: 500
+    mean: 500
+    median: 500
+    min: 500
+    stdev: 0.0
+  slope:
+    max: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      70GNGUBl0j4=
+    mean: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      ODtUWaUuwD4=
+    median: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      gXy9GfWuuj4=
+    min: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      fAfJP6tgib4=
+    stdev: 2.306174930751252e-06
+  throughput:
+    max: 168.8073949827671
+    mean: 165.98165458262486
+    median: 166.198697102995
+    min: 162.93887166211243
+    stdev: 2.9402758515151963
+success: true
+system_info:
+  cpu:
+    model: Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+  cpu_count: 12
+  hostname: DESKTOP-0JNE0TN
+  memory_total: 31.637802124023438
+  platform: Windows
+  platform_release: '10'
+  platform_version: 10.0.19045
+  python_version: 3.12.0

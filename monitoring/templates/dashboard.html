@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="navbar-brand">FixWurx Dashboard</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link active">Overview</a></li>
+                <li class="nav-item"><a href="/agents" class="nav-link">Agents</a></li>
+                <li class="nav-item"><a href="/entropy" class="nav-link">Entropy</a></li>
+                <li class="nav-item"><a href="/rollbacks" class="nav-link">Rollbacks</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>System Dashboard</h1>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">System Health</h2>
+                </div>
+                <div class="card-body" id="health-container">
+                    <div class="system-stats">
+                        <p>Status: <span id="system-health">Unknown</span></p>
+                        <p>Uptime: <span id="system-uptime">0</span></p>
+                        <p>Active Agents: <span id="active-agents">0</span>/<span id="total-agents">0</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Entropy Status</h2>
+                </div>
+                <div class="card-body" id="entropy-container">
+                    <p>Current: <span id="current-entropy">-</span> bits</p>
+                    <p>Progress: <span id="entropy-progress">0</span>%</p>
+                    <p>Reduction Rate: <span id="entropy-rate">0</span> bits/hour</p>
+                    <div class="chart-container">
+                        <canvas id="entropy-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Agent Status</h2>
+                </div>
+                <div class="card-body" id="agents-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Agent</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Last Update</th>
+                            </tr>
+                        </thead>
+                        <tbody id="agent-table-body">
+                            <!-- Agent rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Recent Activity</h2>
+                </div>
+                <div class="card-body">
+                    <div id="activity-log" style="height: 200px; overflow-y: auto;">
+                        <!-- Activity logs will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Connect to SSE endpoint
+        const eventSource = new EventSource('/events');
+        
+        // Data storage
+        const metrics = {
+            entropy: [],
+            system: {},
+            agents: {}
+        };
+        
+        // Charts
+        let entropyChart;
+        
+        // Initialize the dashboard
+        function initDashboard() {
+            // Initialize entropy chart
+            const ctx = document.getElementById('entropy-chart').getContext('2d');
+            entropyChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Entropy (bits)',
+                        data: [],
+                        borderColor: '#3498db',
+                        tension: 0.2,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'minute'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Bits'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Fetch initial system status
+            fetch('/api/system')
+                .then(response => response.json())
+                .then(data => updateSystemStatus(data));
+                
+            // Fetch initial entropy metrics
+            fetch('/api/entropy')
+                .then(response => response.json())
+                .then(data => updateEntropyDisplay(data));
+                
+            // Fetch initial agent status
+            fetch('/api/agents')
+                .then(response => response.json())
+                .then(data => updateAgentTable(data));
+        }
+        
+        // Format time duration
+        function formatDuration(seconds) {
+            const days = Math.floor(seconds / 86400);
+            const hours = Math.floor((seconds % 86400) / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            
+            let result = '';
+            if (days > 0) result += `${days}d `;
+            if (hours > 0) result += `${hours}h `;
+            result += `${minutes}m`;
+            
+            return result;
+        }
+        
+        // Update system health display
+        function updateSystemStatus(data) {
+            document.getElementById('system-health').textContent = data.health;
+            document.getElementById('system-uptime').textContent = formatDuration(data.uptime_seconds);
+            document.getElementById('active-agents').textContent = data.active_agents;
+            document.getElementById('total-agents').textContent = data.total_agents;
+            
+            // Update health indicator
+            const healthElement = document.getElementById('system-health');
+            healthElement.className = '';
+            healthElement.classList.add(`status-${data.health}`);
+        }
+        
+        // Update entropy display
+        function updateEntropyDisplay(data) {
+            document.getElementById('current-entropy').textContent = data.bits.toFixed(2);
+            document.getElementById('entropy-progress').textContent = data.progress_percent.toFixed(1);
+            document.getElementById('entropy-rate').textContent = data.reduction_rate.toFixed(2);
+        }
+        
+        // Update agent table
+        function updateAgentTable(agents) {
+            const tableBody = document.getElementById('agent-table-body');
+            tableBody.innerHTML = '';
+            
+            agents.forEach(agent => {
+                const row = document.createElement('tr');
+                
+                // Format last updated time
+                const lastUpdated = new Date(agent.last_updated * 1000);
+                const timeAgo = Math.floor((Date.now() - lastUpdated) / 1000);
+                const timeAgoStr = timeAgo < 60 ? `${timeAgo}s ago` : 
+                                 timeAgo < 3600 ? `${Math.floor(timeAgo/60)}m ago` : 
+                                 `${Math.floor(timeAgo/3600)}h ago`;
+                
+                // Status indicator
+                const statusClass = agent.status === 'active' ? 'status-healthy' :
+                                  agent.status === 'idle' ? 'status-unknown' :
+                                  agent.status === 'error' ? 'status-critical' : 'status-warning';
+                
+                row.innerHTML = `
+                    <td>${agent.agent_id}</td>
+                    <td>${agent.agent_type}</td>
+                    <td><span class="status-indicator ${statusClass}"></span>${agent.status}</td>
+                    <td>${timeAgoStr}</td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Add activity to log
+        function logActivity(message) {
+            const logElement = document.getElementById('activity-log');
+            const entry = document.createElement('div');
+            const time = new Date().toLocaleTimeString();
+            entry.textContent = `[${time}] ${message}`;
+            logElement.prepend(entry);
+            
+            // Keep log size manageable
+            if (logElement.children.length > 50) {
+                logElement.removeChild(logElement.lastChild);
+            }
+        }
+        
+        // Handle incoming events
+        eventSource.onmessage = function(event) {
+            try {
+                const data = JSON.parse(event.data);
+                
+                // Handle array of history data
+                if (Array.isArray(data)) {
+                    data.forEach(processMetric);
+                    return;
+                }
+                
+                // Handle single metric
+                processMetric(data);
+                
+            } catch (error) {
+                console.error('Error processing event:', error);
+            }
+        };
+        
+        // Process a single metric
+        function processMetric(metric) {
+            const timestamp = metric.ts;
+            const name = metric.name;
+            const value = metric.value;
+            const type = metric.type;
+            const tags = metric.tags || {};
+            
+            // Log activity
+            logActivity(`${name}: ${value}`);
+            
+            // Store and process based on metric type
+            if (name.endsWith('entropy_bits')) {
+                // Update entropy chart
+                entropyChart.data.datasets[0].data.push({
+                    x: timestamp * 1000,
+                    y: value
+                });
+                
+                // Keep chart data manageable
+                if (entropyChart.data.datasets[0].data.length > 100) {
+                    entropyChart.data.datasets[0].data.shift();
+                }
+                
+                entropyChart.update();
+                
+                // Fetch updated entropy metrics
+                fetch('/api/entropy')
+                    .then(response => response.json())
+                    .then(data => updateEntropyDisplay(data));
+            }
+            
+            if (type === 'agent') {
+                // Fetch updated agent status
+                fetch('/api/agents')
+                    .then(response => response.json())
+                    .then(data => updateAgentTable(data));
+            }
+            
+            if (name === 'system.health') {
+                // Fetch updated system status
+                fetch('/api/system')
+                    .then(response => response.json())
+                    .then(data => updateSystemStatus(data));
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initDashboard);
+        
+        // Handle connection errors
+        eventSource.onerror = function() {
+            logActivity('SSE Connection error. Reconnecting...');
+        };
+    </script>
+</body>
+</html>

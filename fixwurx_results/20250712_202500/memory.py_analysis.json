@@ -1,0 +1,34 @@
+{
+  "file": "calculator/utils/memory.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "Shallow-copy leaks internal state in `get_last_calculation`, `get_all_calculations`, `get_calculations_by_operation`, and `__iter__`.",
+        "reason": "The helper methods build the returned value with `dict(calc)` which only creates a *shallow* copy of the dictionary. Mutable objects stored in the record (e.g. lists, other dicts, custom objects held in `a`, `b`, or `result`) are still shared between the caller and the internal history. A caller can therefore mutate these nested objects and unintentionally corrupt the private history.",
+        "fix": "Use `copy.deepcopy` for every record that is handed to external callers (and for the records stored internally, if you want full isolation). This guarantees that nested mutable objects are no longer shared."
+      },
+      {
+        "description": "Missing input validation in `get_calculations_by_operation`.",
+        "reason": "`add_calculation` enforces that `operation` is a non-empty string, but the corresponding query method accepts any value. Passing an unexpected type (e.g. `None` or an integer) silently returns an empty list instead of raising a meaningful error, producing inconsistent API behaviour.",
+        "fix": "Add the same validation rule that `add_calculation` uses \u2013 the supplied `operation` must be a non-empty string \u2013 and raise `ValueError` otherwise."
+      },
+      {
+        "description": "Naive UTC timestamps produced by `datetime.utcnow()`.",
+        "reason": "`datetime.utcnow()` returns a *naive* (timezone-unaware) object. Mixing naive and aware `datetime` instances in the same code base is error-prone and can break chronological ordering once the application starts working with timezone-aware objects elsewhere.",
+        "fix": "Use `datetime.now(timezone.utc)` (or `datetime.utcnow().replace(tzinfo=timezone.utc)`) to attach an explicit UTC tz-info to the stored timestamp."
+      },
+      {
+        "description": "Public attribute `max_size` can be mutated after construction.",
+        "reason": "Because `max_size` is a public attribute, external code can set it to an invalid (e.g. negative) value, breaking the invariant that the history size is always positive.",
+        "fix": "Make `max_size` a read-only property backed by a private attribute (e.g. `_max_size`). Attempting to re-assign it raises `AttributeError`."
+      },
+      {
+        "description": "Type hint and iterator clarity.",
+        "reason": "`__iter__` has no return type annotation and returns an `Iterator[Dict[str, Any]]`. Adding the annotation makes static analysis more accurate.",
+        "fix": "Annotate `__iter__` as `Iterator[Dict[str, Any]]`."
+      }
+    ],
+    "fixed_code": "from __future__ import annotations\n\nimport copy\nfrom datetime import datetime, timezone\nfrom typing import Any, Dict, Iterator, List, Optional\n\n\nclass CalculationHistory:\n    \"\"\"Class to store and manage calculation history with a fixed maximum size.\"\"\"\n\n    # ------------------------------------------------------------------\n    # Construction helpers\n    # ------------------------------------------------------------------\n    def __init__(self, max_size: int = 10):\n        \"\"\"Initialise an empty history.\n\n        Parameters\n        ----------\n        max_size : int, optional\n            The maximum number of calculations to keep. Must be positive.\n        \"\"\"\n        if max_size <= 0:\n            raise ValueError(\"max_size must be a positive integer\")\n\n        self._max_size: int = max_size  # make read-only via a property\n        self._history: List[Dict[str, Any]] = []  # underscore to signal private\n\n    # ------------------------------------------------------------------\n    # Public API\n    # ------------------------------------------------------------------\n    @property\n    def max_size(self) -> int:\n        \"\"\"Read-only access to the maximum history size.\"\"\"\n        return self._max_size\n\n    def add_calculation(self, operation: str, a: Any, b: Any, result: Any) -> None:\n        \"\"\"Add a calculation to the history, automatically trimming if needed.\"\"\"\n        if not isinstance(operation, str) or not operation:\n            raise ValueError(\"'operation' must be a non-empty string\")\n\n        # Store *deep* copies so the history is immune to later mutations\n        calculation: Dict[str, Any] = {\n            \"timestamp\": datetime.now(timezone.utc),\n            \"operation\": operation,\n            \"a\": copy.deepcopy(a),\n            \"b\": copy.deepcopy(b),\n            \"result\": copy.deepcopy(result),\n        }\n\n        self._history.append(calculation)\n\n        # Trim to `max_size` \u2013 remove oldest entries first\n        if len(self._history) > self._max_size:\n            excess = len(self._history) - self._max_size\n            del self._history[:excess]\n\n    def get_last_calculation(self) -> Optional[Dict[str, Any]]:\n        \"\"\"Return the most recent calculation or ``None`` if history is empty.\"\"\"\n        if not self._history:\n            return None\n        # Return a deep copy to prevent external mutations\n        return copy.deepcopy(self._history[-1])\n\n    def clear_history(self) -> None:\n        \"\"\"Remove all stored calculations.\"\"\"\n        self._history.clear()\n\n    def get_all_calculations(self) -> List[Dict[str, Any]]:\n        \"\"\"Return *deep* copies of all calculations in chronological order.\"\"\"\n        return copy.deepcopy(self._history)\n\n    def get_calculations_by_operation(self, operation: str) -> List[Dict[str, Any]]:\n        \"\"\"Return calculations whose `operation` field matches the supplied value.\"\"\"\n        if not isinstance(operation, str) or not operation:\n            raise ValueError(\"'operation' must be a non-empty string\")\n        return [copy.deepcopy(calc) for calc in self._history if calc[\"operation\"] == operation]\n\n    # ------------------------------------------------------------------\n    # Dunder methods for convenience\n    # ------------------------------------------------------------------\n    def __len__(self) -> int:  # allows len(history)\n        return len(self._history)\n\n    def __iter__(self) -> Iterator[Dict[str, Any]]:  # iterate over calculations safely\n        # iterate over a snapshot copy so callers can't mutate internal state\n        return iter(self.get_all_calculations())\n"
+  },
+  "time_taken": 29.845519304275513
+}

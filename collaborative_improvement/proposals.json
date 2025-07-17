@@ -1,0 +1,127 @@
+{
+  "proposal_e140bba0": {
+    "id": "proposal_e140bba0",
+    "pattern_id": "pattern_53627887",
+    "script": "#!/usr/bin/env bash\n# Automated Grep Error Log Script\n#\n# This script was automatically generated from a detected command pattern.\n#\n\n# Error handling\nset -e\n\n# Define variables\nSCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n\n# Command sequence\necho \"Step 1: ls -la\"\nls -la\n\necho \"Step 2: grep 'error' log.txt\"\ngrep 'error' log.txt\n\necho \"Script completed successfully\"",
+    "created": 1752620782.5902004,
+    "reviews": [
+      {
+        "id": "review_f1c79ec5",
+        "reviewer_id": "reviewer1",
+        "approved": true,
+        "comments": "Looks good!",
+        "timestamp": 1752620782.593189
+      },
+      {
+        "id": "review_3350c038",
+        "reviewer_id": "reviewer2",
+        "approved": true,
+        "comments": "Approved",
+        "timestamp": 1752620782.5941916
+      }
+    ],
+    "approved": true,
+    "committed": true,
+    "script_id": "script_1752620782_25318724"
+  },
+  "proposal_69b717fb": {
+    "id": "proposal_69b717fb",
+    "pattern_id": "pattern_53627887",
+    "script": "#!/usr/bin/env bash\n# Automated Grep Error Log Script\n#\n# This script was automatically generated from a detected command pattern.\n#\n\n# Error handling\nset -e\n\n# Define variables\nSCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n\n# Command sequence\necho \"Step 1: ls -la\"\nls -la\n\necho \"Step 2: grep 'error' log.txt\"\ngrep 'error' log.txt\n\necho \"Script completed successfully\"",
+    "created": 1752621033.3320432,
+    "reviews": [
+      {
+        "id": "review_fd1dc832",
+        "reviewer_id": "reviewer1",
+        "approved": true,
+        "comments": "Looks good!",
+        "timestamp": 1752621033.3350441
+      },
+      {
+        "id": "review_ddaca726",
+        "reviewer_id": "reviewer2",
+        "approved": true,
+        "comments": "Approved",
+        "timestamp": 1752621033.3360417
+      }
+    ],
+    "approved": true,
+    "committed": true,
+    "script_id": "script_1752621033_25318724"
+  },
+  "proposal_f2e35c41": {
+    "id": "proposal_f2e35c41",
+    "pattern_id": "pattern_53627887",
+    "script": "#!/usr/bin/env bash\n# Automated Grep Error Log Script\n#\n# This script was automatically generated from a detected command pattern.\n#\n\n# Error handling\nset -e\n\n# Define variables\nSCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n\n# Command sequence\necho \"Step 1: ls -la\"\nls -la\n\necho \"Step 2: grep 'error' log.txt\"\ngrep 'error' log.txt\n\necho \"Script completed successfully\"",
+    "created": 1752621461.6719944,
+    "reviews": [
+      {
+        "id": "review_639d3d5a",
+        "reviewer_id": "reviewer1",
+        "approved": true,
+        "comments": "Looks good!",
+        "timestamp": 1752621461.675001
+      },
+      {
+        "id": "review_dc2ca1c5",
+        "reviewer_id": "reviewer2",
+        "approved": true,
+        "comments": "Approved",
+        "timestamp": 1752621461.6759977
+      }
+    ],
+    "approved": true,
+    "committed": true,
+    "script_id": "script_1752621461_25318724"
+  },
+  "proposal_c3a710fc": {
+    "id": "proposal_c3a710fc",
+    "pattern_id": "pattern_53627887",
+    "script": "#!/usr/bin/env bash\n# Automated Grep Error Log Script\n#\n# This script was automatically generated from a detected command pattern.\n#\n\n# Error handling\nset -e\n\n# Define variables\nSCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n\n# Command sequence\necho \"Step 1: ls -la\"\nls -la\n\necho \"Step 2: grep 'error' log.txt\"\ngrep 'error' log.txt\n\necho \"Script completed successfully\"",
+    "created": 1752621607.431104,
+    "reviews": [
+      {
+        "id": "review_d301a262",
+        "reviewer_id": "reviewer1",
+        "approved": true,
+        "comments": "Looks good!",
+        "timestamp": 1752621607.4331055
+      },
+      {
+        "id": "review_2a2e07e8",
+        "reviewer_id": "reviewer2",
+        "approved": true,
+        "comments": "Approved",
+        "timestamp": 1752621607.4341037
+      }
+    ],
+    "approved": true,
+    "committed": true,
+    "script_id": "script_1752621607_25318724"
+  },
+  "proposal_a3db4e59": {
+    "id": "proposal_a3db4e59",
+    "pattern_id": "pattern_53627887",
+    "script": "#!/usr/bin/env bash\n# Automated Grep Error Log Script\n#\n# This script was automatically generated from a detected command pattern.\n#\n\n# Error handling\nset -e\n\n# Define variables\nSCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\n\n# Command sequence\necho \"Step 1: ls -la\"\nls -la\n\necho \"Step 2: grep 'error' log.txt\"\ngrep 'error' log.txt\n\necho \"Script completed successfully\"",
+    "created": 1752621984.7561953,
+    "reviews": [
+      {
+        "id": "review_ee4845b4",
+        "reviewer_id": "reviewer1",
+        "approved": true,
+        "comments": "Looks good!",
+        "timestamp": 1752621984.7592063
+      },
+      {
+        "id": "review_aefdd550",
+        "reviewer_id": "reviewer2",
+        "approved": true,
+        "comments": "Approved",
+        "timestamp": 1752621984.7601964
+      }
+    ],
+    "approved": true,
+    "committed": true,
+    "script_id": "script_1752621984_25318724"
+  }
+}

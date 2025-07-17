@@ -1,0 +1,29 @@
+{
+  "file": "calculator/operations/basic_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "`_validate_numbers` accepts `bool` values because `bool` is a subclass of `int`.",
+        "reason": "Passing `True` or `False` would be interpreted as `1` or `0`, which is hardly ever what a user of a calculator API intends.",
+        "fix": "Explicitly reject `bool` inside `_validate_numbers`."
+      },
+      {
+        "description": "`power` may silently return a *complex* number when the base is negative and the exponent is not an integer (e.g. `power(-2, 0.5)`).",
+        "reason": "The public API is documented as returning `Number = Union[int, float]`. Returning a `complex` breaks the contract and can crash downstream code that only expects real numbers.",
+        "fix": "Add a guard that raises `ValueError` when the base is negative and the exponent is non-integer."
+      },
+      {
+        "description": "`power(0, negative_number)` triggers a low-level `ZeroDivisionError` from Python\u2019s internals.",
+        "reason": "While Python already raises an exception, the error message (`0.0 cannot be raised to a negative power`) is cryptic and inconsistent with the library\u2019s own wording for similar errors (e.g. division by zero).",
+        "fix": "Proactively detect the situation and raise a clearer `ZeroDivisionError` with an explicit message."
+      },
+      {
+        "description": "Overflow in `power` is not handled.",
+        "reason": "Very large exponents can raise `OverflowError`; surfacing a domain-specific message keeps error handling consistent across the API.",
+        "fix": "Wrap the exponentiation in `try/except OverflowError` and re-raise with a customised message."
+      }
+    ],
+    "fixed_code": "from typing import Union\nimport math\n\nNumber = Union[int, float]\n\n\ndef _validate_numbers(*args: Number) -> None:\n    \"\"\"Ensure all supplied arguments are int or float and **not** bool.\"\"\"\n    for arg in args:\n        # `bool` is a subclass of `int`, so we must exclude it explicitly\n        if isinstance(arg, bool) or not isinstance(arg, (int, float)):\n            raise TypeError(\n                f\"Operands must be int or float, got {type(arg).__name__}.\"\n            )\n\n\ndef add(a: Number, b: Number) -> Number:\n    _validate_numbers(a, b)\n    return a + b\n\n\ndef subtract(a: Number, b: Number) -> Number:\n    _validate_numbers(a, b)\n    return a - b\n\n\ndef multiply(a: Number, b: Number) -> Number:\n    _validate_numbers(a, b)\n    return a * b\n\n\ndef divide(a: Number, b: Number) -> Number:\n    \"\"\"Divide *a* by *b* and return the result.\"\"\"\n    _validate_numbers(a, b)\n    if b == 0:\n        raise ZeroDivisionError(\"Division by zero is undefined.\")\n    return a / b\n\n\ndef power(a: Number, b: Number) -> Number:\n    \"\"\"Return *a* raised to the power of *b* with extra validation.\"\"\"\n    _validate_numbers(a, b)\n\n    # 0 ** negative \u2192 mathematical division by zero\n    if a == 0 and b < 0:\n        raise ZeroDivisionError(\"0 cannot be raised to a negative power.\")\n\n    # Negative base + non-integer exponent \u2192 complex result, which we disallow\n    if a < 0 and not float(b).is_integer():\n        raise ValueError(\n            \"Negative base with non-integer exponent results in a complex number \"\n            \"which is not supported by this calculator.\"\n        )\n\n    try:\n        return a ** b\n    except OverflowError as exc:\n        raise OverflowError(\"Result is too large to be represented.\") from exc\n\n\ndef modulus(a: Number, b: Number) -> Number:\n    \"\"\"Return the remainder of *a* divided by *b*.\"\"\"\n    _validate_numbers(a, b)\n    if b == 0:\n        raise ZeroDivisionError(\"Modulus by zero is undefined.\")\n    return a % b\n"
+  },
+  "time_taken": 23.816794633865356
+}

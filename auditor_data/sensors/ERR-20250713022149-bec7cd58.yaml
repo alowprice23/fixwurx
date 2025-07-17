@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 33
+details:
+  message: Test error 33
+error_id: ERR-20250713022149-bec7cd58
+error_type: TEST_ERROR_1
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: CRITICAL
+status: OPEN
+timestamp: '2025-07-13T02:21:49.586758'

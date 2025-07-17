@@ -1,0 +1,60 @@
+error_analysis:
+  sample_errors:
+  - component: database
+    message: Connection timeout after 30s
+    severity: high
+    stack_trace: "File \"database.py\", line 45, in connect\n  raise TimeoutError(\"\
+      Connection timeout after 30s\")"
+    status: open
+    timestamp: '2025-07-12T22:15:30'
+  - component: api
+    message: 'Invalid parameter: user_id is required'
+    severity: medium
+    stack_trace: "File \"api.py\", line 120, in get_user\n  raise ValueError(\"Invalid\
+      \ parameter: user_id is required\")"
+    status: open
+    timestamp: '2025-07-12T23:05:12'
+functionality_verification:
+  sample_test_suite:
+    component: core
+    description: Tests for core system functionality
+    name: Core Functionality Tests
+    suite_id: test-suite-1
+    tags:
+    - core
+    - critical
+    test_cases:
+    - category: behavioral
+      component: auth
+      description: Test user authentication flow
+      expected_outputs:
+        success: true
+        user_id: '12345'
+      inputs:
+        password: password123
+        username: test_user
+      name: User Authentication
+      test_id: test-1
+    - category: behavioral
+      component: database
+      description: Test data storage functionality
+      expected_outputs:
+        success: true
+      inputs:
+        key: test_key
+        value: test_value
+      name: Data Storage
+      test_id: test-2
+  tests_directory: tests
+system_auditor:
+  component_thresholds:
+    function_complexity_threshold: 10
+    max_cpu_usage: 50
+    max_memory_usage: 200
+    min_comment_ratio: 0.1
+    min_test_coverage: 0.7
+  system_thresholds:
+    max_api_response_time: 0.3
+    max_database_read_time: 0.5
+    max_database_write_time: 1.0
+    security_compliance_level: high

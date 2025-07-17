@@ -1,0 +1,10 @@
+{
+  "timestamp": 1752394824.0451245,
+  "sensor_id": "cache_sensor",
+  "error_type": "MemoryError",
+  "error_message": "Out of memory when allocating cache",
+  "traceback": "NoneType: None\n",
+  "context": {
+    "cache_size_mb": 512
+  }
+}

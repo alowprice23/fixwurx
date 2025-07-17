@@ -1,0 +1,133 @@
+{
+  "timestamp": 1752391569.9707084,
+  "results": {
+    "ObligationLedgerSensor": {
+      "success": false,
+      "error": "ObligationLedgerSensor.monitor() missing 1 required positional argument: 'data'"
+    },
+    "GraphDatabaseSensor": {
+      "sensor_id": "graph_database_sensor",
+      "component_name": "GraphDatabase",
+      "status": {
+        "sensor_id": "graph_database_sensor",
+        "component_name": "GraphDatabase",
+        "last_check_time": null,
+        "node_count": 0,
+        "edge_count": 0,
+        "orphaned_nodes_count": 0,
+        "circular_refs_count": 0,
+        "avg_query_time_ms": 0.0
+      },
+      "reports_count_no_data": 1,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "MetaAwarenessSensor": {
+      "sensor_id": "meta_awareness_sensor",
+      "component_name": "AuditorMetaAwareness",
+      "status": {
+        "sensor_id": "meta_awareness_sensor",
+        "component_name": "AuditorMetaAwareness",
+        "last_check_time": null,
+        "health_score": 100.0,
+        "avg_consistency_score": 1.0,
+        "avg_hallucination_score": 0.0,
+        "avg_confidence_error": 0.0,
+        "avg_drift_score": 0.0,
+        "boundary_violations": 0,
+        "self_descriptions_count": 0
+      },
+      "reports_count_no_data": 0,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "PerformanceBenchmarkSensor": {
+      "success": false,
+      "error": "PerformanceBenchmarkSensor.monitor() missing 1 required positional argument: 'data'"
+    },
+    "EnergyCalculatorSensor": {
+      "sensor_id": "energy_calculator_sensor",
+      "component_name": "SystemEnergy",
+      "status": {
+        "sensor_id": "energy_calculator_sensor",
+        "component_name": "SystemEnergy",
+        "last_check_time": null,
+        "health_score": 100.0,
+        "avg_cpu_percent": 0.0,
+        "avg_memory_percent": 0.0,
+        "avg_io_rate_mb": 0.0,
+        "energy_efficiency": 1.0,
+        "cumulative_energy_wh": 0.0,
+        "uptime_sec": 0.0,
+        "energy_per_fix": 0.0,
+        "bug_fixes": 0,
+        "optimizations_applied": 0
+      },
+      "reports_count_no_data": 1,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "ProofMetricsSensor": {
+      "sensor_id": "proof_metrics_sensor",
+      "component_name": "VerificationProofs",
+      "status": {
+        "sensor_id": "proof_metrics_sensor",
+        "component_name": "VerificationProofs",
+        "last_check_time": null,
+        "health_score": 60.0,
+        "proof_coverage": {
+          "total": 0.0,
+          "critical_paths": 0.0
+        },
+        "consistency_score": 1.0,
+        "soundness_score": 1.0,
+        "unproven_changes": 0,
+        "proof_count": 7
+      },
+      "reports_count_no_data": 3,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "TimeSeriesDatabaseSensor": {
+      "sensor_id": "time_series_database_sensor",
+      "component_name": "TimeSeriesDatabase",
+      "status": {
+        "sensor_id": "time_series_database_sensor",
+        "component_name": "TimeSeriesDatabase",
+        "last_check_time": null,
+        "health_score": 69.63453296650576,
+        "avg_query_time_ms": 87.9475989171816,
+        "avg_insertion_time_ms": 18.846985573528105,
+        "data_gaps_24h": 1,
+        "index_health": 1.0,
+        "storage_mb": 7737.974760819245
+      },
+      "reports_count_no_data": 4,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "DocumentStoreSensor": {
+      "sensor_id": "document_store_sensor",
+      "component_name": "DocumentStore",
+      "status": {
+        "sensor_id": "document_store_sensor",
+        "component_name": "DocumentStore",
+        "last_check_time": null,
+        "health_score": 51.39611880699802,
+        "avg_query_time_ms": 63.002972207004596,
+        "avg_storage_time_ms": 104.20791852540313,
+        "avg_query_error_rate": 0.04220146240516372,
+        "avg_storage_error_rate": 0.03860332556863702,
+        "avg_index_latency_ms": 136.49140600263573,
+        "avg_index_fragmentation": 27.45709709710573,
+        "integrity_issues_24h": 1,
+        "total_docs": 18033,
+        "total_size_mb": 2317.267579442586
+      },
+      "reports_count_no_data": 1,
+      "reports_count_with_data": 0,
+      "success": true
+    }
+  },
+  "success_rate": "6/8"
+}

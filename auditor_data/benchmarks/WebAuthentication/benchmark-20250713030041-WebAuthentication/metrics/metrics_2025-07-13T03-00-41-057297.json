@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-07-13T03:00:41.057297",
+  "session_id": "benchmark-20250713030041-WebAuthentication",
+  "metrics": {
+    "bug_detection_recall": 0.65,
+    "bug_fix_yield": 0.72,
+    "test_pass_ratio": 0.88,
+    "energy_reduction_pct": 0.25,
+    "mttd": 4.5,
+    "mttr": 12.3,
+    "aggregate_confidence_score": 0.77
+  }
+}

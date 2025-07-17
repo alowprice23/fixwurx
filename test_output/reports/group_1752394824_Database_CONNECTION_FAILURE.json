@@ -1,0 +1,101 @@
+{
+  "id": "group_1752394824_Database_CONNECTION_FAILURE",
+  "component": "Database",
+  "error_type": "CONNECTION_FAILURE",
+  "severity": "HIGH",
+  "first_seen": 1752394824.0541267,
+  "last_updated": 1752394824.0561237,
+  "count": 5,
+  "reports": [
+    {
+      "timestamp": 1752394824.0541267,
+      "component": "Database",
+      "sensor_id": "db_sensor",
+      "error_type": "CONNECTION_FAILURE",
+      "severity": "HIGH",
+      "details": {
+        "message": "Failed to connect to database (attempt 1)",
+        "host": "db.example.com",
+        "port": 5432
+      },
+      "context": {
+        "connection_attempts": 1,
+        "last_success": 1752394524.0531263
+      }
+    },
+    {
+      "timestamp": 1752394824.0541267,
+      "component": "Database",
+      "sensor_id": "db_sensor",
+      "error_type": "CONNECTION_FAILURE",
+      "severity": "HIGH",
+      "details": {
+        "message": "Failed to connect to database (attempt 2)",
+        "host": "db.example.com",
+        "port": 5432
+      },
+      "context": {
+        "connection_attempts": 2,
+        "last_success": 1752394524.0531263
+      }
+    },
+    {
+      "timestamp": 1752394824.0551262,
+      "component": "Database",
+      "sensor_id": "db_sensor",
+      "error_type": "CONNECTION_FAILURE",
+      "severity": "HIGH",
+      "details": {
+        "message": "Failed to connect to database (attempt 3)",
+        "host": "db.example.com",
+        "port": 5432
+      },
+      "context": {
+        "connection_attempts": 3,
+        "last_success": 1752394524.0531263
+      }
+    },
+    {
+      "timestamp": 1752394824.0561237,
+      "component": "API",
+      "sensor_id": "api_sensor",
+      "error_type": "CONNECTION_FAILURE",
+      "severity": "MEDIUM",
+      "details": {
+        "message": "Failed to connect to API (attempt 1)",
+        "endpoint": "/api/data",
+        "status_code": 503
+      },
+      "context": {
+        "retry_count": 1
+      }
+    },
+    {
+      "timestamp": 1752394824.0561237,
+      "component": "API",
+      "sensor_id": "api_sensor",
+      "error_type": "CONNECTION_FAILURE",
+      "severity": "MEDIUM",
+      "details": {
+        "message": "Failed to connect to API (attempt 2)",
+        "endpoint": "/api/data",
+        "status_code": 503
+      },
+      "context": {
+        "retry_count": 2
+      }
+    }
+  ],
+  "context": {
+    "connection_attempts": 1,
+    "last_success": 1752394524.0531263,
+    "retry_count": 1
+  },
+  "status": "acknowledged",
+  "acknowledged_at": 1752394824.0581222,
+  "acknowledgement": {
+    "acknowledged_by": "test_user",
+    "notes": "Investigating this issue",
+    "timestamp": 1752394824.0581222
+  }
+}

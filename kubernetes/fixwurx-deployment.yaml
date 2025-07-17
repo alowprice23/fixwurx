@@ -1,0 +1,187 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fixwurx
+  namespace: fixwurx
+  labels:
+    app: fixwurx
+    component: api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fixwurx
+      component: api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: fixwurx
+        component: api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+      - name: fixwurx
+        image: fixwurx:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+          name: api
+        - containerPort: 8001
+          name: dashboard
+        env:
+        - name: ENVIRONMENT
+          value: "production"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: fixwurx-secrets
+              key: database-url
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: fixwurx-secrets
+              key: openai-api-key
+        - name: ANTHROPIC_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: fixwurx-secrets
+              key: anthropic-api-key
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+        volumeMounts:
+        - name: fixwurx-data
+          mountPath: /app/data
+        - name: fixwurx-triangulum
+          mountPath: /app/.triangulum
+      volumes:
+      - name: fixwurx-data
+        persistentVolumeClaim:
+          claimName: fixwurx-data-pvc
+      - name: fixwurx-triangulum
+        persistentVolumeClaim:
+          claimName: fixwurx-triangulum-pvc
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fixwurx
+  namespace: fixwurx
+  labels:
+    app: fixwurx
+spec:
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: api
+  - port: 8001
+    targetPort: 8001
+    name: dashboard
+  selector:
+    app: fixwurx
+    component: api
+  type: ClusterIP
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fixwurx-data-pvc
+  namespace: fixwurx
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: standard
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fixwurx-triangulum-pvc
+  namespace: fixwurx
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: standard
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fixwurx-secrets
+  namespace: fixwurx
+type: Opaque
+data:
+  database-url: cG9zdGdyZXNxbDovL2ZpeHd1cng6cGFzc3dvcmRAZGI6NTQzMi9maXh3dXJ4 # postgresql://fixwurx:password@db:5432/fixwurx
+  openai-api-key: T1BFTkFJX0FQSV9LRVk= # Placeholder - will be replaced in production
+  anthropic-api-key: QU5USFJPUElDX0FQSV9LRVk= # Placeholder - will be replaced in production
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fixwurx-ingress
+  namespace: fixwurx
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  tls:
+  - hosts:
+    - fixwurx.local
+    secretName: fixwurx-tls
+  rules:
+  - host: fixwurx.local
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: fixwurx
+            port:
+              number: 8000
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: fixwurx
+            port:
+              number: 8001

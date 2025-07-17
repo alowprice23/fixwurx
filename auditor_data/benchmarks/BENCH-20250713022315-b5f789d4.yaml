@@ -1,0 +1,35 @@
+benchmark_id: BENCH-20250713022315-b5f789d4
+config:
+  benchmark_type: PERFORMANCE
+  environment: {}
+  function_args:
+    matrix_size: 80
+  has_function: true
+  iterations: 5
+  metrics:
+  - execution_time
+  - cpu_usage
+  - memory_usage
+  - throughput
+  name: energy_calculator_benchmark_80
+  target: EnergyCalculator
+  test_scenario: Minimize energy for 80x80 matrix
+  timeout_seconds: 60
+  warmup_iterations: 1
+duration_seconds: 0.005
+end_time: '2025-07-13T02:23:15.991500'
+error: cannot access local variable 'result' where it is not associated with a value
+measurements: []
+start_time: '2025-07-13T02:23:15.986500'
+statistics: {}
+success: false
+system_info:
+  cpu:
+    model: Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+  cpu_count: 12
+  hostname: DESKTOP-0JNE0TN
+  memory_total: 31.637802124023438
+  platform: Windows
+  platform_release: '10'
+  platform_version: 10.0.19045
+  python_version: 3.12.0

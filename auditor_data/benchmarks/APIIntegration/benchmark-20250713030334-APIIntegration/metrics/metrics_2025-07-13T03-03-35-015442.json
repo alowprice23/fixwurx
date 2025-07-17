@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-07-13T03:03:35.015442",
+  "session_id": "benchmark-20250713030334-APIIntegration",
+  "metrics": {
+    "bug_detection_recall": 0.89,
+    "bug_fix_yield": 0.975,
+    "test_pass_ratio": 1.0,
+    "energy_reduction_pct": 0.48750000000000004,
+    "mttd": 5.4,
+    "mttr": 10.400000000000002,
+    "aggregate_confidence_score": 0.98
+  }
+}

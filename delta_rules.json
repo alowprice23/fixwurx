@@ -1,0 +1,176 @@
+[
+  {
+    "pattern": "authenticate_user",
+    "transforms_to": [
+      "validate_credentials",
+      "manage_sessions",
+      "handle_auth_errors"
+    ]
+  },
+  {
+    "pattern": "authorize_user",
+    "transforms_to": [
+      "verify_permissions",
+      "enforce_access_control",
+      "log_authorization_attempts"
+    ]
+  },
+  {
+    "pattern": "manage_user_data",
+    "transforms_to": [
+      "store_user_profiles",
+      "update_user_information",
+      "delete_user_accounts",
+      "handle_privacy_settings"
+    ]
+  },
+  {
+    "pattern": "process_payments",
+    "transforms_to": [
+      "validate_payment_info",
+      "execute_transaction",
+      "handle_payment_errors",
+      "generate_receipts"
+    ]
+  },
+  {
+    "pattern": "store_data",
+    "transforms_to": [
+      "validate_data",
+      "persist_data",
+      "backup_data",
+      "handle_storage_errors"
+    ]
+  },
+  {
+    "pattern": "retrieve_data",
+    "transforms_to": [
+      "query_database",
+      "format_response",
+      "handle_missing_data",
+      "cache_results"
+    ]
+  },
+  {
+    "pattern": "process_user_input",
+    "transforms_to": [
+      "sanitize_input",
+      "validate_input_format",
+      "convert_input_types",
+      "handle_malformed_input"
+    ]
+  },
+  {
+    "pattern": "render_ui",
+    "transforms_to": [
+      "fetch_view_data",
+      "apply_templates",
+      "handle_view_errors",
+      "optimize_rendering"
+    ]
+  },
+  {
+    "pattern": "manage_api",
+    "transforms_to": [
+      "handle_api_requests",
+      "validate_api_params",
+      "rate_limit_requests",
+      "version_api_endpoints"
+    ]
+  },
+  {
+    "pattern": "ensure_security",
+    "transforms_to": [
+      "prevent_injection_attacks",
+      "protect_against_xss",
+      "implement_csrf_protection",
+      "secure_sensitive_data"
+    ]
+  },
+  {
+    "pattern": "validate_credentials",
+    "transforms_to": [
+      "check_username_password",
+      "handle_mfa",
+      "prevent_brute_force"
+    ]
+  },
+  {
+    "pattern": "manage_sessions",
+    "transforms_to": [
+      "create_session_tokens",
+      "validate_session_integrity",
+      "handle_session_expiration"
+    ]
+  },
+  {
+    "pattern": "enforce_access_control",
+    "transforms_to": [
+      "check_role_permissions",
+      "apply_resource_restrictions",
+      "audit_access_attempts"
+    ]
+  },
+  {
+    "pattern": "persist_data",
+    "transforms_to": [
+      "optimize_database_writes",
+      "ensure_data_integrity",
+      "implement_transactions"
+    ]
+  },
+  {
+    "pattern": "handle_errors",
+    "transforms_to": [
+      "log_error_details",
+      "provide_user_feedback",
+      "attempt_error_recovery",
+      "report_critical_failures"
+    ]
+  },
+  {
+    "pattern": "implement_logging",
+    "transforms_to": [
+      "record_system_events",
+      "track_user_actions",
+      "monitor_performance_metrics",
+      "manage_log_rotation"
+    ]
+  },
+  {
+    "pattern": "ensure_scalability",
+    "transforms_to": [
+      "implement_caching",
+      "optimize_resource_usage",
+      "enable_horizontal_scaling",
+      "manage_connection_pooling"
+    ]
+  },
+  {
+    "pattern": "support_internationalization",
+    "transforms_to": [
+      "manage_translations",
+      "handle_locale_formatting",
+      "support_rtl_languages",
+      "adapt_to_cultural_differences"
+    ]
+  },
+  {
+    "pattern": "ensure_accessibility",
+    "transforms_to": [
+      "support_screen_readers",
+      "implement_keyboard_navigation",
+      "provide_text_alternatives",
+      "ensure_sufficient_contrast"
+    ]
+  },
+  {
+    "pattern": "implement_testing",
+    "transforms_to": [
+      "write_unit_tests",
+      "perform_integration_testing",
+      "conduct_security_audits",
+      "automate_regression_testing"
+    ]
+  }
+]

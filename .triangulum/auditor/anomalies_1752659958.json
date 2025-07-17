@@ -1,0 +1,8 @@
+[
+  {
+    "type": "performance",
+    "severity": "medium",
+    "description": "API latency and throughput are unusually high at 105.05169606208801 ms and units respectively, which may indicate a bottleneck or inefficiency in the system.",
+    "recommendation": "Investigate the cause of high API latency and throughput. Consider optimizing the code, scaling resources, or reviewing network configurations to improve performance."
+  }
+]

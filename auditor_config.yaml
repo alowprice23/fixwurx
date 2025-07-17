@@ -1,0 +1,179 @@
+agent:
+  action_capabilities:
+  - create_placeholder_module
+  - request_implementation
+  - optimize_energy
+  - suggest_code_improvements
+  - increase_test_coverage
+  - reduce_complexity
+  - restore_semantic_consistency
+  - stabilize_reflection
+  action_cooldown_seconds: 60
+  autonomous_mode: true
+  critical_components:
+  - auditor.py
+  - graph_database.py
+  - time_series_database.py
+  - document_store.py
+  - benchmarking_system.py
+  learning_enabled: true
+  max_consecutive_actions: 3
+  monitoring_interval_seconds: 300
+agents:
+  llm:
+    api_key: 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
+    model: gpt-4o
+    provider: openai
+benchmarking:
+  defaults:
+    iterations: 5
+    timeout_seconds: 60
+    warmup_iterations: 1
+  enabled: true
+  path: auditor_data/benchmarks
+bug_tracking:
+  path: auditor_data/bugs
+  status_levels:
+  - OPEN
+  - IN_PROGRESS
+  - RESOLVED
+  - VERIFIED
+data_path: auditor_data
+databases:
+  document:
+    backup_enabled: true
+    backup_path: auditor_data/backups
+    enabled: true
+    path: auditor_data/documents
+  graph:
+    enabled: true
+    path: auditor_data/graph
+  time_series:
+    enabled: true
+    path: auditor_data/time_series
+    retention_days: 90
+delta_rules_file: delta_rules.json
+enhancement_registry:
+  path: auditor_data/enhancements
+error_reporting:
+  max_history_items: 100
+  path: auditor_data/errors
+  severity_levels:
+  - CRITICAL
+  - HIGH
+  - MEDIUM
+  - LOW
+gap_analysis:
+  implementations_path: implementations
+  path: auditor_data/gaps
+  requirements_path: requirements
+llm:
+  api_key: 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
+  model: gpt-4o
+  provider: openai
+llm_integration:
+  api_key_env: OPENAI_API_KEY
+  custom_settings:
+    error_contextualization:
+      max_tokens: 500
+      temperature: 0.1
+    gap_analysis:
+      max_tokens: 2000
+      temperature: 0.3
+  enabled: true
+  integration_points:
+  - obligation_extraction
+  - delta_rule_generation
+  - error_contextualization
+  - gap_analysis
+  max_tokens: 1000
+  model: gpt-4
+  provider: openai
+  temperature: 0.2
+logging:
+  backup_count: 5
+  file: auditor.log
+  format: '%(asctime)s [%(levelname)s] [%(name)s] %(message)s'
+  level: INFO
+  max_size_mb: 10
+patch_management:
+  notification_enabled: true
+  notification_service: email
+  path: auditor_data/patches
+repo_path: .
+reporting:
+  formats:
+  - YAML
+  - JSON
+  - HTML
+  path: auditor_data/reports
+sensors:
+  collection_interval_seconds: 60
+  components:
+    BenchmarkingSystem:
+      enabled: true
+      max_std_deviation_pct: 5
+      min_iterations: 3
+      regression_threshold_pct: 10
+      sensitivity: 0.7
+    DocumentStore:
+      enabled: true
+      max_invalid_documents: 0
+      max_missing_references: 0
+      min_collection_size: 1
+      sensitivity: 0.8
+    EnergyCalculator:
+      enabled: true
+      energy_delta_threshold: 1.0e-07
+      gradient_norm_min: 0.0
+      lambda_threshold: 0.9
+      sensitivity: 0.9
+    GraphDatabase:
+      enabled: true
+      max_dangling_edges: 0
+      max_orphaned_nodes: 0
+      min_node_count: 1
+      sensitivity: 0.8
+    MetaAwareness:
+      enabled: true
+      max_drift: 0.02
+      max_perturbation: 0.005
+      min_phi_decrease: 0.0
+      sensitivity: 0.9
+    ObligationLedger:
+      enabled: true
+      max_missing_obligations: 0
+      rule_application_threshold: 0.95
+      sensitivity: 0.9
+    ProofMetrics:
+      enabled: true
+      max_bug_probability: 0.00011
+      min_coverage: 0.9
+      min_verification_count: 10
+      sensitivity: 0.8
+    TimeSeriesDatabase:
+      anomaly_z_score: 3.0
+      enabled: true
+      max_gap_seconds: 300
+      min_points_for_analysis: 10
+      sensitivity: 0.7
+  default_thresholds:
+    anomaly_z_score: 3.0
+    max_circular_dependencies: 0
+    max_dangling_edges: 0
+    max_gap_seconds: 300
+    max_invalid_documents: 0
+    max_missing_references: 0
+    max_orphaned_nodes: 0
+    regression_threshold_pct: 10
+    sensitivity: 0.8
+  enabled: true
+  real_time_monitoring: false
+  storage_path: auditor_data/sensors
+thresholds:
+  bug_probability: 0.00011
+  drift: 0.02
+  energy_delta: 1.0e-07
+  lambda: 0.9
+  min_coverage: 0.9
+  perturbation: 0.005

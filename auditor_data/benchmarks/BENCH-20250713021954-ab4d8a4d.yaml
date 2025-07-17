@@ -1,0 +1,36 @@
+benchmark_id: BENCH-20250713021954-ab4d8a4d
+config:
+  benchmark_type: PERFORMANCE
+  environment: {}
+  function_args:
+    obligations_per_rule: 10
+    rule_count: 15
+  has_function: true
+  iterations: 5
+  metrics:
+  - execution_time
+  - cpu_usage
+  - memory_usage
+  - throughput
+  name: obligation_ledger_benchmark_15
+  target: ObligationLedger
+  test_scenario: Apply 15 rules to generate obligations
+  timeout_seconds: 60
+  warmup_iterations: 1
+duration_seconds: 0.047181
+end_time: '2025-07-13T02:19:54.690185'
+error: cannot access local variable 'result' where it is not associated with a value
+measurements: []
+start_time: '2025-07-13T02:19:54.643004'
+statistics: {}
+success: false
+system_info:
+  cpu:
+    model: Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+  cpu_count: 12
+  hostname: DESKTOP-0JNE0TN
+  memory_total: 31.637802124023438
+  platform: Windows
+  platform_release: '10'
+  platform_version: 10.0.19045
+  python_version: 3.12.0

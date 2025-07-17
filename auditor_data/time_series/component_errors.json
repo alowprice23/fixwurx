@@ -1,0 +1,142 @@
+{
+  "name": "component_errors",
+  "description": "Errors by component",
+  "unit": "count",
+  "points": [
+    {
+      "timestamp": "2025-06-29T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 54.54545454545454,
+        "EnergyCalculator": 18.181818181818183,
+        "ProofMetrics": 9.090909090909092,
+        "MetaAwareness": 18.181818181818183
+      }
+    },
+    {
+      "timestamp": "2025-06-30T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 45.0,
+        "EnergyCalculator": 25.0,
+        "ProofMetrics": 10.0,
+        "MetaAwareness": 20.0
+      }
+    },
+    {
+      "timestamp": "2025-07-01T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 36.666666666666664,
+        "EnergyCalculator": 30.0,
+        "ProofMetrics": 13.333333333333334,
+        "MetaAwareness": 20.0
+      }
+    },
+    {
+      "timestamp": "2025-07-02T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 34.21052631578947,
+        "EnergyCalculator": 34.21052631578947,
+        "ProofMetrics": 10.526315789473683,
+        "MetaAwareness": 21.052631578947366
+      }
+    },
+    {
+      "timestamp": "2025-07-03T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 28.57142857142857,
+        "EnergyCalculator": 32.6530612244898,
+        "ProofMetrics": 16.3265306122449,
+        "MetaAwareness": 22.448979591836736
+      }
+    },
+    {
+      "timestamp": "2025-07-04T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 29.09090909090909,
+        "EnergyCalculator": 30.909090909090907,
+        "ProofMetrics": 14.545454545454545,
+        "MetaAwareness": 25.454545454545453
+      }
+    },
+    {
+      "timestamp": "2025-07-05T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 31.343283582089555,
+        "EnergyCalculator": 29.850746268656714,
+        "ProofMetrics": 13.432835820895523,
+        "MetaAwareness": 25.37313432835821
+      }
+    },
+    {
+      "timestamp": "2025-07-06T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 29.333333333333332,
+        "EnergyCalculator": 29.333333333333332,
+        "ProofMetrics": 13.333333333333334,
+        "MetaAwareness": 28.000000000000004
+      }
+    },
+    {
+      "timestamp": "2025-07-07T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 28.57142857142857,
+        "EnergyCalculator": 30.952380952380953,
+        "ProofMetrics": 13.095238095238097,
+        "MetaAwareness": 27.380952380952383
+      }
+    },
+    {
+      "timestamp": "2025-07-08T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 28.40909090909091,
+        "EnergyCalculator": 30.681818181818183,
+        "ProofMetrics": 13.636363636363635,
+        "MetaAwareness": 27.27272727272727
+      }
+    },
+    {
+      "timestamp": "2025-07-09T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 28.723404255319153,
+        "EnergyCalculator": 28.723404255319153,
+        "ProofMetrics": 12.76595744680851,
+        "MetaAwareness": 29.78723404255319
+      }
+    },
+    {
+      "timestamp": "2025-07-10T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 28.431372549019606,
+        "EnergyCalculator": 29.411764705882355,
+        "ProofMetrics": 13.725490196078432,
+        "MetaAwareness": 28.431372549019606
+      }
+    },
+    {
+      "timestamp": "2025-07-11T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 26.851851851851855,
+        "EnergyCalculator": 30.555555555555557,
+        "ProofMetrics": 13.88888888888889,
+        "MetaAwareness": 28.703703703703702
+      }
+    },
+    {
+      "timestamp": "2025-07-12T02:15:28.608389",
+      "values": {
+        "ObligationLedger": 28.07017543859649,
+        "EnergyCalculator": 28.947368421052634,
+        "ProofMetrics": 15.789473684210526,
+        "MetaAwareness": 27.192982456140353
+      }
+    },
+    {
+      "timestamp": "2025-07-13T02:15:29.952094",
+      "values": {
+        "ObligationLedger": 27.82608695652174,
+        "EnergyCalculator": 29.565217391304348,
+        "ProofMetrics": 15.65217391304348,
+        "MetaAwareness": 26.956521739130434
+      }
+    }
+  ]
+}

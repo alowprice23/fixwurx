@@ -1,0 +1,11 @@
+{
+  "timestamp": 1752394824.0401242,
+  "sensor_id": "db_sensor",
+  "error_type": "ValueError",
+  "error_message": "Database connection failed",
+  "traceback": "NoneType: None\n",
+  "context": {
+    "attempt": 1,
+    "db_host": "db1.example.com"
+  }
+}

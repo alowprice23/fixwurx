@@ -1,0 +1,29 @@
+{
+  "file": "calculator/operations/advanced_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "Boolean values are implicitly accepted by all public functions because `bool` is a subclass of `int`.",
+        "reason": "Passing `True` or `False` to mathematical routines is almost never intended by the caller and can silently produce wrong results (e.g. `square_root(True)` returns `1.0`). Because the type-check only uses `isinstance(x, int)`, `bool` slips through.",
+        "fix": "Explicitly exclude `bool` from the accepted types. A small helper (`_validate_real_number`) is introduced so the check is not repeated in every function."
+      },
+      {
+        "description": "`logarithm` performs numerical comparisons with `x` and `base` before verifying that both are numbers.",
+        "reason": "If a non-numeric object (e.g. a string) is passed, the comparison `x <= 0` raises a cryptic `TypeError` coming from the interpreter, not from our explicit validation.",
+        "fix": "Validate that both `x` and `base` are real numbers (and not `bool`) *before* any comparison, using the common helper."
+      },
+      {
+        "description": "Manual implementation of factorial.",
+        "reason": "Python\u2019s standard library already offers `math.factorial`, which is written in C, faster, well-tested, and automatically raises `OverflowError` when the result is too large for available memory.",
+        "fix": "Replace the manual loop with `return math.factorial(n)` after validation."
+      },
+      {
+        "description": "Repeated, slightly different input-validation code across functions.",
+        "reason": "Duplicated code is harder to maintain and increases the probability of inconsistencies and bugs.",
+        "fix": "Introduce a single private helper `_validate_real_number(value, name)` that performs a uniform, explicit check for real numbers while excluding `bool`."
+      }
+    ],
+    "fixed_code": "from __future__ import annotations\n\n\"\"\"\nAdvanced mathematical operations for the calculator application.\n\"\"\"\n\nimport math\nimport random\nimport numbers\nfrom typing import Union\n\nNumber = Union[int, float]\n\n\ndef _validate_real_number(value: object, name: str) -> None:\n    \"\"\"Raise *TypeError* if *value* is not an ``int`` or ``float`` (excluding ``bool``).\"\"\"\n    if not isinstance(value, numbers.Real) or isinstance(value, bool):\n        raise TypeError(f\"{name} must be a real number (int or float).\")\n\n\ndef square_root(x: Number) -> float:\n    \"\"\"Calculate the square root of a non-negative number.\"\"\"\n    _validate_real_number(x, \"x\")\n    if x < 0:\n        raise ValueError(\"Cannot compute the square root of a negative number.\")\n    return math.sqrt(x)\n\n\ndef factorial(n: int) -> int:\n    \"\"\"Return *n*! for non-negative integer *n*.\"\"\"\n    if isinstance(n, bool) or not isinstance(n, int):\n        raise TypeError(\"n must be an integer.\")\n    if n < 0:\n        raise ValueError(\"n must be non-negative.\")\n    # Use the highly optimised C implementation.\n    return math.factorial(n)\n\n\ndef logarithm(x: Number, *, base: Number = 10) -> float:\n    \"\"\"Compute ``log_base(x)`` with comprehensive validation.\"\"\"\n    _validate_real_number(x, \"x\")\n    _validate_real_number(base, \"base\")\n    if x <= 0:\n        raise ValueError(\"x must be positive for logarithm.\")\n    if base <= 0 or base == 1:\n        raise ValueError(\"base must be positive and not equal to 1.\")\n    return math.log(x, base)\n\n\ndef sine(angle_degrees: Number) -> float:\n    \"\"\"Return the sine of *angle_degrees*.\"\"\"\n    _validate_real_number(angle_degrees, \"angle_degrees\")\n    angle_radians = math.radians(angle_degrees)\n    return math.sin(angle_radians)\n\n\ndef random_operation(min_val: int, max_val: int) -> int:\n    \"\"\"Return a random integer *N* such that ``min_val \u2264 N \u2264 max_val``.\"\"\"\n    if (\n        isinstance(min_val, bool)\n        or isinstance(max_val, bool)\n        or not isinstance(min_val, int)\n        or not isinstance(max_val, int)\n    ):\n        raise TypeError(\"min_val and max_val must be integers.\")\n    if min_val > max_val:\n        raise ValueError(\"min_val cannot be greater than max_val.\")\n    return random.randint(min_val, max_val)\n"
+  },
+  "time_taken": 33.7644784450531
+}

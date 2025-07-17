@@ -1,0 +1,14 @@
+[
+  {
+    "type": "performance",
+    "severity": "medium",
+    "description": "API latency is significantly higher than CPU and memory usage, indicating a potential bottleneck or inefficiency in the system.",
+    "recommendation": "Investigate the cause of high API latency. Check for network issues, inefficient code, or resource contention that might be affecting API performance."
+  },
+  {
+    "type": "performance",
+    "severity": "medium",
+    "description": "Throughput is notably higher than other performance metrics, which may indicate a mismatch in system capacity planning or resource allocation.",
+    "recommendation": "Review system capacity and resource allocation to ensure that throughput levels are sustainable and do not negatively impact other performance metrics."
+  }
+]

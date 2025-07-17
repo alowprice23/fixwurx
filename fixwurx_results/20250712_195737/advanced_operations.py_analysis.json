@@ -1,0 +1,44 @@
+{
+  "file": "calculator/operations/advanced_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "square_root does not validate input type or check for negative numbers",
+        "reason": "Passing a negative number (or a non-numeric type) to math.sqrt raises a ValueError (or TypeError) deep inside the std-lib, giving the caller an unclear message. The function contract should explicitly reject invalid inputs with a clear, early exception.",
+        "fix": "Add explicit type checking, raise TypeError for non-numeric input, and raise ValueError for negative numbers before calling math.sqrt."
+      },
+      {
+        "description": "square_root lacks documentation of failure conditions",
+        "reason": "Without documenting that the function raises on invalid data, callers cannot easily handle error cases.",
+        "fix": "Expand the docstring to list parameters, return type and possible exceptions."
+      },
+      {
+        "description": "Missing import for the random module",
+        "reason": "random_operation calls random.randint but the module is never imported, resulting in a NameError at runtime.",
+        "fix": "Add `import random` near the top of the file."
+      },
+      {
+        "description": "factorial has an incorrect base-case and no input validation",
+        "reason": "Returning 0 for n=0 is mathematically wrong; additionally, negative integers and non-integers are accepted silently. Recursive implementation can also hit recursion limits for large n.",
+        "fix": "Return 1 for n == 0, forbid negative or non-integer inputs, and use an iterative loop to avoid recursion-depth issues."
+      },
+      {
+        "description": "logarithm ignores the supplied base argument",
+        "reason": "It always uses math.log10, so logarithm(x, 2) actually returns log10(x).",
+        "fix": "Switch to math.log(x, base) and validate that x>0, base>0 and base!=1."
+      },
+      {
+        "description": "sine uses cosine, not sine, and manual radian conversion",
+        "reason": "Returns the cosine, producing incorrect results. Manual conversion is error-prone.",
+        "fix": "Use math.radians(angle_degrees) to convert then math.sin."
+      },
+      {
+        "description": "random_operation lacks argument validation",
+        "reason": "If min_val > max_val or either is non-integer, random.randint raises or behaves unexpectedly.",
+        "fix": "Validate that both are integers and min_val \u2264 max_val."
+      }
+    ],
+    "fixed_code": "\"\"\"\nAdvanced mathematical operations for the calculator application.\n\"\"\"\nfrom __future__ import annotations\n\nimport math\nimport random\nfrom typing import Union\n\nNumber = Union[int, float]\n\ndef square_root(x: Number) -> float:\n    \"\"\"Calculate the square root of a non-negative number.\n\n    Parameters\n    ----------\n    x : int | float\n        The value whose square root will be computed.\n\n    Returns\n    -------\n    float\n        The non-negative square root of *x*.\n\n    Raises\n    ------\n    TypeError\n        If *x* is not a real number.\n    ValueError\n        If *x* is negative.\n    \"\"\"\n    if not isinstance(x, (int, float)):\n        raise TypeError(\"Input must be a real number (int or float).\")\n    if x < 0:\n        raise ValueError(\"Cannot compute the square root of a negative number.\")\n    return math.sqrt(x)\n\ndef factorial(n: int) -> int:\n    \"\"\"Return *n*! for non-negative integer *n*.\n\n    Raises\n    ------\n    TypeError\n        If *n* is not an integer.\n    ValueError\n        If *n* is negative.\n    \"\"\"\n    if not isinstance(n, int):\n        raise TypeError(\"n must be an integer.\")\n    if n < 0:\n        raise ValueError(\"n must be non-negative.\")\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n\ndef logarithm(x: Number, base: Number = 10) -> float:\n    \"\"\"Compute log_base(x).\n\n    Raises\n    ------\n    ValueError\n        If *x* \u2264 0, or the base is \u2264 0 or 1.\n    \"\"\"\n    if x <= 0:\n        raise ValueError(\"x must be positive for logarithm.\")\n    if base <= 0 or base == 1:\n        raise ValueError(\"base must be positive and not equal to 1.\")\n    return math.log(x, base)\n\ndef sine(angle_degrees: Number) -> float:\n    \"\"\"Return the sine of *angle_degrees*.\"\"\"\n    angle_radians = math.radians(angle_degrees)\n    return math.sin(angle_radians)\n\ndef random_operation(min_val: int, max_val: int) -> int:\n    \"\"\"Return a random integer N such that min_val \u2264 N \u2264 max_val.\n\n    Raises\n    ------\n    TypeError\n        If arguments are not integers.\n    ValueError\n        If min_val > max_val.\n    \"\"\"\n    if not isinstance(min_val, int) or not isinstance(max_val, int):\n        raise TypeError(\"min_val and max_val must be integers.\")\n    if min_val > max_val:\n        raise ValueError(\"min_val cannot be greater than max_val.\")\n    return random.randint(min_val, max_val)\n"
+  },
+  "time_taken": 22.989628314971924
+}

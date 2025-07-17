@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 14
+details:
+  message: Test error 14
+error_id: ERR-20250713022316-4b067294
+error_type: TEST_ERROR_2
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: CRITICAL
+status: OPEN
+timestamp: '2025-07-13T02:23:16.093340'

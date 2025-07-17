@@ -1,0 +1,29 @@
+{
+  "file": "calculator/operations/advanced_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "square_root (and the other functions) accept `bool` values because `bool` is a subclass of `int`.",
+        "reason": "Calling `square_root(True)` silently returns `1.0`, which is almost certainly not what the caller intends. Accepting booleans where real numeric data are expected is a common source of subtle logic errors.",
+        "fix": "Explicitly reject `bool` by checking `isinstance(x, bool)` before the generic numeric check."
+      },
+      {
+        "description": "square_root does not guard against NaN or infinite inputs.",
+        "reason": "For `float('nan')` the comparison `x < 0` is `False`, so the function falls through and returns `nan` without signalling an error. For `math.inf` the result is silently `inf`. Silent propagation of these special values can hide earlier data-quality problems.",
+        "fix": "Use `math.isnan` and `math.isinf` to raise a `ValueError` (or handle in a clearly-documented way) before calling `math.sqrt`."
+      },
+      {
+        "description": "Identical numeric validation logic (type, NaN/\u221e checks, positivity, etc.) is repeated or partially missing across functions.",
+        "reason": "Duplicated validation is error-prone and makes the code harder to maintain. Inconsistent checks mean edge cases are handled differently from one function to another.",
+        "fix": "Introduce a single private helper (`_validate_real_number`) used by all public operations to enforce consistent, centralised input validation."
+      },
+      {
+        "description": "factorial re-implements a simple loop instead of delegating to `math.factorial`.",
+        "reason": "`math.factorial` is written in C, significantly faster, already validated, and battle-tested for very large integers. Re-implementing it in Python is slower and unnecessary.",
+        "fix": "Replace the manual loop with `return math.factorial(n)` after validating the argument."
+      }
+    ],
+    "fixed_code": " \"\"\"\nAdvanced mathematical operations for the calculator application.\n\"\"\"\nfrom __future__ import annotations\n\nimport math\nimport random\nfrom numbers import Real\nfrom typing import Union\n\nNumber = Union[int, float]\n\n\ndef _validate_real_number(value: Real, *, allow_zero: bool = True, var_name: str = \"value\") -> None:\n    \"\"\"Common validator for numeric inputs used by this module.\n\n    Parameters\n    ----------\n    value : Real\n        Value to validate.\n    allow_zero : bool, optional\n        Whether zero is permitted (useful for logarithm where zero is invalid).\n    var_name : str, optional\n        Variable name to improve error messages.\n    \"\"\"\n    # Reject bool explicitly (bool is a subclass of int)\n    if isinstance(value, bool) or not isinstance(value, Real):\n        raise TypeError(f\"{var_name} must be a real number (int or float).\")\n\n    # Guard against NaN and infinity\n    if math.isnan(value):\n        raise ValueError(f\"{var_name} cannot be NaN.\")\n    if math.isinf(value):\n        raise ValueError(f\"{var_name} cannot be infinite.\")\n\n    if not allow_zero and value == 0:\n        raise ValueError(f\"{var_name} must be non-zero.\")\n\n\ndef square_root(x: Number) -> float:\n    \"\"\"Calculate the square root of a non-negative real number.\"\"\"\n    _validate_real_number(x, var_name=\"x\")\n    if x < 0:\n        raise ValueError(\"Cannot compute the square root of a negative number.\")\n    return math.sqrt(x)\n\n\ndef factorial(n: int) -> int:\n    \"\"\"Return *n*! for non-negative integer *n*.\"\"\"\n    if isinstance(n, bool) or not isinstance(n, int):\n        raise TypeError(\"n must be an integer.\")\n    if n < 0:\n        raise ValueError(\"n must be non-negative.\")\n    # Delegate to the highly-optimised C implementation\n    return math.factorial(n)\n\n\ndef logarithm(x: Number, base: Number = 10) -> float:\n    \"\"\"Compute log_base(x).\"\"\"\n    _validate_real_number(x, allow_zero=False, var_name=\"x\")\n    _validate_real_number(base, allow_zero=False, var_name=\"base\")\n\n    if base == 1:\n        raise ValueError(\"base must not be 1.\")\n\n    return math.log(x, base)\n\n\ndef sine(angle_degrees: Number) -> float:\n    \"\"\"Return the sine of *angle_degrees*.\"\"\"\n    _validate_real_number(angle_degrees, var_name=\"angle_degrees\")\n    angle_radians = math.radians(angle_degrees)\n    return math.sin(angle_radians)\n\n\ndef random_operation(min_val: int, max_val: int) -> int:\n    \"\"\"Return a random integer *N* such that *min_val \u2264 N \u2264 max_val*.\"\"\"\n    if (\n        isinstance(min_val, bool)\n        or isinstance(max_val, bool)\n        or not isinstance(min_val, int)\n        or not isinstance(max_val, int)\n    ):\n        raise TypeError(\"min_val and max_val must be integers.\")\n    if min_val > max_val:\n        raise ValueError(\"min_val cannot be greater than max_val.\")\n    return random.randint(min_val, max_val)\n"
+  },
+  "time_taken": 31.124762535095215
+}

@@ -1,0 +1,13 @@
+component_name: EnergyCalculator
+context:
+  source_file: energy.py
+details:
+  message: Real-time ENERGY_DIVERGENCE error
+error_id: ERR-20250713021529-c348434c
+error_type: ENERGY_DIVERGENCE
+recommendations: []
+related_errors: []
+sensor_id: energy_calculator_sensor
+severity: HIGH
+status: OPEN
+timestamp: '2025-07-13T02:15:29.950095'

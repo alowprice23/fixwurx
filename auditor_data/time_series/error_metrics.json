@@ -1,0 +1,97 @@
+{
+  "name": "error_metrics",
+  "description": "Error metrics from the auditor",
+  "unit": "count",
+  "points": [
+    {
+      "timestamp": "2025-06-29T02:15:28.608389",
+      "values": {
+        "total_errors": 11
+      }
+    },
+    {
+      "timestamp": "2025-06-30T02:15:28.608389",
+      "values": {
+        "total_errors": 9
+      }
+    },
+    {
+      "timestamp": "2025-07-01T02:15:28.608389",
+      "values": {
+        "total_errors": 10
+      }
+    },
+    {
+      "timestamp": "2025-07-02T02:15:28.608389",
+      "values": {
+        "total_errors": 8
+      }
+    },
+    {
+      "timestamp": "2025-07-03T02:15:28.608389",
+      "values": {
+        "total_errors": 11
+      }
+    },
+    {
+      "timestamp": "2025-07-04T02:15:28.608389",
+      "values": {
+        "total_errors": 6
+      }
+    },
+    {
+      "timestamp": "2025-07-05T02:15:28.608389",
+      "values": {
+        "total_errors": 12
+      }
+    },
+    {
+      "timestamp": "2025-07-06T02:15:28.608389",
+      "values": {
+        "total_errors": 8
+      }
+    },
+    {
+      "timestamp": "2025-07-07T02:15:28.608389",
+      "values": {
+        "total_errors": 9
+      }
+    },
+    {
+      "timestamp": "2025-07-08T02:15:28.608389",
+      "values": {
+        "total_errors": 4
+      }
+    },
+    {
+      "timestamp": "2025-07-09T02:15:28.608389",
+      "values": {
+        "total_errors": 6
+      }
+    },
+    {
+      "timestamp": "2025-07-10T02:15:28.608389",
+      "values": {
+        "total_errors": 8
+      }
+    },
+    {
+      "timestamp": "2025-07-11T02:15:28.608389",
+      "values": {
+        "total_errors": 6
+      }
+    },
+    {
+      "timestamp": "2025-07-12T02:15:28.608389",
+      "values": {
+        "total_errors": 6
+      }
+    },
+    {
+      "timestamp": "2025-07-13T02:15:29.952094",
+      "values": {
+        "total_errors": 1
+      }
+    }
+  ]
+}

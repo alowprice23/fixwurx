@@ -1,0 +1,133 @@
+benchmark_id: BENCH-20250713022149-deed82a4
+config:
+  benchmark_type: PERFORMANCE
+  environment: {}
+  function_args:
+    error_count: 80
+    sensor_count: 4
+  has_function: true
+  iterations: 5
+  metrics:
+  - execution_time
+  - cpu_usage
+  - memory_usage
+  - throughput
+  name: sensor_integration_benchmark_4_80
+  target: SensorRegistry
+  test_scenario: Generate and collect 80 errors from 4 sensors
+  timeout_seconds: 60
+  warmup_iterations: 1
+duration_seconds: 0.221002
+end_time: '2025-07-13T02:21:49.608759'
+error: null
+measurements:
+- collected_count: 16
+  cpu_usage: 28.0
+  error_count: 80
+  execution_time: 0.028003692626953125
+  function_result: '{''metrics'': {''sensor_count'': 4, ''error_count'': 80, ''collected_count'':
+    16, ''throughput'': 3076.5818235164675}}'
+  iteration: iteration-1
+  memory_usage: 0.01171875
+  sensor_count: 4
+  throughput: 3076.5818235164675
+  timestamp: '2025-07-13T02:21:49.422757'
+- collected_count: 19
+  cpu_usage: 58.3
+  error_count: 80
+  execution_time: 0.03899526596069336
+  function_result: '{''metrics'': {''sensor_count'': 4, ''error_count'': 80, ''collected_count'':
+    19, ''throughput'': 2105.2572403754457}}'
+  iteration: iteration-1
+  memory_usage: 0.03515625
+  sensor_count: 4
+  throughput: 2105.2572403754457
+  timestamp: '2025-07-13T02:21:49.450761'
+- collected_count: 21
+  cpu_usage: 61.1
+  error_count: 80
+  execution_time: 0.042999267578125
+  function_result: '{''metrics'': {''sensor_count'': 4, ''error_count'': 80, ''collected_count'':
+    21, ''throughput'': 1951.2815115055157}}'
+  iteration: iteration-1
+  memory_usage: 0.015625
+  sensor_count: 4
+  throughput: 1951.2815115055157
+  timestamp: '2025-07-13T02:21:49.490757'
+- collected_count: 30
+  cpu_usage: 35.1
+  error_count: 80
+  execution_time: 0.04700040817260742
+  function_result: '{''metrics'': {''sensor_count'': 4, ''error_count'': 80, ''collected_count'':
+    30, ''throughput'': 1818.2741952964127}}'
+  iteration: iteration-1
+  memory_usage: 0.01171875
+  sensor_count: 4
+  throughput: 1818.2741952964127
+  timestamp: '2025-07-13T02:21:49.533757'
+- collected_count: 19
+  cpu_usage: 21.7
+  error_count: 80
+  execution_time: 0.026999235153198242
+  function_result: '{''metrics'': {''sensor_count'': 4, ''error_count'': 80, ''collected_count'':
+    19, ''throughput'': 3200.292995574546}}'
+  iteration: iteration-1
+  memory_usage: 0.0390625
+  sensor_count: 4
+  throughput: 3200.292995574546
+  timestamp: '2025-07-13T02:21:49.580757'
+start_time: '2025-07-13T02:21:49.387757'
+statistics:
+  collected_count:
+    max: 30
+    mean: 21
+    median: 19
+    min: 16
+    stdev: 5.338539126015656
+  cpu_usage:
+    max: 61.1
+    mean: 40.84
+    median: 35.1
+    min: 21.7
+    stdev: 17.884853927276005
+  error_count:
+    max: 80
+    mean: 80
+    median: 80
+    min: 80
+    stdev: 0.0
+  execution_time:
+    max: 0.04700040817260742
+    mean: 0.03679957389831543
+    median: 0.03899526596069336
+    min: 0.026999235153198242
+    stdev: 0.008954446550552102
+  memory_usage:
+    max: 0.0390625
+    mean: 0.02265625
+    median: 0.015625
+    min: 0.01171875
+    stdev: 0.013361430762880523
+  sensor_count:
+    max: 4
+    mean: 4
+    median: 4
+    min: 4
+    stdev: 0.0
+  throughput:
+    max: 3200.292995574546
+    mean: 2430.3375532536775
+    median: 2105.2572403754457
+    min: 1818.2741952964127
+    stdev: 655.7927445308766
+success: true
+system_info:
+  cpu:
+    model: Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+  cpu_count: 12
+  hostname: DESKTOP-0JNE0TN
+  memory_total: 31.637802124023438
+  platform: Windows
+  platform_release: '10'
+  platform_version: 10.0.19045
+  python_version: 3.12.0

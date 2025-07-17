@@ -1,0 +1,35 @@
+benchmark_id: BENCH-20250713022315-150a3e5e
+config:
+  benchmark_type: PERFORMANCE
+  environment: {}
+  function_args:
+    proof_count: 800
+  has_function: true
+  iterations: 5
+  metrics:
+  - execution_time
+  - cpu_usage
+  - memory_usage
+  - throughput
+  name: proof_metrics_benchmark_800
+  target: ProofMetrics
+  test_scenario: Verify 800 proofs
+  timeout_seconds: 60
+  warmup_iterations: 1
+duration_seconds: 0.005
+end_time: '2025-07-13T02:23:16.000501'
+error: cannot access local variable 'result' where it is not associated with a value
+measurements: []
+start_time: '2025-07-13T02:23:15.995501'
+statistics: {}
+success: false
+system_info:
+  cpu:
+    model: Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+  cpu_count: 12
+  hostname: DESKTOP-0JNE0TN
+  memory_total: 31.637802124023438
+  platform: Windows
+  platform_release: '10'
+  platform_version: 10.0.19045
+  python_version: 3.12.0

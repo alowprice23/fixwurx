@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="navbar-brand">FixWurx Dashboard</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link">Overview</a></li>
+                <li class="nav-item"><a href="/agents" class="nav-link">Agents</a></li>
+                <li class="nav-item"><a href="/entropy" class="nav-link">Entropy</a></li>
+                <li class="nav-item"><a href="/rollbacks" class="nav-link">Rollbacks</a></li>
+                <li class="nav-item"><a href="/alerts" class="nav-link active">Alerts</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Alert Management</h1>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Active Alerts</h2>
+                    <div>
+                        <span class="badge badge-danger active-critical-count">0</span>
+                        <span class="badge badge-warning active-warning-count">0</span>
+                        <span class="badge badge-primary active-info-count">0</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="active-alerts-container">
+                        <table class="table" id="active-alerts-table">
+                            <thead>
+                                <tr>
+                                    <th>Severity</th>
+                                    <th>Name</th>
+                                    <th>Metric</th>
+                                    <th>Value</th>
+                                    <th>Threshold</th>
+                                    <th>Time</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="active-alerts-body">
+                                <tr class="no-alerts-row">
+                                    <td colspan="7" style="text-align: center;">No active alerts</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Alert Configurations</h2>
+                    <button class="btn" id="create-alert-btn">New Alert</button>
+                </div>
+                <div class="card-body">
+                    <table class="table" id="alert-configs-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Metric</th>
+                                <th>Condition</th>
+                                <th>Threshold</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alert-configs-body">
+                            <tr class="no-configs-row">
+                                <td colspan="6" style="text-align: center;">No alert configurations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-header">
+                <h2 class="card-title">Alert History</h2>
+                <div>
+                    <select id="history-filter" class="form-control" style="width: auto; display: inline-block;">
+                        <option value="all">All Severities</option>
+                        <option value="critical">Critical Only</option>
+                        <option value="warning">Warning Only</option>
+                        <option value="info">Info Only</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table" id="alert-history-table">
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Name</th>
+                            <th>Metric</th>
+                            <th>Value</th>
+                            <th>Status</th>
+                            <th>Created</th>
+                            <th>Resolved</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alert-history-body">
+                        <tr class="no-history-row">
+                            <td colspan="7" style="text-align: center;">No alert history</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Configuration Modal -->
+    <div id="alert-config-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="background: white; margin: 10% auto; padding: 20px; width: 80%; max-width: 600px; border-radius: 8px;">
+            <h2 id="modal-title">Create Alert Configuration</h2>
+            <form id="alert-config-form">
+                <div class="form-group">
+                    <label for="alert-name">Name</label>
+                    <input type="text" id="alert-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="alert-description">Description</label>
+                    <textarea id="alert-description" class="form-control" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="alert-metric">Metric Name</label>
+                    <input type="text" id="alert-metric" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="alert-condition">Condition</label>
+                    <select id="alert-condition" class="form-control" required>
+                        <option value="above">Above</option>
+                        <option value="below">Below</option>
+                        <option value="equals">Equals</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="alert-threshold">Threshold</label>
+                    <input type="number" id="alert-threshold" class="form-control" step="any" required>
+                </div>
+                <div class="form-group">
+                    <label for="alert-severity">Severity</label>
+                    <select id="alert-severity" class="form-control" required>
+                        <option value="info">Info</option>
+                        <option value="warning" selected>Warning</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="alert-duration">Duration (seconds)</label>
+                    <input type="number" id="alert-duration" class="form-control" min="0" value="0">
+                    <small>0 means immediate alert</small>
+                </div>
+                <div class="form-group">
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="alert-enabled" checked>
+                        <label for="alert-enabled"></label>
+                        <span style="margin-left: 10px;">Enabled</span>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn" style="background-color: #ccc; margin-right: 10px;" id="cancel-btn">Cancel</button>
+                    <button type="submit" class="btn" id="save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Server-Sent Events for real-time updates
+        const eventSource = new EventSource('/events');
+        
+        // Global state
+        let activeAlerts = [];
+        let alertConfigs = [];
+        let alertHistory = [];
+        
+        // Fetch initial data
+        fetchActiveAlerts();
+        fetchAlertConfigs();
+        fetchAlertHistory();
+        
+        // Event listeners
+        document.getElementById('history-filter').addEventListener('change', updateAlertHistoryTable);
+        document.getElementById('create-alert-btn').addEventListener('click', showCreateAlertModal);
+        document.getElementById('cancel-btn').addEventListener('click', hideAlertModal);
+        document.getElementById('alert-config-form').addEventListener('submit', saveAlertConfig);
+        
+        // SSE event handler
+        eventSource.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            
+            // Check if this is an alert-related metric
+            if (data.name && data.name.startsWith('alert.')) {
+                fetchActiveAlerts();
+                fetchAlertHistory();
+            }
+        };
+        
+        // Functions
+        function fetchActiveAlerts() {
+            fetch('/api/alerts/active')
+                .then(response => response.json())
+                .then(data => {
+                    activeAlerts = data;
+                    updateActiveAlertsTable();
+                })
+                .catch(error => console.error('Error fetching active alerts:', error));
+        }
+        
+        function fetchAlertConfigs() {
+            fetch('/api/alerts/configs')
+                .then(response => response.json())
+                .then(data => {
+                    alertConfigs = data;
+                    updateAlertConfigsTable();
+                })
+                .catch(error => console.error('Error fetching alert configs:', error));
+        }
+        
+        function fetchAlertHistory() {
+            fetch('/api/alerts/history')
+                .then(response => response.json())
+                .then(data => {
+                    alertHistory = data;
+                    updateAlertHistoryTable();
+                })
+                .catch(error => console.error('Error fetching alert history:', error));
+        }
+        
+        function updateActiveAlertsTable() {
+            const tableBody = document.getElementById('active-alerts-body');
+            let criticalCount = 0;
+            let warningCount = 0;
+            let infoCount = 0;
+            
+            // Clear table
+            tableBody.innerHTML = '';
+            
+            if (activeAlerts.length === 0) {
+                tableBody.innerHTML = '<tr class="no-alerts-row"><td colspan="7" style="text-align: center;">No active alerts</td></tr>';
+                updateAlertCounts(0, 0, 0);
+                return;
+            }
+            
+            // Sort by severity (critical first)
+            activeAlerts.sort((a, b) => {
+                const severityOrder = { 'critical': 0, 'warning': 1, 'info': 2 };
+                return severityOrder[a.severity] - severityOrder[b.severity];
+            });
+            
+            // Add rows
+            activeAlerts.forEach(alert => {
+                const row = document.createElement('tr');
+                
+                // Count by severity
+                if (alert.severity === 'critical') criticalCount++;
+                else if (alert.severity === 'warning') warningCount++;
+                else if (alert.severity === 'info') infoCount++;
+                
+                // Format created time
+                const createdDate = new Date(alert.created_at * 1000);
+                const timeString = createdDate.toLocaleString();
+                
+                // Add row content
+                row.innerHTML = `
+                    <td>
+                        <span class="badge badge-${alert.severity === 'critical' ? 'danger' : alert.severity === 'warning' ? 'warning' : 'primary'}">
+                            ${alert.severity}
+                        </span>
+                    </td>
+                    <td>${alert.name}</td>
+                    <td>${alert.metric_name}</td>
+                    <td>${alert.value.toFixed(2)}</td>
+                    <td>${alert.threshold.toFixed(2)}</td>
+                    <td>${timeString}</td>
+                    <td>
+                        <button class="btn" style="padding: 2px 5px;" onclick="acknowledgeAlert('${alert.id}')">Acknowledge</button>
+                        <button class="btn" style="padding: 2px 5px;" onclick="resolveAlert('${alert.id}')">Resolve</button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+            
+            // Update counts
+            updateAlertCounts(criticalCount, warningCount, infoCount);
+        }
+        
+        function updateAlertCounts(critical, warning, info) {
+            document.querySelector('.active-critical-count').textContent = critical;
+            document.querySelector('.active-warning-count').textContent = warning;
+            document.querySelector('.active-info-count').textContent = info;
+        }
+        
+        function updateAlertConfigsTable() {
+            const tableBody = document.getElementById('alert-configs-body');
+            
+            // Clear table
+            tableBody.innerHTML = '';
+            
+            if (alertConfigs.length === 0) {
+                tableBody.innerHTML = '<tr class="no-configs-row"><td colspan="6" style="text-align: center;">No alert configurations</td></tr>';
+                return;
+            }
+            
+            // Add rows
+            alertConfigs.forEach(config => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${config.name}</td>
+                    <td>${config.metric_name}</td>
+                    <td>${config.condition} ${config.threshold.toFixed(2)}</td>
+                    <td>${config.threshold.toFixed(2)}</td>
+                    <td>
+                        <span class="badge badge-${config.enabled ? 'success' : 'danger'}">
+                            ${config.enabled ? 'Enabled' : 'Disabled'}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn" style="padding: 2px 5px;" onclick="editAlertConfig('${config.id}')">Edit</button>
+                        <button class="btn" style="padding: 2px 5px;" onclick="toggleAlertConfig('${config.id}', ${!config.enabled})">
+                            ${config.enabled ? 'Disable' : 'Enable'}
+                        </button>
+                        <button class="btn" style="padding: 2px 5px;" onclick="deleteAlertConfig('${config.id}')">Delete</button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        function updateAlertHistoryTable() {
+            const tableBody = document.getElementById('alert-history-body');
+            const filter = document.getElementById('history-filter').value;
+            
+            // Clear table
+            tableBody.innerHTML = '';
+            
+            if (alertHistory.length === 0) {
+                tableBody.innerHTML = '<tr class="no-history-row"><td colspan="7" style="text-align: center;">No alert history</td></tr>';
+                return;
+            }
+            
+            // Filter by severity if needed
+            let filteredHistory = alertHistory;
+            if (filter !== 'all') {
+                filteredHistory = alertHistory.filter(alert => alert.severity === filter);
+            }
+            
+            // Sort by created_at (newest first)
+            filteredHistory.sort((a, b) => b.created_at - a.created_at);
+            
+            // Add rows
+            filteredHistory.forEach(alert => {
+                const row = document.createElement('tr');
+                
+                // Format times
+                const createdDate = new Date(alert.created_at * 1000);
+                const createdString = createdDate.toLocaleString();
+                
+                let resolvedString = 'N/A';
+                if (alert.resolved_at) {
+                    const resolvedDate = new Date(alert.resolved_at * 1000);
+                    resolvedString = resolvedDate.toLocaleString();
+                }
+                
+                row.innerHTML = `
+                    <td>
+                        <span class="badge badge-${alert.severity === 'critical' ? 'danger' : alert.severity === 'warning' ? 'warning' : 'primary'}">
+                            ${alert.severity}
+                        </span>
+                    </td>
+                    <td>${alert.name}</td>
+                    <td>${alert.metric_name}</td>
+                    <td>${alert.value.toFixed(2)}</td>
+                    <td>${alert.status}</td>
+                    <td>${createdString}</td>
+                    <td>${resolvedString}</td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Alert actions
+        function acknowledgeAlert(alertId) {
+            fetch(`/api/alerts/${alertId}/acknowledge`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user: 'dashboard_user' // In a real app, this would be the logged-in user
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    fetchActiveAlerts();
+                    fetchAlertHistory();
+                } else {
+                    console.error('Failed to acknowledge alert');
+                }
+            })
+            .catch(error => console.error('Error acknowledging alert:', error));
+        }
+        
+        function resolveAlert(alertId) {
+            fetch(`/api/alerts/${alertId}/resolve`, {
+                method: 'POST',
+            })
+            .then(response => {
+                if (response.ok) {
+                    fetchActiveAlerts();
+                    fetchAlertHistory();
+                } else {
+                    console.error('Failed to resolve alert');
+                }
+            })
+            .catch(error => console.error('Error resolving alert:', error));
+        }
+        
+        // Alert configuration actions
+        function showCreateAlertModal() {
+            document.getElementById('modal-title').textContent = 'Create Alert Configuration';
+            document.getElementById('alert-config-form').reset();
+            document.getElementById('alert-config-modal').style.display = 'block';
+        }
+        
+        function hideAlertModal() {
+            document.getElementById('alert-config-modal').style.display = 'none';
+        }
+        
+        function editAlertConfig(configId) {
+            const config = alertConfigs.find(c => c.id === configId);
+            if (!config) return;
+            
+            document.getElementById('modal-title').textContent = 'Edit Alert Configuration';
+            
+            // Fill form with config values
+            document.getElementById('alert-name').value = config.name;
+            document.getElementById('alert-description').value = config.description;
+            document.getElementById('alert-metric').value = config.metric_name;
+            document.getElementById('alert-condition').value = config.condition;
+            document.getElementById('alert-threshold').value = config.threshold;
+            document.getElementById('alert-severity').value = config.severity;
+            document.getElementById('alert-duration').value = config.duration_seconds;
+            document.getElementById('alert-enabled').checked = config.enabled;
+            
+            // Store config ID for update
+            document.getElementById('alert-config-form').dataset.configId = configId;
+            
+            // Show modal
+            document.getElementById('alert-config-modal').style.display = 'block';
+        }
+        
+        function saveAlertConfig(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('alert-config-form');
+            const configId = form.dataset.configId;
+            
+            const config = {
+                name: document.getElementById('alert-name').value,
+                description: document.getElementById('alert-description').value,
+                metric_name: document.getElementById('alert-metric').value,
+                condition: document.getElementById('alert-condition').value,
+                threshold: parseFloat(document.getElementById('alert-threshold').value),
+                severity: document.getElementById('alert-severity').value,
+                duration_seconds: parseInt(document.getElementById('alert-duration').value),
+                enabled: document.getElementById('alert-enabled').checked,
+            };
+            
+            // If editing, add the ID
+            if (configId) {
+                config.id = configId;
+            }
+            
+            fetch('/api/alerts/configs', {
+                method: configId ? 'PUT' : 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(config),
+            })
+            .then(response => {
+                if (response.ok) {
+                    hideAlertModal();
+                    fetchAlertConfigs();
+                } else {
+                    console.error('Failed to save alert configuration');
+                }
+            })
+            .catch(error => console.error('Error saving alert configuration:', error));
+        }
+        
+        function toggleAlertConfig(configId, enabled) {
+            fetch(`/api/alerts/configs/${configId}/toggle`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    enabled: enabled
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    fetchAlertConfigs();
+                } else {
+                    console.error('Failed to toggle alert configuration');
+                }
+            })
+            .catch(error => console.error('Error toggling alert configuration:', error));
+        }
+        
+        function deleteAlertConfig(configId) {
+            if (!confirm('Are you sure you want to delete this alert configuration?')) {
+                return;
+            }
+            
+            fetch(`/api/alerts/configs/${configId}`, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (response.ok) {
+                    fetchAlertConfigs();
+                } else {
+                    console.error('Failed to delete alert configuration');
+                }
+            })
+            .catch(error => console.error('Error deleting alert configuration:', error));
+        }
+    </script>
+</body>
+</html>

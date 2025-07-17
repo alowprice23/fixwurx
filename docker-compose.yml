@@ -1,0 +1,135 @@
+version: '3.8'
+
+services:
+  # Main FixWurx service
+  fixwurx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fixwurx:latest
+    container_name: fixwurx_main
+    restart: always
+    ports:
+      - "8000:8000"  # API server
+      - "8001:8001"  # Dashboard
+    volumes:
+      - ./data:/app/data
+      - ./.triangulum:/app/.triangulum
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=info
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - DATABASE_URL=sqlite:///data/fixwurx.db
+    depends_on:
+      - db
+      - prometheus
+    networks:
+      - fixwurx_network
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  # Database service
+  db:
+    image: postgres:14-alpine
+    container_name: fixwurx_db
+    restart: always
+    environment:
+      - POSTGRES_USER=fixwurx
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=fixwurx
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - fixwurx_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fixwurx"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Monitoring service - Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: fixwurx_prometheus
+    restart: always
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - fixwurx_network
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+
+  # Visualization - Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: fixwurx_grafana
+    restart: always
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - fixwurx_network
+    depends_on:
+      - prometheus
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=false
+
+  # Distributed tracing - Jaeger
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: fixwurx_jaeger
+    restart: always
+    ports:
+      - "16686:16686"  # UI
+      - "14268:14268"  # Collector
+    networks:
+      - fixwurx_network
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+
+  # Load balancer - Nginx
+  loadbalancer:
+    image: nginx:alpine
+    container_name: fixwurx_loadbalancer
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/www:/var/www
+    networks:
+      - fixwurx_network
+    depends_on:
+      - fixwurx
+
+networks:
+  fixwurx_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  prometheus_data:
+  grafana_data:

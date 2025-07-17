@@ -1,0 +1,18 @@
+{
+  "description": "Debugging session for DataProcessing",
+  "complexity": 0.7,
+  "total_bugs": 14,
+  "session_id": "session-20250713024958",
+  "project_name": "DataProcessing",
+  "created_at": "2025-07-13T02:49:58.406766",
+  "metrics_stored": [
+    "metrics_2025-07-13T02-49-58-408756.json",
+    "metrics_2025-07-13T02-49-58-410753.json",
+    "metrics_2025-07-13T02-49-58-914549.json",
+    "metrics_2025-07-13T02-49-59-426873.json",
+    "metrics_2025-07-13T02-49-59-936380.json",
+    "metrics_2025-07-13T02-50-00-442082.json"
+  ],
+  "reports_stored": 0,
+  "last_updated": "2025-07-13T02:50:00.442082"
+}

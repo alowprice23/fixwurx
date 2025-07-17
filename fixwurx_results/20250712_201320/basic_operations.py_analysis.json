@@ -1,0 +1,24 @@
+{
+  "file": "calculator/operations/basic_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "Boolean values (`True`, `False`) are accepted as valid operands.",
+        "reason": "In Python, `bool` is a subclass of `int`, so `isinstance(True, int)` evaluates to `True`.  Arithmetic with booleans is usually unintended (e.g. `True + 2 == 3`).  Allowing them can lead to subtle logic errors in client code.",
+        "fix": "Explicitly reject `bool` in `_validate_numbers`.  A concise way is to check `type(arg) is bool` before the numeric check (or use `numbers.Real` and also exclude `bool`)."
+      },
+      {
+        "description": "Zero-division guard in `divide` (and in `modulus`) uses the equality operator `== 0` only.",
+        "reason": "While `== 0` works for exact zeros, it misses signed zeros like `-0.0` (which still behave as zero) and can produce unexpected results with very small floating-point representations (e.g. `5 / 1e-323` silently overflows to `inf` on some platforms instead of raising).  Relying solely on `== 0` is fragile in numerical contexts.",
+        "fix": "Add a small helper `_is_zero` that utilises `math.isclose` to treat any value that is numerically indistinguishable from zero as zero (absolute tolerance).  Use this helper in `divide` and `modulus`."
+      },
+      {
+        "description": "Code duplication for zero-division checks.",
+        "reason": "Both `divide` and `modulus` perform an identical zero check.  Duplicated logic is harder to maintain and can drift out of sync.",
+        "fix": "Factor the zero-check into a dedicated helper `_assert_non_zero`.  Both arithmetic functions can call this helper."
+      }
+    ],
+    "fixed_code": "from __future__ import annotations\n\"\"\"\nBasic arithmetic operations for the calculator application.\nNow contains corrected implementations and stricter input validation.\n\"\"\"\n\nimport math\nfrom typing import Union\n\nNumber = Union[int, float]\n\n\ndef _validate_numbers(*args: Number) -> None:\n    \"\"\"Ensure all supplied arguments are *strictly* int or float (not bool).\"\"\"\n    for arg in args:\n        # Exclude bool explicitly \u2013 it is a subclass of int\n        if type(arg) is bool or not isinstance(arg, (int, float)):\n            raise TypeError(\n                f\"Operands must be int or float, got {type(arg).__name__}.\"\n            )\n\n\ndef _is_zero(value: Number, *, abs_tol: float = 0.0) -> bool:\n    \"\"\"Return True if *value* is (numerically) zero.\"\"\"\n    # Fast path for exact zero to avoid the call overhead of math.isclose\n    if value == 0:\n        return True\n    # For floats very close to zero (e.g. -0.0 or sub-normals)\n    return isinstance(value, float) and math.isclose(value, 0.0, abs_tol=abs_tol)\n\n\ndef _assert_non_zero(value: Number, op_name: str) -> None:\n    \"\"\"Raise ZeroDivisionError if *value* is (numerically) zero.\"\"\"\n    if _is_zero(value):\n        raise ZeroDivisionError(f\"{op_name} by zero is undefined.\")\n\n\n# Public arithmetic API\n\ndef add(a: Number, b: Number) -> Number:\n    \"\"\"Add two numbers and return the result.\"\"\"\n    _validate_numbers(a, b)\n    return a + b\n\n\ndef subtract(a: Number, b: Number) -> Number:\n    \"\"\"Subtract *b* from *a* and return the result.\"\"\"\n    _validate_numbers(a, b)\n    return a - b\n\n\ndef multiply(a: Number, b: Number) -> Number:\n    \"\"\"Multiply two numbers and return the result.\"\"\"\n    _validate_numbers(a, b)\n    return a * b\n\n\ndef divide(a: Number, b: Number) -> Number:\n    \"\"\"Divide *a* by *b* and return the result.\n\n    Raises\n    ------\n    ZeroDivisionError\n        If *b* is numerically zero.\n    \"\"\"\n    _validate_numbers(a, b)\n    _assert_non_zero(b, \"Division\")\n    return a / b\n\n\ndef power(a: Number, b: Number) -> Number:\n    \"\"\"Return *a* raised to the power of *b*.\"\"\"\n    _validate_numbers(a, b)\n    return a ** b\n\n\ndef modulus(a: Number, b: Number) -> Number:\n    \"\"\"Return the remainder of *a* divided by *b*.\n\n    Raises\n    ------\n    ZeroDivisionError\n        If *b* is numerically zero.\n    \"\"\"\n    _validate_numbers(a, b)\n    _assert_non_zero(b, \"Modulus\")\n    return a % b\n"
+  },
+  "time_taken": 28.476128816604614
+}

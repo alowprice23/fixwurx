@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+"""
+Sample Python script with intentional bugs for testing the bug detection system.
+"""
+
+def calculate_ratio(a, b):
+    """
+    Calculate the ratio of a to b.
+    
+    Args:
+        a: Numerator
+        b: Denominator
+        
+    Returns:
+        Ratio of a to b
+    """
+    # Bug: Missing division by zero check
+    return a / b
+
+def process_data(data):
+    """
+    Process the input data.
+    
+    Args:
+        data: Input data
+        
+    Returns:
+        Processed data
+    """
+    # Bug: No input validation
+    result = []
+    
+    for item in data:
+        # Bug: Potential index error
+        if item > 0:
+            result.append(item * 2)
+            
+    # Bug: Unused variable
+    total = sum(result)
+    
+    return result
+
+def search_item(items, target):
+    """
+    Search for an item in a list.
+    
+    Args:
+        items: List to search in
+        target: Item to search for
+        
+    Returns:
+        Index of the item if found, -1 otherwise
+    """
+    # Bug: Inefficient algorithm (O(n) when it could be O(log n))
+    for i, item in enumerate(items):
+        if item == target:
+            return i
+    return -1
+
+def main():
+    """
+    Main function to run the sample script.
+    """
+    # Bug: No exception handling
+    data = [1, 2, 3, 0, -1, 5]
+    processed = process_data(data)
+    print(f"Processed data: {processed}")
+    
+    # Bug: Potential division by zero
+    ratios = [calculate_ratio(a, b) for a, b in zip(data[:-1], data[1:])]
+    print(f"Ratios: {ratios}")
+    
+    # Bug: No bounds checking
+    items = [10, 20, 30, 40, 50]
+    index = search_item(items, 35)
+    print(f"Index of 35: {index}")
+    
+    # Bug: Potential index error
+    if index >= 0:
+        print(f"Found at index {index}: {items[index]}")
+    else:
+        # This is correct handling, but previous code could have issues
+        print("Item not found")
+
+if __name__ == "__main__":
+    main()

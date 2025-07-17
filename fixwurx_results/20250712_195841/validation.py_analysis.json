@@ -1,0 +1,44 @@
+{
+  "file": "calculator/utils/validation.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "is_number() uses a bare \"except\" and does not exclude special float values such as NaN/Inf.",
+        "reason": "Catching every exception hides programming errors and makes debugging harder. Allowing NaN or Infinity to be treated as valid numbers may break later arithmetic operations.",
+        "fix": "Catch only (ValueError, TypeError), convert to float, then use math.isfinite() to ensure the resulting number is a real finite value."
+      },
+      {
+        "description": "is_positive() returns True when the supplied number is 0 (\">= 0\" instead of \"> 0\") and does not verify that the input is numeric.",
+        "reason": "By definition a strictly positive number must be greater than zero. Passing non-numeric values silently raises an exception.",
+        "fix": "Convert the argument to float inside a try/except and compare with \"> 0\"."
+      },
+      {
+        "description": "is_integer() logic is inconsistent and again uses a bare \"except\".",
+        "reason": "Values like True/False are subclasses of int and are incorrectly accepted. For strings it first calls int(value) which will happily turn \"3.5\" into 3 after truncation in other languages but raises here, creating inconsistent behaviour.",
+        "fix": "Convert to float once, make sure it is finite and call num.is_integer(). Explicitly reject booleans and catch only the relevant exceptions."
+      },
+      {
+        "description": "is_in_range() performs no input validation and silently assumes min_val <= max_val.",
+        "reason": "Non-numeric inputs raise TypeError, and ranges reversed by mistake (min_val > max_val) give wrong answers.",
+        "fix": "Validate/convert all three arguments, swap the bounds if they were supplied in reverse order, then do the comparison."
+      },
+      {
+        "description": "validate_operation_inputs() only checks that both operands are numbers; it ignores unsupported operations and division-by-zero.",
+        "reason": "Calling code may attempt an unsupported operation or attempt division by zero and crash at runtime.",
+        "fix": "Add an _ALLOWED_OPERATIONS set, verify that the requested operation exists and that the divisor is not zero for division."
+      },
+      {
+        "description": "Multiple bare \"except:\" clauses across the module.",
+        "reason": "Catching every exception (including SystemExit, KeyboardInterrupt, etc.) is a bad practice and masks genuine errors.",
+        "fix": "Catch specific exception types such as ValueError and TypeError."
+      },
+      {
+        "description": "Boolean values are accepted as valid numbers.",
+        "reason": "Although bool is a subclass of int, treating True/False as 1/0 for calculator input is rarely intended.",
+        "fix": "Explicitly reject bool instances in the helper that converts to float."
+      }
+    ],
+    "fixed_code": "\"\"\"\nInput-validation utilities for the calculator application.\nAll functions now use precise error handling and stricter semantics.\n\"\"\"\n\nimport math\nfrom numbers import Number\n\n# ---------------------------------------------------------------------------\n# Internal helpers\n# ---------------------------------------------------------------------------\n\ndef _to_float(value):\n    \"\"\"Safely convert *value* to float.\n\n    Raises\n    ------\n    ValueError\n        If *value* is not a valid finite real number.\n    \"\"\"\n    # Reject booleans explicitly (bool is a subclass of int)\n    if isinstance(value, bool):\n        raise ValueError(\"Boolean values are not accepted as numbers.\")\n\n    num = float(value)\n\n    if not math.isfinite(num):\n        raise ValueError(\"Number must be finite (no NaN or Inf).\")\n\n    return num\n\n# ---------------------------------------------------------------------------\n# Public API\n# ---------------------------------------------------------------------------\n\ndef is_number(value):\n    \"\"\"Return *True* if *value* represents a finite real number.\"\"\"\n    try:\n        _to_float(value)\n        return True\n    except (ValueError, TypeError):\n        return False\n\n\ndef is_positive(number):\n    \"\"\"Return *True* if *number* is strictly greater than 0.\"\"\"\n    try:\n        return _to_float(number) > 0\n    except (ValueError, TypeError):\n        return False\n\n\ndef is_integer(value):\n    \"\"\"Return *True* if *value* represents an integer value (3, 3.0, \"3\", \u2026).\"\"\"\n    try:\n        return _to_float(value).is_integer()\n    except (ValueError, TypeError):\n        return False\n\n\ndef is_in_range(value, min_val, max_val):\n    \"\"\"Return *True* if *value* lies inclusively between *min_val* and *max_val*.\"\"\"\n    try:\n        num  = _to_float(value)\n        low  = _to_float(min_val)\n        high = _to_float(max_val)\n    except (ValueError, TypeError):\n        return False\n\n    if low > high:  # user supplied bounds in reverse order\n        low, high = high, low\n\n    return low <= num <= high\n\n\n_ALLOWED_OPERATIONS = {\n    \"add\", \"subtract\", \"multiply\", \"divide\",  # long names\n    \"+\", \"-\", \"*\", \"/\"                       # symbols\n}\n\n\ndef validate_operation_inputs(a, b, operation):\n    \"\"\"Validate inputs for a calculator operation.\n\n    Checks performed\n    ----------------\n    1. Operands *a* and *b* are numbers\n    2. *operation* is one of the supported operations\n    3. Division by zero is rejected\n    \"\"\"\n    # 1. Supported operation? ------------------------------------------------\n    if operation not in _ALLOWED_OPERATIONS:\n        return False\n\n    # 2. Are both operands numbers? -----------------------------------------\n    if not (is_number(a) and is_number(b)):\n        return False\n\n    # 3. Division-by-zero protection ----------------------------------------\n    if operation in {\"divide\", \"/\"} and _to_float(b) == 0:\n        return False\n\n    return True\n"
+  },
+  "time_taken": 34.3296480178833
+}

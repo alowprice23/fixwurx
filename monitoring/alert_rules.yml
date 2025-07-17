@@ -1,0 +1,83 @@
+groups:
+- name: fixwurx_alerts
+  rules:
+  - alert: FixWurxServiceDown
+    expr: up{job="fixwurx"} == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "FixWurx service is down"
+      description: "FixWurx service has been down for more than 1 minute."
+
+  - alert: HighMemoryUsage
+    expr: (container_memory_usage_bytes{container_name="fixwurx"} / container_spec_memory_limit_bytes{container_name="fixwurx"}) * 100 > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High memory usage detected"
+      description: "FixWurx container is using more than 80% of its memory limit for 5 minutes."
+
+  - alert: HighCPUUsage
+    expr: (rate(container_cpu_usage_seconds_total{container_name="fixwurx"}[5m]) / container_spec_cpu_quota{container_name="fixwurx"} * 100000) > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High CPU usage detected"
+      description: "FixWurx container is using more than 80% of its CPU limit for 5 minutes."
+
+  - alert: SlowResponseTime
+    expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job="fixwurx"}[5m])) by (le)) > 1
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Slow response times detected"
+      description: "95th percentile of response times is over 1 second for 5 minutes."
+
+  - alert: HighErrorRate
+    expr: sum(rate(http_requests_total{job="fixwurx", status=~"5.."}[5m])) / sum(rate(http_requests_total{job="fixwurx"}[5m])) * 100 > 5
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "High error rate detected"
+      description: "Error rate is higher than 5% for 5 minutes."
+
+  - alert: TaskQueueBacklog
+    expr: fixwurx_task_queue_size > 100
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Task queue backlog detected"
+      description: "FixWurx task queue has more than 100 pending tasks for 10 minutes."
+
+  - alert: LowDiskSpace
+    expr: (node_filesystem_avail_bytes{mountpoint="/app/data"} / node_filesystem_size_bytes{mountpoint="/app/data"}) * 100 < 10
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Low disk space"
+      description: "Node disk space is below 10% for 5 minutes on {{ $labels.instance }} at mount point {{ $labels.mountpoint }}."
+
+  - alert: PatchApplicationFailure
+    expr: fixwurx_patch_application_failures_total > 0
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Patch application failures detected"
+      description: "FixWurx has recorded failures when applying patches."
+
+  - alert: HighNumberOfBugs
+    expr: fixwurx_detected_bugs_total > 50
+    for: 30m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High number of bugs detected"
+      description: "FixWurx has detected more than 50 bugs in the last 30 minutes."

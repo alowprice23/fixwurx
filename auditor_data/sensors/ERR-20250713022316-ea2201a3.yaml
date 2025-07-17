@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 72
+details:
+  message: Test error 72
+error_id: ERR-20250713022316-ea2201a3
+error_type: TEST_ERROR_2
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: HIGH
+status: OPEN
+timestamp: '2025-07-13T02:23:16.133347'

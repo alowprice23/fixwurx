@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | FixWurx</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Error logs specific styles */
+        .severity-debug { color: #6c757d; }
+        .severity-info { color: #17a2b8; }
+        .severity-warning { color: #ffc107; background-color: rgba(255, 193, 7, 0.1); }
+        .severity-error { color: #dc3545; background-color: rgba(220, 53, 69, 0.1); }
+        .severity-critical { color: #fff; background-color: #dc3545; }
+
+        .error-log-card {
+            margin-bottom: 15px;
+            border-left: 4px solid #ccc;
+            padding-left: 15px;
+        }
+        
+        .error-log-card.debug { border-left-color: #6c757d; }
+        .error-log-card.info { border-left-color: #17a2b8; }
+        .error-log-card.warning { border-left-color: #ffc107; }
+        .error-log-card.error { border-left-color: #dc3545; }
+        .error-log-card.critical { border-left-color: #dc3545; }
+        
+        .error-log-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .error-log-timestamp {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .error-log-message {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .error-log-component {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .error-log-context {
+            font-family: monospace;
+            font-size: 0.9rem;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border-radius: 3px;
+        }
+        
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .filter-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .filter-select, .filter-input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .filter-button {
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: auto;
+        }
+        
+        .refresh-button {
+            background-color: var(--secondary);
+        }
+        
+        .export-button {
+            background-color: var(--dark);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .pagination-button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .pagination-button.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .no-logs-message {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Error statistics */
+        .error-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Severity colors */
+        .stat-debug { color: #6c757d; }
+        .stat-info { color: #17a2b8; }
+        .stat-warning { color: #ffc107; }
+        .stat-error { color: #dc3545; }
+        .stat-critical { color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="navbar-brand">FixWurx Dashboard</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="/agents" class="nav-link">Agents</a></li>
+                <li class="nav-item"><a href="/entropy" class="nav-link">Entropy</a></li>
+                <li class="nav-item"><a href="/rollbacks" class="nav-link">Rollbacks</a></li>
+                <li class="nav-item"><a href="/alerts" class="nav-link">Alerts</a></li>
+                <li class="nav-item"><a href="/error-logs" class="nav-link active">Error Logs</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>System Error Logs</h1>
+        
+        <div class="error-stats">
+            <!-- Stats will be populated by JavaScript -->
+        </div>
+        
+        <div class="filter-container">
+            <div class="filter-group">
+                <span class="filter-label">Severity</span>
+                <select id="severity-filter" class="filter-select">
+                    <option value="DEBUG">All Levels</option>
+                    <option value="INFO">Info & Above</option>
+                    <option value="WARNING" selected>Warning & Above</option>
+                    <option value="ERROR">Error & Above</option>
+                    <option value="CRITICAL">Critical Only</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Component</span>
+                <select id="component-filter" class="filter-select">
+                    <option value="">All Components</option>
+                    <!-- Components will be populated by JavaScript -->
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Time Range</span>
+                <select id="time-filter" class="filter-select">
+                    <option value="1">Last Hour</option>
+                    <option value="6">Last 6 Hours</option>
+                    <option value="24" selected>Last 24 Hours</option>
+                    <option value="72">Last 3 Days</option>
+                    <option value="168">Last Week</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Search Text</span>
+                <input type="text" id="text-filter" class="filter-input" placeholder="Filter by text...">
+            </div>
+            
+            <div class="filter-group">
+                <button id="apply-filters" class="filter-button">Apply Filters</button>
+            </div>
+            
+            <div class="filter-group">
+                <button id="refresh-logs" class="filter-button refresh-button">Refresh</button>
+            </div>
+            
+            <div class="filter-group">
+                <button id="export-logs" class="filter-button export-button">Export</button>
+            </div>
+        </div>
+        
+        <div id="error-logs-container">
+            <!-- Logs will be populated by JavaScript -->
+        </div>
+        
+        <div class="pagination" id="pagination">
+            <!-- Pagination will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Variables to track state
+        let allLogs = [];
+        let filteredLogs = [];
+        let currentPage = 1;
+        const logsPerPage = 10;
+        let uniqueComponents = new Set();
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial log fetch
+            fetchAndDisplayLogs();
+            
+            // Set up event listeners
+            document.getElementById('apply-filters').addEventListener('click', applyFilters);
+            document.getElementById('refresh-logs').addEventListener('click', fetchAndDisplayLogs);
+            document.getElementById('export-logs').addEventListener('click', exportLogs);
+        });
+        
+        // Fetch logs from API
+        async function fetchAndDisplayLogs() {
+            try {
+                // Get selected time range
+                const hoursFilter = document.getElementById('time-filter').value;
+                
+                // Fetch logs
+                const response = await fetch(`/api/error-logs?hours=${hoursFilter}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch error logs');
+                }
+                
+                const data = await response.json();
+                allLogs = data;
+                
+                // Extract unique components
+                uniqueComponents = new Set();
+                allLogs.forEach(log => {
+                    if (log.component) {
+                        uniqueComponents.add(log.component);
+                    }
+                });
+                
+                // Update component filter options
+                updateComponentFilter();
+                
+                // Apply initial filters
+                applyFilters();
+                
+                // Fetch and display statistics
+                fetchAndDisplayStats();
+                
+            } catch (error) {
+                console.error('Error fetching logs:', error);
+                document.getElementById('error-logs-container').innerHTML = 
+                    `<div class="no-logs-message">Error loading logs: ${error.message}</div>`;
+            }
+        }
+        
+        // Apply filters to logs
+        function applyFilters() {
+            const severityLevel = document.getElementById('severity-filter').value;
+            const component = document.getElementById('component-filter').value;
+            const searchText = document.getElementById('text-filter').value.toLowerCase();
+            
+            // Map severity level to numeric value for comparison
+            const severityValues = {
+                'DEBUG': 0,
+                'INFO': 1,
+                'WARNING': 2,
+                'ERROR': 3,
+                'CRITICAL': 4
+            };
+            
+            const minSeverityValue = severityValues[severityLevel] || 0;
+            
+            // Filter logs
+            filteredLogs = allLogs.filter(log => {
+                // Check severity
+                const logSeverityValue = severityValues[log.severity] || 0;
+                if (logSeverityValue < minSeverityValue) {
+                    return false;
+                }
+                
+                // Check component
+                if (component && log.component !== component) {
+                    return false;
+                }
+                
+                // Check search text
+                if (searchText && !(
+                    (log.message && log.message.toLowerCase().includes(searchText)) ||
+                    (log.component && log.component.toLowerCase().includes(searchText)) ||
+                    (log.context_str && log.context_str.toLowerCase().includes(searchText))
+                )) {
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            // Reset to first page and display
+            currentPage = 1;
+            displayLogs();
+            updatePagination();
+        }
+        
+        // Display logs on the page
+        function displayLogs() {
+            const container = document.getElementById('error-logs-container');
+            
+            if (filteredLogs.length === 0) {
+                container.innerHTML = '<div class="no-logs-message">No logs match the current filters</div>';
+                return;
+            }
+            
+            // Calculate pagination
+            const startIndex = (currentPage - 1) * logsPerPage;
+            const endIndex = Math.min(startIndex + logsPerPage, filteredLogs.length);
+            const currentLogs = filteredLogs.slice(startIndex, endIndex);
+            
+            // Generate HTML for logs
+            const logsHtml = currentLogs.map(log => {
+                const severityClass = log.severity ? log.severity.toLowerCase() : 'info';
+                
+                return `
+                <div class="error-log-card ${severityClass}">
+                    <div class="error-log-header">
+                        <span class="badge severity-${severityClass}">${log.severity || 'INFO'}</span>
+                        <span class="error-log-timestamp">${log.date} ${log.time}</span>
+                    </div>
+                    <div class="error-log-message">${log.message || 'No message'}</div>
+                    <div class="error-log-component">Component: ${log.component || 'Unknown'}</div>
+                    ${log.context_str ? `<div class="error-log-context">${log.context_str}</div>` : ''}
+                </div>
+                `;
+            }).join('');
+            
+            container.innerHTML = logsHtml;
+        }
+        
+        // Update pagination controls
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredLogs.length / logsPerPage);
+            const paginationElement = document.getElementById('pagination');
+            
+            if (totalPages <= 1) {
+                paginationElement.innerHTML = '';
+                return;
+            }
+            
+            let paginationHtml = '';
+            
+            // Previous button
+            paginationHtml += `
+                <button class="pagination-button" 
+                    ${currentPage === 1 ? 'disabled' : ''}
+                    onclick="changePage(${currentPage - 1})">
+                    &laquo; Prev
+                </button>
+            `;
+            
+            // Page buttons
+            for (let i = 1; i <= totalPages; i++) {
+                if (
+                    i === 1 || 
+                    i === totalPages || 
+                    (i >= currentPage - 2 && i <= currentPage + 2)
+                ) {
+                    paginationHtml += `
+                        <button class="pagination-button ${i === currentPage ? 'active' : ''}"
+                            onclick="changePage(${i})">
+                            ${i}
+                        </button>
+                    `;
+                } else if (
+                    i === currentPage - 3 || 
+                    i === currentPage + 3
+                ) {
+                    paginationHtml += `<span class="pagination-ellipsis">...</span>`;
+                }
+            }
+            
+            // Next button
+            paginationHtml += `
+                <button class="pagination-button" 
+                    ${currentPage === totalPages ? 'disabled' : ''}
+                    onclick="changePage(${currentPage + 1})">
+                    Next &raquo;
+                </button>
+            `;
+            
+            paginationElement.innerHTML = paginationHtml;
+        }
+        
+        // Change current page
+        function changePage(page) {
+            currentPage = page;
+            displayLogs();
+            updatePagination();
+        }
+        
+        // Update component filter dropdown
+        function updateComponentFilter() {
+            const select = document.getElementById('component-filter');
+            const currentValue = select.value;
+            
+            // Clear existing options except the first one
+            while (select.options.length > 1) {
+                select.remove(1);
+            }
+            
+            // Add component options
+            Array.from(uniqueComponents).sort().forEach(component => {
+                const option = document.createElement('option');
+                option.value = component;
+                option.textContent = component;
+                select.appendChild(option);
+            });
+            
+            // Restore selection if possible
+            if (currentValue && Array.from(uniqueComponents).includes(currentValue)) {
+                select.value = currentValue;
+            }
+        }
+        
+        // Fetch and display error statistics
+        async function fetchAndDisplayStats() {
+            try {
+                const response = await fetch('/api/error-stats');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch error statistics');
+                }
+                
+                const stats = await response.json();
+                
+                // Generate HTML for statistics
+                const statsHtml = `
+                    <div class="stat-card">
+                        <div class="stat-label">Total Logs</div>
+                        <div class="stat-value">${stats.total_entries || 0}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Debug</div>
+                        <div class="stat-value stat-debug">${stats.by_severity?.DEBUG || 0}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Info</div>
+                        <div class="stat-value stat-info">${stats.by_severity?.INFO || 0}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Warning</div>
+                        <div class="stat-value stat-warning">${stats.by_severity?.WARNING || 0}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Error</div>
+                        <div class="stat-value stat-error">${stats.by_severity?.ERROR || 0}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Critical</div>
+                        <div class="stat-value stat-critical">${stats.by_severity?.CRITICAL || 0}</div>
+                    </div>
+                `;
+                
+                document.querySelector('.error-stats').innerHTML = statsHtml;
+                
+            } catch (error) {
+                console.error('Error fetching statistics:', error);
+                document.querySelector('.error-stats').innerHTML = 
+                    `<div class="stat-card">Error loading statistics: ${error.message}</div>`;
+            }
+        }
+        
+        // Export logs to JSON file
+        function exportLogs() {
+            // Create a blob with the JSON data
+            const dataStr = JSON.stringify(filteredLogs, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            
+            // Create a download link and trigger it
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `error_logs_export_${new Date().toISOString().slice(0, 10)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 100);
+        }
+    </script>
+</body>
+</html>

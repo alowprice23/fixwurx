@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 71
+details:
+  message: Test error 71
+error_id: ERR-20250713022149-6bf9958e
+error_type: TEST_ERROR_1
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: MEDIUM
+status: OPEN
+timestamp: '2025-07-13T02:21:49.548757'

@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-07-13T03:03:35.021389",
+  "session_id": "benchmark-20250713030334-APIIntegration",
+  "report": {
+    "error_id": "ERR-20250713030335-2277cc3f",
+    "timestamp": "2025-07-13T03:03:35.021389",
+    "sensor_id": "integration_sensor",
+    "component_name": "APIIntegration",
+    "error_type": "API_INTEGRATION_FAILURE",
+    "severity": "HIGH",
+    "details": {
+      "message": "Failed to connect to external API endpoint",
+      "endpoint": "https://api.example.com/v2/data",
+      "status_code": 503
+    },
+    "context": {
+      "request_headers": {
+        "Accept": "application/json"
+      },
+      "response_body": "Service Unavailable"
+    },
+    "status": "OPEN",
+    "related_errors": [],
+    "recommendations": []
+  }
+}

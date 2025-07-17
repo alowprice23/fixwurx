@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fixwurx-config
+  labels:
+    app: fixwurx
+data:
+  environment: "production"
+  log_level: "info"
+  config.json: |
+    {
+      "application": {
+        "name": "FixWurx",
+        "version": "1.0.0",
+        "description": "Automated bug detection and fixing system"
+      },
+      "system": {
+        "workers": 3,
+        "max_memory_usage": "80%",
+        "max_cpu_usage": "70%",
+        "timeout": 300
+      },
+      "features": {
+        "auto_fix": true,
+        "auto_test": true,
+        "auto_rollback": true,
+        "notifications": true,
+        "metrics_collection": true
+      },
+      "monitoring": {
+        "enabled": true,
+        "interval": 60,
+        "retention_days": 30,
+        "alert_threshold": 80
+      }
+    }
+  prometheus-config.yml: |
+    global:
+      scrape_interval: 15s
+      evaluation_interval: 15s
+    
+    scrape_configs:
+      - job_name: 'fixwurx'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['fixwurx:8080']
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fixwurx-secrets
+  labels:
+    app: fixwurx
+type: Opaque
+stringData:
+  API_KEY: "replace-with-real-api-key-in-production"
+  DB_PASSWORD: "replace-with-real-db-password-in-production"
+  REDIS_PASSWORD: "replace-with-real-redis-password-in-production"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fixwurx-data-pvc
+  labels:
+    app: fixwurx
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: standard

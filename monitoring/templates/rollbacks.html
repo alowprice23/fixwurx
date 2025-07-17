@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="navbar-brand">FixWurx Dashboard</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link">Overview</a></li>
+                <li class="nav-item"><a href="/agents" class="nav-link">Agents</a></li>
+                <li class="nav-item"><a href="/entropy" class="nav-link">Entropy</a></li>
+                <li class="nav-item"><a href="/rollbacks" class="nav-link active">Rollbacks</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Rollback Management</h1>
+        
+        <div class="dashboard-grid">
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header">
+                    <h2 class="card-title">Rollback Status</h2>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="rollback-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Pending Rollbacks</h2>
+                </div>
+                <div class="card-body">
+                    <div id="pending-rollbacks">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Bug ID</th>
+                                    <th>Trigger</th>
+                                    <th>Scheduled Time</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pending-rollbacks-table">
+                                <!-- Pending rollbacks will be inserted here -->
+                                <tr>
+                                    <td colspan="4" class="text-center">No pending rollbacks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Rollback Configuration</h2>
+                </div>
+                <div class="card-body">
+                    <div id="rollback-config">
+                        <div class="config-item">
+                            <h3>Policy</h3>
+                            <select id="policy-select" class="form-control">
+                                <option value="conservative">Conservative</option>
+                                <option value="balanced" selected>Balanced</option>
+                                <option value="aggressive">Aggressive</option>
+                                <option value="planner">Planner Guided</option>
+                                <option value="manual_only">Manual Only</option>
+                            </select>
+                        </div>
+                        
+                        <div class="config-item">
+                            <h3>Automatic Rollback</h3>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="auto-rollback-toggle" checked>
+                                <label for="auto-rollback-toggle"></label>
+                                <span id="auto-rollback-status">Enabled</span>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <h3>Triggers</h3>
+                            <div class="checkbox-list">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="trigger-test_failure" checked>
+                                    <label for="trigger-test_failure">Test Failure</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="trigger-regression" checked>
+                                    <label for="trigger-regression">Regression</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="trigger-performance">
+                                    <label for="trigger-performance">Performance Degradation</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="trigger-security" checked>
+                                    <label for="trigger-security">Security Risk</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="trigger-planner" checked>
+                                    <label for="trigger-planner">Planner Decision</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="trigger-timeout">
+                                    <label for="trigger-timeout">Timeout</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <button id="save-config-btn" class="btn">Save Configuration</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header">
+                    <h2 class="card-title">Schedule Rollback</h2>
+                </div>
+                <div class="card-body">
+                    <div id="schedule-rollback-form">
+                        <div class="form-group">
+                            <label for="bug-id-input">Bug ID</label>
+                            <input type="text" id="bug-id-input" class="form-control" placeholder="Enter bug ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="trigger-select">Trigger Reason</label>
+                            <select id="trigger-select" class="form-control">
+                                <option value="manual">Manual</option>
+                                <option value="test_failure">Test Failure</option>
+                                <option value="regression">Regression</option>
+                                <option value="performance">Performance Degradation</option>
+                                <option value="security">Security Risk</option>
+                                <option value="planner">Planner Decision</option>
+                                <option value="timeout">Timeout</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="delay-input">Delay (seconds)</label>
+                            <input type="number" id="delay-input" class="form-control" value="0" min="0">
+                        </div>
+                        <div class="form-actions">
+                            <button id="schedule-btn" class="btn">Schedule Rollback</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header">
+                    <h2 class="card-title">Rollback History</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Bug ID</th>
+                                <th>Status</th>
+                                <th>Trigger</th>
+                                <th>Timestamp</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rollback-history-table">
+                            <!-- Rollback history will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Connect to SSE endpoint
+        const eventSource = new EventSource('/events');
+        
+        // State
+        let rollbackConfig = {
+            policy: 'balanced',
+            auto_rollback_enabled: true,
+            triggers: {
+                test_failure: true,
+                regression: true,
+                performance: false,
+                security: true,
+                planner: true,
+                timeout: false
+            }
+        };
+        
+        let pendingRollbacks = [];
+        let rollbackHistory = [];
+        let rollbackChart;
+        
+        // Initialize page
+        function initRollbacksPage() {
+            // Set up rollback chart
+            const ctx = document.getElementById('rollback-chart').getContext('2d');
+            rollbackChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Success', 'Failed', 'Pending', 'Cancelled'],
+                    datasets: [{
+                        label: 'Rollback Status',
+                        data: [0, 0, 0, 0],
+                        backgroundColor: [
+                            '#2ecc71', // success
+                            '#e74c3c', // failed
+                            '#3498db', // pending
+                            '#95a5a6'  // cancelled
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Count'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Set up event listeners
+            document.getElementById('auto-rollback-toggle').addEventListener('change', function(e) {
+                const enabled = e.target.checked;
+                document.getElementById('auto-rollback-status').textContent = enabled ? 'Enabled' : 'Disabled';
+                rollbackConfig.auto_rollback_enabled = enabled;
+            });
+            
+            document.getElementById('policy-select').addEventListener('change', function(e) {
+                rollbackConfig.policy = e.target.value;
+            });
+            
+            // Trigger checkboxes
+            const triggerIds = ['test_failure', 'regression', 'performance', 'security', 'planner', 'timeout'];
+            triggerIds.forEach(id => {
+                document.getElementById(`trigger-${id}`).addEventListener('change', function(e) {
+                    rollbackConfig.triggers[id] = e.target.checked;
+                });
+            });
+            
+            // Save button
+            document.getElementById('save-config-btn').addEventListener('click', saveConfiguration);
+            
+            // Schedule rollback button
+            document.getElementById('schedule-btn').addEventListener('click', scheduleRollback);
+            
+            // Load initial data
+            loadRollbackData();
+        }
+        
+        // Format time
+        function formatTime(timestamp) {
+            if (!timestamp) return 'N/A';
+            return new Date(timestamp * 1000).toLocaleString();
+        }
+        
+        // Format date
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            try {
+                return new Date(dateString).toLocaleString();
+            } catch (e) {
+                return dateString;
+            }
+        }
+        
+        // Load rollback data
+        function loadRollbackData() {
+            // This would typically come from API endpoints
+            // For demo, use mock data
+            mockLoadRollbackData();
+        }
+        
+        // Mock load rollback data
+        function mockLoadRollbackData() {
+            // Mock config
+            document.getElementById('policy-select').value = rollbackConfig.policy;
+            document.getElementById('auto-rollback-toggle').checked = rollbackConfig.auto_rollback_enabled;
+            document.getElementById('auto-rollback-status').textContent = 
+                rollbackConfig.auto_rollback_enabled ? 'Enabled' : 'Disabled';
+            
+            // Mock triggers
+            for (const [trigger, enabled] of Object.entries(rollbackConfig.triggers)) {
+                const checkbox = document.getElementById(`trigger-${trigger}`);
+                if (checkbox) checkbox.checked = enabled;
+            }
+            
+            // Mock pending rollbacks
+            updatePendingRollbacks([
+                {
+                    bug_id: 'BUG-123',
+                    trigger: 'test_failure',
+                    scheduled_time: Date.now() / 1000 + 600, // 10 minutes from now
+                    details: { delay_seconds: 600 }
+                }
+            ]);
+            
+            // Mock history
+            updateRollbackHistory([
+                {
+                    bug_id: 'BUG-101',
+                    status: 'success',
+                    trigger: 'manual',
+                    timestamp: Date.now() / 1000 - 3600, // 1 hour ago
+                    details: {}
+                },
+                {
+                    bug_id: 'BUG-102',
+                    status: 'failed',
+                    trigger: 'test_failure',
+                    timestamp: Date.now() / 1000 - 7200, // 2 hours ago
+                    details: { error: 'Patch file missing' }
+                }
+            ]);
+            
+            // Update chart
+            updateRollbackChart();
+        }
+        
+        // Update pending rollbacks
+        function updatePendingRollbacks(rollbacks) {
+            pendingRollbacks = rollbacks;
+            
+            const tableBody = document.getElementById('pending-rollbacks-table');
+            tableBody.innerHTML = '';
+            
+            if (rollbacks.length === 0) {
+                const row = document.createElement('tr');
+                row.innerHTML = '<td colspan="4" class="text-center">No pending rollbacks</td>';
+                tableBody.appendChild(row);
+                return;
+            }
+            
+            rollbacks.forEach(rollback => {
+                const row = document.createElement('tr');
+                
+                // Calculate time remaining
+                const now = Date.now() / 1000;
+                const timeRemaining = Math.max(0, rollback.scheduled_time - now);
+                const timeStr = timeRemaining < 60 
+                    ? `${Math.round(timeRemaining)}s` 
+                    : `${Math.round(timeRemaining / 60)}m`;
+                
+                row.innerHTML = `
+                    <td>${rollback.bug_id}</td>
+                    <td>${rollback.trigger}</td>
+                    <td>${formatTime(rollback.scheduled_time)} (in ${timeStr})</td>
+                    <td>
+                        <button onclick="cancelRollback('${rollback.bug_id}')" class="btn-small">Cancel</button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Update rollback history
+        function updateRollbackHistory(history) {
+            rollbackHistory = history;
+            
+            const tableBody = document.getElementById('rollback-history-table');
+            tableBody.innerHTML = '';
+            
+            if (history.length === 0) {
+                const row = document.createElement('tr');
+                row.innerHTML = '<td colspan="5" class="text-center">No rollback history</td>';
+                tableBody.appendChild(row);
+                return;
+            }
+            
+            history.forEach(item => {
+                const row = document.createElement('tr');
+                
+                // Status class
+                const statusClass = 
+                    item.status === 'success' ? 'text-success' :
+                    item.status === 'failed' ? 'text-danger' :
+                    '';
+                
+                // Format details
+                let detailsStr = '';
+                if (item.details && Object.keys(item.details).length > 0) {
+                    detailsStr = Object.entries(item.details)
+                        .map(([k, v]) => `${k}: ${v}`)
+                        .join(', ');
+                }
+                
+                row.innerHTML = `
+                    <td>${item.bug_id}</td>
+                    <td class="${statusClass}">${item.status}</td>
+                    <td>${item.trigger}</td>
+                    <td>${formatDate(item.timestamp)}</td>
+                    <td>${detailsStr}</td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Update rollback chart
+        function updateRollbackChart() {
+            // Count by status
+            const statusCounts = {
+                success: 0,
+                failed: 0,
+                pending: pendingRollbacks.length,
+                cancelled: 0
+            };
+            
+            rollbackHistory.forEach(item => {
+                if (statusCounts[item.status] !== undefined) {
+                    statusCounts[item.status]++;
+                }
+            });
+            
+            // Update chart
+            rollbackChart.data.datasets[0].data = [
+                statusCounts.success,
+                statusCounts.failed,
+                statusCounts.pending,
+                statusCounts.cancelled
+            ];
+            
+            rollbackChart.update();
+        }
+        
+        // Save configuration
+        function saveConfiguration() {
+            // In a real implementation, this would call an API
+            alert('Configuration saved');
+            
+            // For demo, just update the chart
+            updateRollbackChart();
+        }
+        
+        // Schedule rollback
+        function scheduleRollback() {
+            const bugId = document.getElementById('bug-id-input').value.trim();
+            const trigger = document.getElementById('trigger-select').value;
+            const delay = parseInt(document.getElementById('delay-input').value, 10) || 0;
+            
+            if (!bugId) {
+                alert('Please enter a bug ID');
+                return;
+            }
+            
+            // In a real implementation, this would call an API
+            alert(`Scheduled rollback for ${bugId} with trigger ${trigger} and delay ${delay}s`);
+            
+            // For demo, add to pending rollbacks
+            const scheduledTime = Date.now() / 1000 + delay;
+            pendingRollbacks.push({
+                bug_id: bugId,
+                trigger: trigger,
+                scheduled_time: scheduledTime,
+                details: { delay_seconds: delay }
+            });
+            
+            updatePendingRollbacks(pendingRollbacks);
+            updateRollbackChart();
+            
+            // Clear form
+            document.getElementById('bug-id-input').value = '';
+        }
+        
+        // Cancel rollback
+        window.cancelRollback = function(bugId) {
+            // In a real implementation, this would call an API
+            alert(`Cancelled rollback for ${bugId}`);
+            
+            // For demo, remove from pending rollbacks
+            pendingRollbacks = pendingRollbacks.filter(r => r.bug_id !== bugId);
+            updatePendingRollbacks(pendingRollbacks);
+            updateRollbackChart();
+        };
+        
+        // Handle incoming events
+        eventSource.onmessage = function(event) {
+            try {
+                const data = JSON.parse(event.data);
+                
+                // Check if this is rollback related
+                if (data.type === 'rollback') {
+                    loadRollbackData();
+                }
+            } catch (error) {
+                console.error('Error processing event:', error);
+            }
+        };
+        
+        // Add custom styles for rollback page
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.textContent = `
+                .form-group {
+                    margin-bottom: 1rem;
+                }
+                
+                .form-control {
+                    display: block;
+                    width: 100%;
+                    padding: 0.5rem;
+                    font-size: 1rem;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                }
+                
+                .form-actions {
+                    margin-top: 1.5rem;
+                }
+                
+                .btn {
+                    padding: 0.5rem 1rem;
+                    background-color: #3498db;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                
+                .btn:hover {
+                    background-color: #2980b9;
+                }
+                
+                .btn-small {
+                    padding: 0.25rem 0.5rem;
+                    font-size: 0.8rem;
+                    background-color: #e74c3c;
+                }
+                
+                .btn-small:hover {
+                    background-color: #c0392b;
+                }
+                
+                .config-item {
+                    margin-bottom: 1.5rem;
+                }
+                
+                .toggle-switch {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .toggle-switch input {
+                    height: 0;
+                    width: 0;
+                    visibility: hidden;
+                    position: absolute;
+                }
+                
+                .toggle-switch label {
+                    cursor: pointer;
+                    width: 50px;
+                    height: 25px;
+                    background: #ccc;
+                    display: block;
+                    border-radius: 25px;
+                    position: relative;
+                }
+                
+                .toggle-switch label:after {
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 19px;
+                    height: 19px;
+                    background: #fff;
+                    border-radius: 19px;
+                    transition: 0.3s;
+                }
+                
+                .toggle-switch input:checked + label {
+                    background: #2ecc71;
+                }
+                
+                .toggle-switch input:checked + label:after {
+                    left: calc(100% - 3px);
+                    transform: translateX(-100%);
+                }
+                
+                .toggle-switch span {
+                    margin-left: 10px;
+                }
+                
+                .checkbox-list {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                    grid-gap: 10px;
+                }
+                
+                .checkbox-item {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .checkbox-item input {
+                    margin-right: 5px;
+                }
+                
+                .text-center {
+                    text-align: center;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Initialize page
+            initRollbacksPage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "file": "calculator/operations/basic_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "Boolean values (`True` / `False`) pass the `_validate_numbers` check and are therefore accepted by `subtract` (and the other arithmetic helpers). Because `bool` is a subclass of `int`, the current `isinstance(arg, (int, float))` condition evaluates to `True` for boolean operands.",
+        "reason": "Although syntactically valid, treating `True` and `False` as numeric inputs is often unintended and can silently lead to logic errors (e.g., `subtract(True, 3)` returns `-2`). Most calculator-style APIs purposely exclude boolean operands to avoid this confusion.",
+        "fix": "Explicitly reject `bool` by adding an extra check in `_validate_numbers`."
+      }
+    ],
+    "fixed_code": " \"\"\"\n Basic arithmetic operations for the calculator application.\n Now contains corrected implementations and stricter input validation.\n \"\"\"\n \n from typing import Union\n \n Number = Union[int, float]\n \n \n def _validate_numbers(*args: Number) -> None:\n     \"\"\"Ensure all supplied arguments are non-boolean `int` or `float`.\"\"\"\n     for arg in args:\n         # Reject bool explicitly (bool is a subclass of int)\n         if isinstance(arg, bool):\n             raise TypeError(\n                 \"Operands must be int or float, boolean values are not supported.\"\n             )\n         if not isinstance(arg, (int, float)):\n             raise TypeError(\n                 f\"Operands must be int or float, got {type(arg).__name__}.\"\n             )\n \n \n def add(a: Number, b: Number) -> Number:\n     \"\"\"Add two numbers and return the result.\"\"\"\n     _validate_numbers(a, b)\n     return a + b\n \n \n def subtract(a: Number, b: Number) -> Number:\n     \"\"\"Subtract *b* from *a* and return the result.\"\"\"\n     _validate_numbers(a, b)\n     return a - b\n \n \n def multiply(a: Number, b: Number) -> Number:\n     \"\"\"Multiply two numbers and return the result.\"\"\"\n     _validate_numbers(a, b)\n     return a * b\n \n \n def divide(a: Number, b: Number) -> Number:\n     \"\"\"Divide *a* by *b* and return the result.\n \n     Raises\n     ------\n     ZeroDivisionError\n         If *b* is 0.\n     \"\"\"\n     _validate_numbers(a, b)\n     if b == 0:\n         raise ZeroDivisionError(\"Division by zero is undefined.\")\n     return a / b\n \n \n def power(a: Number, b: Number) -> Number:\n     \"\"\"Return *a* raised to the power of *b*.\"\"\"\n     _validate_numbers(a, b)\n     return a ** b\n \n \n def modulus(a: Number, b: Number) -> Number:\n     \"\"\"Return the remainder of *a* divided by *b*.\n \n     Raises\n     ------\n     ZeroDivisionError\n         If *b* is 0.\n     \"\"\"\n     _validate_numbers(a, b)\n     if b == 0:\n         raise ZeroDivisionError(\"Modulus by zero is undefined.\")\n     return a % b\n "
+  },
+  "time_taken": 13.69368839263916
+}

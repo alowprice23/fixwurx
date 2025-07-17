@@ -1,0 +1,11 @@
+{
+  "timestamp": 1752394824.044123,
+  "sensor_id": "api_sensor",
+  "error_type": "TimeoutError",
+  "error_message": "API timeout #3",
+  "traceback": "NoneType: None\n",
+  "context": {
+    "endpoint": "/api/data",
+    "timeout_ms": 5000
+  }
+}

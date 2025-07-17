@@ -1,0 +1,53 @@
+{
+  "name": "benchmark_TimeSeriesDatabase",
+  "description": "Benchmark results for TimeSeriesDatabase",
+  "unit": "various",
+  "points": [
+    {
+      "timestamp": "2025-07-13T02:22:01.864602",
+      "values": {
+        "point_count_mean": 500,
+        "point_count_min": 500,
+        "point_count_max": 500,
+        "execution_time_mean": 3.0303285121917725,
+        "execution_time_min": 2.9819648265838623,
+        "execution_time_max": 3.0836026668548584,
+        "slope_mean": 1.9290698200011648e-06,
+        "slope_min": -1.890779514225429e-07,
+        "slope_max": 4.3858311976206795e-06,
+        "throughput_mean": 165.98165458262486,
+        "throughput_min": 162.93887166211243,
+        "throughput_max": 168.8073949827671,
+        "memory_usage_mean": 0.24609375,
+        "memory_usage_min": 0.203125,
+        "memory_usage_max": 0.33203125,
+        "cpu_usage_mean": 18.133333333333333,
+        "cpu_usage_min": 16.0,
+        "cpu_usage_max": 20.1
+      }
+    },
+    {
+      "timestamp": "2025-07-13T02:23:29.146205",
+      "values": {
+        "throughput_mean": 156.50787969859903,
+        "throughput_min": 153.99421164716924,
+        "throughput_max": 158.8245201832628,
+        "slope_mean": 5.598242403343658e-07,
+        "slope_min": -4.013252452169466e-06,
+        "slope_max": 3.229833280815682e-06,
+        "memory_usage_mean": 0.21484375,
+        "memory_usage_min": 0.1875,
+        "memory_usage_max": 0.26171875,
+        "cpu_usage_mean": 21.666666666666668,
+        "cpu_usage_min": 20.1,
+        "cpu_usage_max": 24.4,
+        "point_count_mean": 500,
+        "point_count_min": 500,
+        "point_count_max": 500,
+        "execution_time_mean": 3.219468593597412,
+        "execution_time_min": 3.174099922180176,
+        "execution_time_max": 3.2725934982299805
+      }
+    }
+  ]
+}

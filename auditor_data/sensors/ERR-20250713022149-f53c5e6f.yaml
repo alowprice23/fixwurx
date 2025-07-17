@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 58
+details:
+  message: Test error 58
+error_id: ERR-20250713022149-f53c5e6f
+error_type: TEST_ERROR_2
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: CRITICAL
+status: OPEN
+timestamp: '2025-07-13T02:21:49.401760'

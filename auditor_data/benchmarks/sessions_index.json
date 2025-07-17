@@ -1,0 +1,251 @@
+{
+  "session-20250713024955": {
+    "description": "Debugging session for Authentication",
+    "complexity": 0.3,
+    "total_bugs": 6,
+    "session_id": "session-20250713024955",
+    "project_name": "Authentication",
+    "created_at": "2025-07-13T02:49:55.869882",
+    "metrics_stored": [
+      "metrics_2025-07-13T02-49-55-875884.json",
+      "metrics_2025-07-13T02-49-55-877882.json",
+      "metrics_2025-07-13T02-49-56-380267.json",
+      "metrics_2025-07-13T02-49-56-883782.json",
+      "metrics_2025-07-13T02-49-57-389332.json",
+      "metrics_2025-07-13T02-49-57-894808.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T02:49:57.894808"
+  },
+  "session-20250713024958": {
+    "description": "Debugging session for DataProcessing",
+    "complexity": 0.7,
+    "total_bugs": 14,
+    "session_id": "session-20250713024958",
+    "project_name": "DataProcessing",
+    "created_at": "2025-07-13T02:49:58.406766",
+    "metrics_stored": [
+      "metrics_2025-07-13T02-49-58-408756.json",
+      "metrics_2025-07-13T02-49-58-410753.json",
+      "metrics_2025-07-13T02-49-58-914549.json",
+      "metrics_2025-07-13T02-49-59-426873.json",
+      "metrics_2025-07-13T02-49-59-936380.json",
+      "metrics_2025-07-13T02-50-00-442082.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T02:50:00.442082"
+  },
+  "session-20250713025000": {
+    "description": "Debugging session for UserInterface",
+    "complexity": 0.5,
+    "total_bugs": 10,
+    "session_id": "session-20250713025000",
+    "project_name": "UserInterface",
+    "created_at": "2025-07-13T02:50:00.948378",
+    "metrics_stored": [
+      "metrics_2025-07-13T02-50-00-949421.json",
+      "metrics_2025-07-13T02-50-00-950990.json",
+      "metrics_2025-07-13T02-50-01-453930.json",
+      "metrics_2025-07-13T02-50-01-965622.json",
+      "metrics_2025-07-13T02-50-02-468121.json",
+      "metrics_2025-07-13T02-50-02-974515.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T02:50:02.974515"
+  },
+  "benchmark-20250713030041-WebAuthentication": {
+    "description": "Example session for WebAuthentication",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030041-WebAuthentication",
+    "project_name": "WebAuthentication",
+    "created_at": "2025-07-13T03:00:41.056296",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-00-41-057297.json",
+      "metrics_2025-07-13T03-00-41-559572.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:00:41.559572"
+  },
+  "benchmark-20250713030041-DataProcessing": {
+    "description": "Example session for DataProcessing",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030041-DataProcessing",
+    "project_name": "DataProcessing",
+    "created_at": "2025-07-13T03:00:41.565531",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-00-41-567522.json",
+      "metrics_2025-07-13T03-00-42-071438.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:00:42.071438"
+  },
+  "benchmark-20250713030042-APIIntegration": {
+    "description": "Example session for APIIntegration",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030042-APIIntegration",
+    "project_name": "APIIntegration",
+    "created_at": "2025-07-13T03:00:42.073441",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-00-42-074438.json",
+      "metrics_2025-07-13T03-00-42-576644.json"
+    ],
+    "reports_stored": 1,
+    "last_updated": "2025-07-13T03:00:42.581593"
+  },
+  "benchmark-20250713030333-WebAuthentication": {
+    "description": "Example session for WebAuthentication",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030333-WebAuthentication",
+    "project_name": "WebAuthentication",
+    "created_at": "2025-07-13T03:03:33.495885",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-03-33-497888.json",
+      "metrics_2025-07-13T03-03-34-000807.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:03:34.000807"
+  },
+  "benchmark-20250713030334-DataProcessing": {
+    "description": "Example session for DataProcessing",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030334-DataProcessing",
+    "project_name": "DataProcessing",
+    "created_at": "2025-07-13T03:03:34.005807",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-03-34-007804.json",
+      "metrics_2025-07-13T03-03-34-510207.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:03:34.510207"
+  },
+  "benchmark-20250713030334-APIIntegration": {
+    "description": "Example session for APIIntegration",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030334-APIIntegration",
+    "project_name": "APIIntegration",
+    "created_at": "2025-07-13T03:03:34.512209",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-03-34-513207.json",
+      "metrics_2025-07-13T03-03-35-015442.json"
+    ],
+    "reports_stored": 1,
+    "last_updated": "2025-07-13T03:03:35.021389"
+  },
+  "benchmark-20250713030709-WebAuthentication": {
+    "description": "Example session for WebAuthentication",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030709-WebAuthentication",
+    "project_name": "WebAuthentication",
+    "created_at": "2025-07-13T03:07:09.452852",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-07-09-456852.json",
+      "metrics_2025-07-13T03-07-09-959869.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:07:09.959869"
+  },
+  "benchmark-20250713030709-DataProcessing": {
+    "description": "Example session for DataProcessing",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030709-DataProcessing",
+    "project_name": "DataProcessing",
+    "created_at": "2025-07-13T03:07:09.963869",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-07-09-966869.json",
+      "metrics_2025-07-13T03-07-10-470332.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:07:10.470332"
+  },
+  "benchmark-20250713030710-APIIntegration": {
+    "description": "Example session for APIIntegration",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713030710-APIIntegration",
+    "project_name": "APIIntegration",
+    "created_at": "2025-07-13T03:07:10.473347",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-07-10-475331.json",
+      "metrics_2025-07-13T03-07-10-976964.json"
+    ],
+    "reports_stored": 1,
+    "last_updated": "2025-07-13T03:07:10.977854"
+  },
+  "benchmark-20250713035206-WebAuthentication": {
+    "description": "Example session for WebAuthentication",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713035206-WebAuthentication",
+    "project_name": "WebAuthentication",
+    "created_at": "2025-07-13T03:52:06.735054",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-52-06-737054.json",
+      "metrics_2025-07-13T03-52-07-239176.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:52:07.239176"
+  },
+  "benchmark-20250713035207-DataProcessing": {
+    "description": "Example session for DataProcessing",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713035207-DataProcessing",
+    "project_name": "DataProcessing",
+    "created_at": "2025-07-13T03:52:07.242177",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-52-07-244177.json",
+      "metrics_2025-07-13T03-52-07-745757.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T03:52:07.745757"
+  },
+  "benchmark-20250713035207-APIIntegration": {
+    "description": "Example session for APIIntegration",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713035207-APIIntegration",
+    "project_name": "APIIntegration",
+    "created_at": "2025-07-13T03:52:07.748750",
+    "metrics_stored": [
+      "metrics_2025-07-13T03-52-07-749750.json",
+      "metrics_2025-07-13T03-52-08-252473.json"
+    ],
+    "reports_stored": 1,
+    "last_updated": "2025-07-13T03:52:08.253469"
+  },
+  "benchmark-20250713041159-WebAuthentication": {
+    "description": "Example session for WebAuthentication",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713041159-WebAuthentication",
+    "project_name": "WebAuthentication",
+    "created_at": "2025-07-13T04:11:59.262390",
+    "metrics_stored": [
+      "metrics_2025-07-13T04-11-59-264389.json",
+      "metrics_2025-07-13T04-11-59-766351.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T04:11:59.766351"
+  },
+  "benchmark-20250713041159-DataProcessing": {
+    "description": "Example session for DataProcessing",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713041159-DataProcessing",
+    "project_name": "DataProcessing",
+    "created_at": "2025-07-13T04:11:59.770362",
+    "metrics_stored": [
+      "metrics_2025-07-13T04-11-59-772357.json",
+      "metrics_2025-07-13T04-12-00-274262.json"
+    ],
+    "reports_stored": 0,
+    "last_updated": "2025-07-13T04:12:00.274262"
+  },
+  "benchmark-20250713041200-APIIntegration": {
+    "description": "Example session for APIIntegration",
+    "created_by": "demonstrate_shell_interface.py",
+    "session_id": "benchmark-20250713041200-APIIntegration",
+    "project_name": "APIIntegration",
+    "created_at": "2025-07-13T04:12:00.279274",
+    "metrics_stored": [
+      "metrics_2025-07-13T04-12-00-281269.json",
+      "metrics_2025-07-13T04-12-00-784167.json"
+    ],
+    "reports_stored": 1,
+    "last_updated": "2025-07-13T04:12:00.790141"
+  }
+}

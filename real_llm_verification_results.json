@@ -1,0 +1,167 @@
+{
+  "timestamp": "2025-07-15 19:48:18",
+  "success": true,
+  "agents": {
+    "meta": {
+      "file_path": "meta_agent.py",
+      "exists": true,
+      "llm_integration": true,
+      "indicator_counts": {
+        "openai": 16,
+        "gpt": 1,
+        "llm": 65,
+        "prompt": 17,
+        "completion": 1,
+        "chat.completions": 1,
+        "temperature": 4,
+        "max_tokens": 4,
+        "model=": 1
+      },
+      "has_imports": true,
+      "has_prompts": true,
+      "has_llm_config": true,
+      "llm_methods": [
+        "def coordinate_agents(self, agent_ids: List[str], task_id: str, task_type: str, task_data: Dict[str, Any] = None) -> Dict[str, Any]:",
+        "def generate_insight(self) -> Dict[str, Any]:",
+        "def visualize_agent_network(self, output_path: Optional[str] = None) -> str:"
+      ],
+      "passed": true
+    },
+    "planner": {
+      "file_path": "agents/core/planner_agent.py",
+      "exists": true,
+      "llm_integration": true,
+      "indicator_counts": {
+        "llm": 1,
+        "prompt": 1,
+        "neural": 57,
+        "learning": 19
+      },
+      "has_imports": false,
+      "has_prompts": true,
+      "has_llm_config": false,
+      "llm_methods": [
+        "def get_metrics(self) -> Dict[str, Any]:"
+      ],
+      "passed": true
+    },
+    "observer": {
+      "file_path": "agents/specialized/specialized_agents.py",
+      "exists": true,
+      "llm_integration": true,
+      "indicator_counts": {
+        "openai": 1,
+        "gpt": 1,
+        "llm": 5,
+        "prompt": 14,
+        "ask(": 6,
+        "astream_chat": 2,
+        "AssistantAgent": 3,
+        "neural": 9,
+        "learning": 1,
+        "temperature": 2,
+        "max_tokens": 1
+      },
+      "has_imports": true,
+      "has_prompts": true,
+      "has_llm_config": true,
+      "llm_methods": [],
+      "passed": true
+    },
+    "analyst": {
+      "file_path": "agents/specialized/specialized_agents.py",
+      "exists": true,
+      "llm_integration": true,
+      "indicator_counts": {
+        "openai": 1,
+        "gpt": 1,
+        "llm": 5,
+        "prompt": 14,
+        "ask(": 6,
+        "astream_chat": 2,
+        "AssistantAgent": 3,
+        "neural": 9,
+        "learning": 1,
+        "temperature": 2,
+        "max_tokens": 1
+      },
+      "has_imports": true,
+      "has_prompts": true,
+      "has_llm_config": true,
+      "llm_methods": [],
+      "passed": true
+    },
+    "verifier": {
+      "file_path": "agents/specialized/specialized_agents.py",
+      "exists": true,
+      "llm_integration": true,
+      "indicator_counts": {
+        "openai": 1,
+        "gpt": 1,
+        "llm": 5,
+        "prompt": 14,
+        "ask(": 6,
+        "astream_chat": 2,
+        "AssistantAgent": 3,
+        "neural": 9,
+        "learning": 1,
+        "temperature": 2,
+        "max_tokens": 1
+      },
+      "has_imports": true,
+      "has_prompts": true,
+      "has_llm_config": true,
+      "llm_methods": [],
+      "passed": true
+    },
+    "launchpad": {
+      "file_path": "agents/core/launchpad/agent.py",
+      "exists": true,
+      "llm_integration": true,
+      "indicator_counts": {
+        "openai": 18,
+        "gpt": 1,
+        "llm": 52,
+        "prompt": 6,
+        "completion": 2,
+        "chat.completions": 2,
+        "temperature": 6,
+        "max_tokens": 6,
+        "model=": 2
+      },
+      "has_imports": true,
+      "has_prompts": true,
+      "has_llm_config": true,
+      "llm_methods": [
+        "def initialize(self) -> bool:",
+        "def get_status(self) -> Dict[str, Any]:",
+        "def restart_component(self, component_name: str) -> bool:"
+      ],
+      "passed": true
+    },
+    "auditor": {
+      "file_path": "agents/auditor/auditor_agent.py",
+      "exists": true,
+      "llm_integration": true,
+      "indicator_counts": {
+        "openai": 18,
+        "gpt": 1,
+        "llm": 41,
+        "prompt": 17,
+        "completion": 1,
+        "chat.completions": 1,
+        "temperature": 4,
+        "max_tokens": 4,
+        "model=": 1
+      },
+      "has_imports": true,
+      "has_prompts": true,
+      "has_llm_config": true,
+      "llm_methods": [
+        "def stop_auditing(self) -> bool:",
+        "def analyze_with_llm(self, analysis_type: str, analysis_data: Dict[str, Any]) -> Dict[str, Any]:"
+      ],
+      "passed": true
+    }
+  }
+}

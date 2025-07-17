@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 1
+details:
+  message: Test error 1
+error_id: ERR-20250713022316-83f7adc0
+error_type: TEST_ERROR_2
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: LOW
+status: OPEN
+timestamp: '2025-07-13T02:23:16.055499'

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "performance",
+    "severity": "medium",
+    "description": "The API latency is significantly higher than other performance metrics, which may indicate a bottleneck or inefficiency in the system.",
+    "recommendation": "Investigate the cause of high API latency. Check for network issues, server load, or inefficient code that could be causing delays. Consider optimizing the API endpoints or scaling resources if necessary."
+  },
+  {
+    "type": "performance",
+    "severity": "low",
+    "description": "The throughput is notably higher than other performance metrics, which could suggest an imbalance in resource allocation or potential overutilization.",
+    "recommendation": "Review the system's resource allocation to ensure that throughput is balanced with other performance metrics. Consider adjusting resource distribution or optimizing processes to maintain consistent performance across metrics."
+  }
+]

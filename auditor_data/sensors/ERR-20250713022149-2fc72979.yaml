@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 65
+details:
+  message: Test error 65
+error_id: ERR-20250713022149-2fc72979
+error_type: TEST_ERROR_1
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: MEDIUM
+status: OPEN
+timestamp: '2025-07-13T02:21:49.547759'

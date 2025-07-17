@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | FixWurx</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <!-- Chart.js for visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        /* Error visualization specific styles */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .filter-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .filter-select, .filter-input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .apply-button {
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: auto;
+        }
+        
+        .export-button {
+            background-color: #2c3e50;
+        }
+        
+        .summary-container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-title {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .summary-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .summary-value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .summary-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .patterns-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        
+        .pattern-card {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .pattern-count {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .pattern-text {
+            font-family: monospace;
+            padding: 8px;
+            background-color: white;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .pattern-metadata {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .pattern-tag {
+            background-color: #e1f5fe;
+            color: #0277bd;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .severity-tag {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .severity-DEBUG { background-color: #e9ecef; color: #6c757d; }
+        .severity-INFO { background-color: #e3f2fd; color: #0d47a1; }
+        .severity-WARNING { background-color: #fff3e0; color: #e65100; }
+        .severity-ERROR { background-color: #ffebee; color: #b71c1c; }
+        .severity-CRITICAL { background-color: #b71c1c; color: white; }
+        
+        .component-tag {
+            background-color: #e8f5e9;
+            color: #1b5e20;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 9999;
+        }
+        
+        .toast.show {
+            opacity: 1;
+        }
+        
+        .toast.success {
+            background-color: #2ecc71;
+        }
+        
+        .toast.error {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="navbar-brand">FixWurx Dashboard</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="/agents" class="nav-link">Agents</a></li>
+                <li class="nav-item"><a href="/entropy" class="nav-link">Entropy</a></li>
+                <li class="nav-item"><a href="/rollbacks" class="nav-link">Rollbacks</a></li>
+                <li class="nav-item"><a href="/alerts" class="nav-link">Alerts</a></li>
+                <li class="nav-item"><a href="/error-logs" class="nav-link">Error Logs</a></li>
+                <li class="nav-item"><a href="/error-visualization" class="nav-link active">Error Analysis</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Error Log Analysis Dashboard</h1>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <span class="filter-label">Time Range</span>
+                <select id="time-range" class="filter-select">
+                    <option value="1">Last Hour</option>
+                    <option value="6">Last 6 Hours</option>
+                    <option value="24" selected>Last 24 Hours</option>
+                    <option value="72">Last 3 Days</option>
+                    <option value="168">Last Week</option>
+                    <option value="720">Last Month</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Severity</span>
+                <select id="severity-filter" class="filter-select">
+                    <option value="">All Severities</option>
+                    <option value="DEBUG">Debug & Above</option>
+                    <option value="INFO">Info & Above</option>
+                    <option value="WARNING" selected>Warning & Above</option>
+                    <option value="ERROR">Error & Above</option>
+                    <option value="CRITICAL">Critical Only</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Component</span>
+                <select id="component-filter" class="filter-select">
+                    <option value="">All Components</option>
+                    <!-- Will be populated dynamically -->
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Group By</span>
+                <select id="group-by" class="filter-select">
+                    <option value="hour">Hourly</option>
+                    <option value="day" selected>Daily</option>
+                    <option value="week">Weekly</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <button id="apply-filters" class="apply-button">Apply Filters</button>
+            </div>
+            
+            <div class="filter-group">
+                <button id="export-html" class="apply-button export-button">Export HTML Report</button>
+            </div>
+            
+            <div class="filter-group">
+                <button id="export-csv" class="apply-button export-button">Export CSV</button>
+            </div>
+        </div>
+        
+        <!-- Error Summary Section -->
+        <div id="summary-container" class="summary-container">
+            <h2 class="summary-title">Error Summary</h2>
+            <div id="summary-loading" class="loading">
+                <div class="loading-spinner"></div>
+                <span>Loading summary data...</span>
+            </div>
+            <div id="summary-grid" class="summary-grid" style="display: none;"></div>
+        </div>
+        
+        <!-- Error Trends Chart -->
+        <div class="card full-width">
+            <div class="card-header">
+                <h2 class="card-title">Error Trends Over Time</h2>
+            </div>
+            <div class="card-body">
+                <div id="trends-loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading trend data...</span>
+                </div>
+                <div id="trends-chart" class="chart-container" style="display: none;">
+                    <canvas id="errorTrendsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Error Distribution Dashboard -->
+        <div class="dashboard-grid">
+            <!-- Severity Distribution Chart -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Severity Distribution</h2>
+                </div>
+                <div class="card-body">
+                    <div id="severity-loading" class="loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading severity data...</span>
+                    </div>
+                    <div id="severity-chart" class="chart-container" style="display: none;">
+                        <canvas id="severityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Component Distribution Chart -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Component Distribution</h2>
+                </div>
+                <div class="card-body">
+                    <div id="component-loading" class="loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading component data...</span>
+                    </div>
+                    <div id="component-chart" class="chart-container" style="display: none;">
+                        <canvas id="componentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Error Patterns Section -->
+        <div class="card full-width">
+            <div class="card-header">
+                <h2 class="card-title">Detected Error Patterns</h2>
+            </div>
+            <div class="card-body">
+                <div id="patterns-loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <span>Analyzing error patterns...</span>
+                </div>
+                <div id="patterns-container" class="patterns-container" style="display: none;"></div>
+            </div>
+        </div>
+        
+        <!-- Toast notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script>
+        // State variables
+        let trendsChart = null;
+        let severityChart = null;
+        let componentChart = null;
+        let components = new Set();
+        
+        // Color schemes
+        const severityColors = {
+            'DEBUG': '#6c757d',
+            'INFO': '#17a2b8',
+            'WARNING': '#ffc107',
+            'ERROR': '#dc3545',
+            'CRITICAL': '#7a0000'
+        };
+        
+        // Component colors will be generated dynamically
+        function getColorForComponent(component, index) {
+            // Generate colors using HSL for better distribution
+            const hue = (index * 137) % 360; // Golden angle to get good distribution
+            return `hsl(${hue}, 70%, 60%)`;
+        }
+        
+        // Toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load initial data
+            loadAllData();
+            
+            // Set up event listeners
+            document.getElementById('apply-filters').addEventListener('click', loadAllData);
+            document.getElementById('export-html').addEventListener('click', exportHtml);
+            document.getElementById('export-csv').addEventListener('click', exportCsv);
+        });
+        
+        // Load all data with current filters
+        function loadAllData() {
+            loadSummary();
+            loadTrends();
+            loadSeverityDistribution();
+            loadComponentDistribution();
+            loadPatterns();
+        }
+        
+        // Get current filter values
+        function getFilters() {
+            return {
+                days: parseInt(document.getElementById('time-range').value),
+                severity: document.getElementById('severity-filter').value,
+                component: document.getElementById('component-filter').value,
+                groupBy: document.getElementById('group-by').value
+            };
+        }
+        
+        // Summary data
+        async function loadSummary() {
+            try {
+                const filters = getFilters();
+                document.getElementById('summary-grid').style.display = 'none';
+                document.getElementById('summary-loading').style.display = 'flex';
+                
+                const response = await fetch(`/api/error-logs/error-analysis/summary?days=${filters.days}&min_severity=${filters.severity}`);
+                if (!response.ok) throw new Error('Failed to load summary data');
+                
+                const data = await response.json();
+                displaySummary(data);
+            } catch (error) {
+                console.error('Error loading summary:', error);
+                showToast('Error loading summary data', 'error');
+            }
+        }
+        
+        function displaySummary(data) {
+            const summaryGrid = document.getElementById('summary-grid');
+            summaryGrid.innerHTML = '';
+            
+            // Total errors
+            const totalCard = document.createElement('div');
+            totalCard.className = 'summary-card';
+            totalCard.innerHTML = `
+                <div class="summary-value">${data.total_errors}</div>
+                <div class="summary-label">Total Errors</div>
+            `;
+            summaryGrid.appendChild(totalCard);
+            
+            // Error rate
+            const rateCard = document.createElement('div');
+            rateCard.className = 'summary-card';
+            rateCard.innerHTML = `
+                <div class="summary-value">${data.error_rate_per_day.toFixed(1)}</div>
+                <div class="summary-label">Errors per Day</div>
+            `;
+            summaryGrid.appendChild(rateCard);
+            
+            // Days analyzed
+            const daysCard = document.createElement('div');
+            daysCard.className = 'summary-card';
+            daysCard.innerHTML = `
+                <div class="summary-value">${data.days_analyzed}</div>
+                <div class="summary-label">Days Analyzed</div>
+            `;
+            summaryGrid.appendChild(daysCard);
+            
+            // Peak day
+            if (data.peak_day) {
+                const peakCard = document.createElement('div');
+                peakCard.className = 'summary-card';
+                peakCard.innerHTML = `
+                    <div class="summary-value">${data.peak_day_count}</div>
+                    <div class="summary-label">Peak Day: ${data.peak_day}</div>
+                `;
+                summaryGrid.appendChild(peakCard);
+            }
+            
+            // Show summary grid
+            document.getElementById('summary-loading').style.display = 'none';
+            summaryGrid.style.display = 'grid';
+        }
+        
+        // Trends data
+        async function loadTrends() {
+            try {
+                const filters = getFilters();
+                document.getElementById('trends-chart').style.display = 'none';
+                document.getElementById('trends-loading').style.display = 'flex';
+                
+                const url = `/api/error-logs/error-analysis/trends?days=${filters.days}&group_by=${filters.groupBy}&min_severity=${filters.severity}`;
+                const response = await fetch(filters.component ? `${url}&component=${filters.component}` : url);
+                if (!response.ok) throw new Error('Failed to load trend data');
+                
+                const data = await response.json();
+                displayTrends(data);
+            } catch (error) {
+                console.error('Error loading trends:', error);
+                showToast('Error loading trend data', 'error');
+            }
+        }
+        
+        function displayTrends(data) {
+            // If no data, show message
+            if (Object.keys(data).length === 0) {
+                document.getElementById('trends-loading').innerHTML = '<p>No trend data available for the selected filters.</p>';
+                return;
+            }
+            
+            // Create a single timeline from all components
+            const timePoints = new Set();
+            Object.values(data).forEach(componentData => {
+                componentData.forEach(([time]) => timePoints.add(time));
+            });
+            
+            // Sort timeline
+            const sortedTimeline = Array.from(timePoints).sort();
+            
+            // Create datasets for each component
+            const datasets = Object.entries(data).map(([component, points], index) => {
+                // Track components for filter dropdown
+                components.add(component);
+                
+                // Create a map of time to count for this component
+                const pointMap = Object.fromEntries(points);
+                
+                // Fill in the dataset using the full timeline
+                const dataset = sortedTimeline.map(time => pointMap[time] || 0);
+                
+                return {
+                    label: component,
+                    data: dataset,
+                    backgroundColor: getColorForComponent(component, index),
+                    borderColor: getColorForComponent(component, index),
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: false
+                };
+            });
+            
+            // Create or update chart
+            const ctx = document.getElementById('errorTrendsChart').getContext('2d');
+            
+            if (trendsChart) {
+                trendsChart.destroy();
+            }
+            
+            trendsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: sortedTimeline,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Error Count'
+                            },
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Update component filter with unique components
+            updateComponentFilter();
+            
+            // Show chart
+            document.getElementById('trends-loading').style.display = 'none';
+            document.getElementById('trends-chart').style.display = 'block';
+        }
+        
+        // Severity distribution
+        async function loadSeverityDistribution() {
+            try {
+                const filters = getFilters();
+                document.getElementById('severity-chart').style.display = 'none';
+                document.getElementById('severity-loading').style.display = 'flex';
+                
+                const url = `/api/error-logs/error-analysis/distribution/severity?days=${filters.days}`;
+                const response = await fetch(filters.component ? `${url}&component=${filters.component}` : url);
+                if (!response.ok) throw new Error('Failed to load severity distribution');
+                
+                const data = await response.json();
+                displaySeverityDistribution(data);
+            } catch (error) {
+                console.error('Error loading severity distribution:', error);
+                showToast('Error loading severity data', 'error');
+            }
+        }
+        
+        function displaySeverityDistribution(data) {
+            // Order severity levels
+            const severityOrder = ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'];
+            const labels = [];
+            const values = [];
+            const colors = [];
+            
+            for (const severity of severityOrder) {
+                if (severity in data) {
+                    labels.push(severity);
+                    values.push(data[severity]);
+                    colors.push(severityColors[severity]);
+                }
+            }
+            
+            // Create or update chart
+            const ctx = document.getElementById('severityChart').getContext('2d');
+            
+            if (severityChart) {
+                severityChart.destroy();
+            }
+            
+            severityChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        backgroundColor: colors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.raw || 0;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Show chart
+            document.getElementById('severity-loading').style.display = 'none';
+            document.getElementById('severity-chart').style.display = 'block';
+        }
+        
+        // Component distribution
+        async function loadComponentDistribution() {
+            try {
+                const filters = getFilters();
+                document.getElementById('component-chart').style.display = 'none';
+                document.getElementById('component-loading').style.display = 'flex';
+                
+                const url = `/api/error-logs/error-analysis/distribution/component?days=${filters.days}`;
+                const response = await fetch(filters.severity ? `${url}&min_severity=${filters.severity}` : url);
+                if (!response.ok) throw new Error('Failed to load component distribution');
+                
+                const data = await response.json();
+                displayComponentDistribution(data);
+            } catch (error) {
+                console.error('Error loading component distribution:', error);
+                showToast('Error loading component data', 'error');
+            }
+        }
+        
+        function displayComponentDistribution(data) {
+            // Sort components by count
+            const sortedComponents = Object.entries(data).sort((a, b) => b[1] - a[1]);
+            
+            // Get top components (at most 10)
+            const labels = [];
+            const values = [];
+            const colors = [];
+            
+            sortedComponents.slice(0, 10).forEach(([component, count], index) => {
+                labels.push(component);
+                values.push(count);
+                colors.push(getColorForComponent(component, index));
+                
+                // Track component for filter dropdown
+                components.add(component);
+            });
+            
+            // Create or update chart
+            const ctx = document.getElementById('componentChart').getContext('2d');
+            
+            if (componentChart) {
+                componentChart.destroy();
+            }
+            
+            componentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Error Count',
+                        data: values,
+                        backgroundColor: colors,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Component'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Error Count'
+                            },
+                            ticks: {
+                                precision: 0
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Update component filter with unique components
+            updateComponentFilter();
+            
+            // Show chart
+            document.getElementById('component-loading').style.display = 'none';
+            document.getElementById('component-chart').style.display = 'block';
+        }
+        
+        // Error patterns
+        async function loadPatterns() {
+            try {
+                const filters = getFilters();
+                document.getElementById('patterns-container').style.display = 'none';
+                document.getElementById('patterns-loading').style.display = 'flex';
+                
+                const url = `/api/error-logs/error-analysis/patterns?days=${filters.days}&min_occurrences=2`;
+                const response = await fetch(filters.severity ? `${url}&min_severity=${filters.severity}` : url);
+                if (!response.ok) throw new Error('Failed to load error patterns');
+                
+                const data = await response.json();
+                displayPatterns(data);
+            } catch (error) {
+                console.error('Error loading patterns:', error);
+                showToast('Error loading pattern data', 'error');
+            }
+        }
+        
+        function displayPatterns(patterns) {
+            const container = document.getElementById('patterns-container');
+            container.innerHTML = '';
+            
+            if (patterns.length === 0) {
+                container.innerHTML = '<p>No error patterns detected with the current filters.</p>';
+                document.getElementById('patterns-loading').style.display = 'none';
+                container.style.display = 'block';
+                return;
+            }
+            
+            // Display up to 5 top patterns
+            patterns.slice(0, 5).forEach(pattern => {
+                const card = document.createElement('div');
+                card.className = 'pattern-card';
+                
+                // Pattern count and text
+                card.innerHTML = `
+                    <div class="pattern-count">${pattern.count} occurrences</div>
+                    <div class="pattern-text">${pattern.pattern}</div>
+                    <div class="pattern-metadata">
+                        <div>Detected in components:</div>
+                        ${pattern.components.map(comp => `<span class="component-tag">${comp}</span>`).join(' ')}
+                    </div>
+                    <div class="pattern-metadata" style="margin-top: 8px;">
+                        <div>Severity levels:</div>
+                        ${pattern.severity_levels.map(sev => `<span class="severity-tag severity-${sev}">${sev}</span>`).join(' ')}
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+            
+            // Show patterns
+            document.getElementById('patterns-loading').style.display = 'none';
+            container.style.display = 'block';
+        }
+        
+        // Update component filter dropdown
+        function updateComponentFilter() {
+            const select = document.getElementById('component-filter');
+            const currentValue = select.value;
+            
+            // Clear existing options except the first one
+            while (select.options.length > 1) {
+                select.remove(1);
+            }
+            
+            // Add component options
+            Array.from(components).sort().forEach(component => {
+                const option = document.createElement('option');
+                option.value = component;
+                option.textContent = component;
+                select.appendChild(option);
+            });
+            
+            // Restore selection if possible
+            if (currentValue && components.has(currentValue)) {
+                select.value = currentValue;
+            }
+        }
+        
+        // Export functions
+        async function exportHtml() {
+            try {
+                const filters = getFilters();
+                
+                const response = await fetch(`/api/error-logs/error-analysis/export?format=html&days=${filters.days}&min_severity=${filters.severity}&include_summary=true`);
+                if (!response.ok) throw new Error('Failed to initiate export');
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    showToast('Export started. The file will be available shortly.');
+                    
+                    // Open the download link in a new tab after a short delay
+                    setTimeout(() => {
+                        window.open(data.download_link, '_blank');
+                    }, 2000);
+                } else {
+                    throw new Error(data.message || 'Export failed');
+                }
+            } catch (error) {
+                console.error('Error exporting HTML:', error);
+                showToast('Error exporting HTML report', 'error');
+            }
+        }
+        
+        async function exportCsv() {
+            try {
+                const filters = getFilters();
+                
+                const response = await fetch(`/api/error-logs/error-analysis/export?format=csv&days=${filters.days}&min_severity=${filters.severity}`);
+                if (!response.ok) throw new Error('Failed to initiate export');
+                
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    showToast('Export started. The file will be available shortly.');
+                    
+                    // Open the download link in a new tab after a short delay
+                    setTimeout(() => {
+                        window.open(data.download_link, '_blank');
+                    }, 2000);
+                } else {
+                    throw new Error(data.message || 'Export failed');
+                }
+            } catch (error) {
+                console.error('Error exporting CSV:', error);
+                showToast('Error exporting CSV data', 'error');
+            }
+        }
+    </script>
+</body>
+</html>

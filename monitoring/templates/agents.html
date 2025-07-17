@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="/" class="navbar-brand">FixWurx Dashboard</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/" class="nav-link">Overview</a></li>
+                <li class="nav-item"><a href="/agents" class="nav-link active">Agents</a></li>
+                <li class="nav-item"><a href="/entropy" class="nav-link">Entropy</a></li>
+                <li class="nav-item"><a href="/rollbacks" class="nav-link">Rollbacks</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Agent Status</h1>
+        
+        <div class="dashboard-grid">
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header">
+                    <h2 class="card-title">Agent Overview</h2>
+                </div>
+                <div class="card-body">
+                    <div id="agent-metrics">
+                        <canvas id="agent-status-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header">
+                    <h2 class="card-title">Agent Details</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Agent ID</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Last Update</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailed-agent-table">
+                            <!-- Agent details will go here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card" id="agent-detail-card" style="display: none; grid-column: span 2;">
+                <div class="card-header">
+                    <h2 class="card-title">Agent Detail: <span id="detail-agent-id"></span></h2>
+                </div>
+                <div class="card-body">
+                    <div id="agent-detail-content">
+                        <!-- Agent detail will go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Connect to SSE endpoint
+        const eventSource = new EventSource('/events');
+        
+        // State
+        let agents = [];
+        let selectedAgentId = null;
+        let statusChart;
+        
+        // Initialize the dashboard
+        function initAgentsPage() {
+            // Create status chart
+            const ctx = document.getElementById('agent-status-chart').getContext('2d');
+            statusChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Active', 'Idle', 'Error', 'Stopped'],
+                    datasets: [{
+                        data: [0, 0, 0, 0],
+                        backgroundColor: [
+                            '#2ecc71', // Active
+                            '#95a5a6', // Idle
+                            '#e74c3c', // Error
+                            '#7f8c8d'  // Stopped
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+            
+            // Load initial agent data
+            loadAgentData();
+        }
+        
+        // Load agent data
+        function loadAgentData() {
+            fetch('/api/agents')
+                .then(response => response.json())
+                .then(data => {
+                    agents = data;
+                    updateAgentTable();
+                    updateStatusChart();
+                })
+                .catch(error => console.error('Error loading agent data:', error));
+        }
+        
+        // Update agent table
+        function updateAgentTable() {
+            const tableBody = document.getElementById('detailed-agent-table');
+            tableBody.innerHTML = '';
+            
+            agents.forEach(agent => {
+                const row = document.createElement('tr');
+                
+                // Format last updated time
+                const lastUpdated = new Date(agent.last_updated * 1000);
+                const timeAgo = Math.floor((Date.now() - lastUpdated) / 1000);
+                const timeAgoStr = timeAgo < 60 ? `${timeAgo}s ago` : 
+                                 timeAgo < 3600 ? `${Math.floor(timeAgo/60)}m ago` : 
+                                 `${Math.floor(timeAgo/3600)}h ago`;
+                
+                // Status indicator
+                const statusClass = agent.status === 'active' ? 'status-healthy' :
+                                  agent.status === 'idle' ? 'status-unknown' :
+                                  agent.status === 'error' ? 'status-critical' : 'status-warning';
+                
+                row.innerHTML = `
+                    <td>${agent.agent_id}</td>
+                    <td>${agent.agent_type}</td>
+                    <td><span class="status-indicator ${statusClass}"></span>${agent.status}</td>
+                    <td>${timeAgoStr}</td>
+                    <td>
+                        <button onclick="showAgentDetail('${agent.agent_id}')">View Details</button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Update status chart
+        function updateStatusChart() {
+            // Count agents by status
+            const statusCounts = {
+                'active': 0,
+                'idle': 0,
+                'error': 0,
+                'stopped': 0
+            };
+            
+            agents.forEach(agent => {
+                if (statusCounts[agent.status] !== undefined) {
+                    statusCounts[agent.status]++;
+                }
+            });
+            
+            // Update chart data
+            statusChart.data.datasets[0].data = [
+                statusCounts.active,
+                statusCounts.idle,
+                statusCounts.error,
+                statusCounts.stopped
+            ];
+            
+            statusChart.update();
+        }
+        
+        // Show agent detail
+        function showAgentDetail(agentId) {
+            selectedAgentId = agentId;
+            
+            // Find the agent
+            const agent = agents.find(a => a.agent_id === agentId);
+            if (!agent) return;
+            
+            // Show the detail card
+            const detailCard = document.getElementById('agent-detail-card');
+            detailCard.style.display = 'block';
+            
+            // Update the detail content
+            document.getElementById('detail-agent-id').textContent = agentId;
+            
+            const detailContent = document.getElementById('agent-detail-content');
+            
+            // Format metrics as table
+            let metricsHtml = '<h3>Metrics</h3>';
+            if (Object.keys(agent.metrics).length > 0) {
+                metricsHtml += '<table class="table"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>';
+                for (const [key, value] of Object.entries(agent.metrics)) {
+                    metricsHtml += `<tr><td>${key}</td><td>${value}</td></tr>`;
+                }
+                metricsHtml += '</tbody></table>';
+            } else {
+                metricsHtml += '<p>No metrics available</p>';
+            }
+            
+            // Build the detail HTML
+            detailContent.innerHTML = `
+                <div class="agent-details">
+                    <p><strong>Type:</strong> ${agent.agent_type}</p>
+                    <p><strong>Status:</strong> ${agent.status}</p>
+                    <p><strong>Last Updated:</strong> ${new Date(agent.last_updated * 1000).toLocaleString()}</p>
+                </div>
+                ${metricsHtml}
+            `;
+        }
+        
+        // Handle incoming events
+        eventSource.onmessage = function(event) {
+            try {
+                const data = JSON.parse(event.data);
+                
+                // Check if this is an agent update
+                if (Array.isArray(data)) {
+                    // Initial data load - just reload agent data
+                    loadAgentData();
+                    return;
+                }
+                
+                // Check if this is an agent update
+                if (data.type === 'agent') {
+                    loadAgentData();
+                }
+            } catch (error) {
+                console.error('Error processing event:', error);
+            }
+        };
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initAgentsPage);
+    </script>
+</body>
+</html>

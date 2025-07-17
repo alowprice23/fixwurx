@@ -1,0 +1,211 @@
+2025-07-12 19:56:06,544 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/basic_operations.py']
+2025-07-12 19:56:06,545 - FixWurx - INFO - Focus set to: subtract
+2025-07-12 19:56:06,545 - FixWurx - INFO - Starting analysis
+2025-07-12 19:56:06,545 - FixWurx - INFO - Analyzing file: calculator/operations/basic_operations.py
+2025-07-12 19:56:06,553 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 19:56:23,142 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 19:56:23,147 - FixWurx - INFO - OpenAI API response received in 16.59 seconds
+2025-07-12 19:56:23,149 - FixWurx - INFO - Found 7 issues in calculator/operations/basic_operations.py
+2025-07-12 19:56:33,594 - FixWurx - INFO - Created backup at calculator/operations/basic_operations.py.bak
+2025-07-12 19:56:33,594 - FixWurx - INFO - Successfully applied fixes to calculator/operations/basic_operations.py
+2025-07-12 19:56:33,595 - FixWurx - INFO - Analysis completed in 27.05 seconds
+2025-07-12 19:56:33,595 - FixWurx - INFO - Fixed 7 issues across 1 files
+2025-07-12 19:56:33,595 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_195606\summary_report.json
+2025-07-12 19:57:37,564 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/advanced_operations.py']
+2025-07-12 19:57:37,564 - FixWurx - INFO - Focus set to: square_root
+2025-07-12 19:57:37,564 - FixWurx - INFO - Starting analysis
+2025-07-12 19:57:37,564 - FixWurx - INFO - Analyzing file: calculator/operations/advanced_operations.py
+2025-07-12 19:57:37,573 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 19:58:00,557 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 19:58:00,563 - FixWurx - INFO - OpenAI API response received in 22.99 seconds
+2025-07-12 19:58:00,565 - FixWurx - INFO - Found 7 issues in calculator/operations/advanced_operations.py
+2025-07-12 19:58:14,634 - FixWurx - INFO - Created backup at calculator/operations/advanced_operations.py.bak
+2025-07-12 19:58:14,635 - FixWurx - INFO - Successfully applied fixes to calculator/operations/advanced_operations.py
+2025-07-12 19:58:14,635 - FixWurx - INFO - Analysis completed in 37.07 seconds
+2025-07-12 19:58:14,636 - FixWurx - INFO - Fixed 7 issues across 1 files
+2025-07-12 19:58:14,636 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_195737\summary_report.json
+2025-07-12 19:58:41,263 - FixWurx - INFO - FixWurx initialized with files: ['calculator/utils/validation.py']
+2025-07-12 19:58:41,264 - FixWurx - INFO - Starting analysis
+2025-07-12 19:58:41,264 - FixWurx - INFO - Analyzing file: calculator/utils/validation.py
+2025-07-12 19:58:41,275 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 19:59:15,593 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 19:59:15,605 - FixWurx - INFO - OpenAI API response received in 34.33 seconds
+2025-07-12 19:59:15,607 - FixWurx - INFO - Found 7 issues in calculator/utils/validation.py
+2025-07-12 19:59:42,964 - FixWurx - INFO - Created backup at calculator/utils/validation.py.bak
+2025-07-12 19:59:42,964 - FixWurx - INFO - Successfully applied fixes to calculator/utils/validation.py
+2025-07-12 19:59:42,965 - FixWurx - INFO - Analysis completed in 61.71 seconds
+2025-07-12 19:59:42,965 - FixWurx - INFO - Fixed 7 issues across 1 files
+2025-07-12 19:59:42,965 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_195841\summary_report.json
+2025-07-12 20:00:01,834 - FixWurx - INFO - FixWurx initialized with files: ['calculator/utils/memory.py']
+2025-07-12 20:00:01,834 - FixWurx - INFO - Starting analysis
+2025-07-12 20:00:01,835 - FixWurx - INFO - Analyzing file: calculator/utils/memory.py
+2025-07-12 20:00:01,843 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:00:25,129 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:00:25,132 - FixWurx - INFO - OpenAI API response received in 23.29 seconds
+2025-07-12 20:00:25,133 - FixWurx - INFO - Found 8 issues in calculator/utils/memory.py
+2025-07-12 20:00:36,939 - FixWurx - INFO - Created backup at calculator/utils/memory.py.bak
+2025-07-12 20:00:36,939 - FixWurx - INFO - Successfully applied fixes to calculator/utils/memory.py
+2025-07-12 20:00:36,940 - FixWurx - INFO - Analysis completed in 35.10 seconds
+2025-07-12 20:00:36,940 - FixWurx - INFO - Fixed 8 issues across 1 files
+2025-07-12 20:00:36,941 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_200001\summary_report.json
+2025-07-12 20:01:48,220 - FixWurx - INFO - FixWurx initialized with files: ['calculator/ui/cli.py']
+2025-07-12 20:01:48,221 - FixWurx - INFO - Starting analysis
+2025-07-12 20:01:48,221 - FixWurx - INFO - Analyzing file: calculator/ui/cli.py
+2025-07-12 20:01:48,231 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:02:21,131 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:02:21,134 - FixWurx - INFO - OpenAI API response received in 32.90 seconds
+2025-07-12 20:02:21,136 - FixWurx - INFO - Found 9 issues in calculator/ui/cli.py
+2025-07-12 20:02:25,908 - FixWurx - INFO - Created backup at calculator/ui/cli.py.bak
+2025-07-12 20:02:25,908 - FixWurx - INFO - Successfully applied fixes to calculator/ui/cli.py
+2025-07-12 20:02:25,909 - FixWurx - INFO - Analysis completed in 37.69 seconds
+2025-07-12 20:02:25,909 - FixWurx - INFO - Fixed 9 issues across 1 files
+2025-07-12 20:02:25,909 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_200148\summary_report.json
+2025-07-12 20:05:07,288 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/basic_operations.py']
+2025-07-12 20:05:07,288 - FixWurx - INFO - Focus set to: subtract
+2025-07-12 20:05:07,288 - FixWurx - INFO - Starting analysis
+2025-07-12 20:05:07,289 - FixWurx - INFO - Analyzing file: calculator/operations/basic_operations.py
+2025-07-12 20:05:07,289 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:05:20,981 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:05:20,984 - FixWurx - INFO - OpenAI API response received in 13.69 seconds
+2025-07-12 20:05:20,984 - FixWurx - INFO - Found 1 issues in calculator/operations/basic_operations.py
+2025-07-12 20:13:01,064 - FixWurx - INFO - User declined to apply fixes
+2025-07-12 20:13:01,065 - FixWurx - INFO - Analysis completed in 473.78 seconds
+2025-07-12 20:13:01,065 - FixWurx - INFO - Fixed 0 issues across 1 files
+2025-07-12 20:13:01,066 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_200507\summary_report.json
+2025-07-12 20:13:02,450 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/basic_operations.py']
+2025-07-12 20:13:02,451 - FixWurx - INFO - Focus set to: multiply
+2025-07-12 20:13:02,451 - FixWurx - INFO - Starting analysis
+2025-07-12 20:13:02,451 - FixWurx - INFO - Analyzing file: calculator/operations/basic_operations.py
+2025-07-12 20:13:02,452 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:13:19,350 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:13:19,353 - FixWurx - INFO - OpenAI API response received in 16.90 seconds
+2025-07-12 20:13:19,353 - FixWurx - INFO - Found 1 issues in calculator/operations/basic_operations.py
+2025-07-12 20:13:19,354 - FixWurx - INFO - User declined to apply fixes
+2025-07-12 20:13:19,355 - FixWurx - INFO - Analysis completed in 16.91 seconds
+2025-07-12 20:13:19,355 - FixWurx - INFO - Fixed 0 issues across 1 files
+2025-07-12 20:13:19,355 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_201302\summary_report.json
+2025-07-12 20:13:20,661 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/basic_operations.py']
+2025-07-12 20:13:20,661 - FixWurx - INFO - Focus set to: divide
+2025-07-12 20:13:20,661 - FixWurx - INFO - Starting analysis
+2025-07-12 20:13:20,661 - FixWurx - INFO - Analyzing file: calculator/operations/basic_operations.py
+2025-07-12 20:13:20,662 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:13:49,135 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:13:49,138 - FixWurx - INFO - OpenAI API response received in 28.48 seconds
+2025-07-12 20:13:49,139 - FixWurx - INFO - Found 3 issues in calculator/operations/basic_operations.py
+2025-07-12 20:13:49,139 - FixWurx - INFO - User declined to apply fixes
+2025-07-12 20:13:49,140 - FixWurx - INFO - Analysis completed in 28.48 seconds
+2025-07-12 20:13:49,140 - FixWurx - INFO - Fixed 0 issues across 1 files
+2025-07-12 20:13:49,140 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_201320\summary_report.json
+2025-07-12 20:13:50,537 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/basic_operations.py']
+2025-07-12 20:13:50,538 - FixWurx - INFO - Focus set to: power
+2025-07-12 20:13:50,538 - FixWurx - INFO - Starting analysis
+2025-07-12 20:13:50,538 - FixWurx - INFO - Analyzing file: calculator/operations/basic_operations.py
+2025-07-12 20:13:50,538 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:14:14,342 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:14:14,354 - FixWurx - INFO - OpenAI API response received in 23.82 seconds
+2025-07-12 20:14:14,357 - FixWurx - INFO - Found 4 issues in calculator/operations/basic_operations.py
+2025-07-12 20:14:14,358 - FixWurx - INFO - User declined to apply fixes
+2025-07-12 20:14:14,361 - FixWurx - INFO - Analysis completed in 23.82 seconds
+2025-07-12 20:14:14,361 - FixWurx - INFO - Fixed 0 issues across 1 files
+2025-07-12 20:14:14,361 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_201350\summary_report.json
+2025-07-12 20:14:15,658 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/advanced_operations.py']
+2025-07-12 20:14:15,658 - FixWurx - INFO - Focus set to: random_operation
+2025-07-12 20:14:15,658 - FixWurx - INFO - Starting analysis
+2025-07-12 20:14:15,658 - FixWurx - INFO - Analyzing file: calculator/operations/advanced_operations.py
+2025-07-12 20:14:15,659 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:14:37,158 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:14:37,161 - FixWurx - INFO - OpenAI API response received in 21.50 seconds
+2025-07-12 20:14:37,162 - FixWurx - INFO - Found 2 issues in calculator/operations/advanced_operations.py
+2025-07-12 20:14:37,162 - FixWurx - INFO - User declined to apply fixes
+2025-07-12 20:14:37,163 - FixWurx - INFO - Analysis completed in 21.50 seconds
+2025-07-12 20:14:37,163 - FixWurx - INFO - Fixed 0 issues across 1 files
+2025-07-12 20:14:37,163 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_201415\summary_report.json
+2025-07-12 20:14:38,609 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/advanced_operations.py']
+2025-07-12 20:14:38,609 - FixWurx - INFO - Focus set to: square_root
+2025-07-12 20:14:38,609 - FixWurx - INFO - Starting analysis
+2025-07-12 20:14:38,610 - FixWurx - INFO - Analyzing file: calculator/operations/advanced_operations.py
+2025-07-12 20:14:38,610 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:15:09,724 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:15:09,735 - FixWurx - INFO - OpenAI API response received in 31.12 seconds
+2025-07-12 20:15:09,738 - FixWurx - INFO - Found 4 issues in calculator/operations/advanced_operations.py
+2025-07-12 20:15:11,093 - FixWurx - INFO - FixWurx initialized with files: ['calculator/ui/cli.py', 'calculator/operations/advanced_operations.py']
+2025-07-12 20:15:11,094 - FixWurx - INFO - Starting analysis
+2025-07-12 20:15:11,094 - FixWurx - INFO - Analyzing file: calculator/ui/cli.py
+2025-07-12 20:15:11,094 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:16:09,421 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:16:09,452 - FixWurx - INFO - OpenAI API response received in 58.36 seconds
+2025-07-12 20:16:09,453 - FixWurx - INFO - Found 6 issues in calculator/ui/cli.py
+2025-07-12 20:16:09,454 - FixWurx - INFO - User declined to apply fixes
+2025-07-12 20:16:09,454 - FixWurx - INFO - Analyzing file: calculator/operations/advanced_operations.py
+2025-07-12 20:16:09,455 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:16:43,217 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:16:43,219 - FixWurx - INFO - OpenAI API response received in 33.76 seconds
+2025-07-12 20:16:43,220 - FixWurx - INFO - Found 4 issues in calculator/operations/advanced_operations.py
+2025-07-12 20:16:43,221 - FixWurx - INFO - User declined to apply fixes
+2025-07-12 20:16:43,226 - FixWurx - INFO - Analysis completed in 92.13 seconds
+2025-07-12 20:16:43,226 - FixWurx - INFO - Fixed 0 issues across 2 files
+2025-07-12 20:16:43,226 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_201511\summary_report.json
+2025-07-12 20:24:12,003 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/basic_operations.py']
+2025-07-12 20:24:12,003 - FixWurx - INFO - Auto-apply mode: enabled
+2025-07-12 20:24:12,004 - FixWurx - INFO - Starting analysis
+2025-07-12 20:24:12,004 - FixWurx - INFO - Analyzing file: calculator/operations/basic_operations.py
+2025-07-12 20:24:12,005 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:24:39,604 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:24:39,607 - FixWurx - INFO - OpenAI API response received in 27.60 seconds
+2025-07-12 20:24:39,608 - FixWurx - INFO - Found 4 issues in calculator/operations/basic_operations.py
+2025-07-12 20:24:39,610 - FixWurx - INFO - Auto-applying fixes
+2025-07-12 20:24:39,611 - FixWurx - INFO - Created backup at calculator/operations/basic_operations.py.bak
+2025-07-12 20:24:39,611 - FixWurx - INFO - Successfully applied fixes to calculator/operations/basic_operations.py
+2025-07-12 20:24:39,612 - FixWurx - INFO - Analysis completed in 27.61 seconds
+2025-07-12 20:24:39,612 - FixWurx - INFO - Fixed 4 issues across 1 files
+2025-07-12 20:24:39,612 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_202412\summary_report.json
+2025-07-12 20:24:39,613 - FixWurx - INFO - Running tests: calculator.tests.test_basic_operations
+2025-07-12 20:24:39,791 - FixWurx - INFO - Test results: Exit code 0
+2025-07-12 20:25:00,334 - FixWurx - INFO - FixWurx initialized with files: ['calculator/utils/memory.py']
+2025-07-12 20:25:00,335 - FixWurx - INFO - Auto-apply mode: enabled
+2025-07-12 20:25:00,335 - FixWurx - INFO - Starting analysis
+2025-07-12 20:25:00,335 - FixWurx - INFO - Analyzing file: calculator/utils/memory.py
+2025-07-12 20:25:00,336 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:25:30,177 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:25:30,181 - FixWurx - INFO - OpenAI API response received in 29.85 seconds
+2025-07-12 20:25:30,182 - FixWurx - INFO - Found 5 issues in calculator/utils/memory.py
+2025-07-12 20:25:30,185 - FixWurx - INFO - Auto-applying fixes
+2025-07-12 20:25:30,186 - FixWurx - INFO - Created backup at calculator/utils/memory.py.bak
+2025-07-12 20:25:30,186 - FixWurx - INFO - Successfully applied fixes to calculator/utils/memory.py
+2025-07-12 20:25:30,187 - FixWurx - INFO - Analysis completed in 29.85 seconds
+2025-07-12 20:25:30,187 - FixWurx - INFO - Fixed 5 issues across 1 files
+2025-07-12 20:25:30,188 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_202500\summary_report.json
+2025-07-12 20:25:30,189 - FixWurx - INFO - Running tests: calculator.tests.test_memory
+2025-07-12 20:25:30,330 - FixWurx - INFO - Test results: Exit code 0
+2025-07-12 20:25:40,362 - FixWurx - INFO - FixWurx initialized with files: ['calculator/ui/cli.py']
+2025-07-12 20:25:40,363 - FixWurx - INFO - Auto-apply mode: enabled
+2025-07-12 20:25:40,363 - FixWurx - INFO - Starting analysis
+2025-07-12 20:25:40,363 - FixWurx - INFO - Analyzing file: calculator/ui/cli.py
+2025-07-12 20:25:40,364 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:26:16,435 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:26:16,437 - FixWurx - INFO - OpenAI API response received in 36.07 seconds
+2025-07-12 20:26:16,438 - FixWurx - INFO - Found 4 issues in calculator/ui/cli.py
+2025-07-12 20:26:16,440 - FixWurx - INFO - Auto-applying fixes
+2025-07-12 20:26:16,441 - FixWurx - INFO - Created backup at calculator/ui/cli.py.bak
+2025-07-12 20:26:16,441 - FixWurx - INFO - Successfully applied fixes to calculator/ui/cli.py
+2025-07-12 20:26:16,442 - FixWurx - INFO - Analysis completed in 36.08 seconds
+2025-07-12 20:26:16,442 - FixWurx - INFO - Fixed 4 issues across 1 files
+2025-07-12 20:26:16,442 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_202540\summary_report.json
+2025-07-12 20:26:16,443 - FixWurx - INFO - Running tests: calculator.tests.test_cli
+2025-07-12 20:26:16,667 - FixWurx - INFO - Test results: Exit code 0
+2025-07-12 20:26:39,031 - FixWurx - INFO - FixWurx initialized with files: ['calculator/operations/advanced_operations.py']
+2025-07-12 20:26:39,032 - FixWurx - INFO - Auto-apply mode: enabled
+2025-07-12 20:26:39,032 - FixWurx - INFO - Starting analysis
+2025-07-12 20:26:39,032 - FixWurx - INFO - Analyzing file: calculator/operations/advanced_operations.py
+2025-07-12 20:26:39,032 - FixWurx - INFO - Sending request to OpenAI API
+2025-07-12 20:27:20,634 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-12 20:27:20,636 - FixWurx - INFO - OpenAI API response received in 41.60 seconds
+2025-07-12 20:27:20,637 - FixWurx - INFO - Found 5 issues in calculator/operations/advanced_operations.py
+2025-07-12 20:27:20,639 - FixWurx - INFO - Auto-applying fixes
+2025-07-12 20:27:20,640 - FixWurx - INFO - Created backup at calculator/operations/advanced_operations.py.bak
+2025-07-12 20:27:20,640 - FixWurx - INFO - Successfully applied fixes to calculator/operations/advanced_operations.py
+2025-07-12 20:27:20,641 - FixWurx - INFO - Analysis completed in 41.61 seconds
+2025-07-12 20:27:20,641 - FixWurx - INFO - Fixed 5 issues across 1 files
+2025-07-12 20:27:20,641 - FixWurx - INFO - Summary report saved to fixwurx_results\20250712_202639\summary_report.json
+2025-07-12 20:27:20,642 - FixWurx - INFO - Running tests: calculator.tests.test_advanced_operations
+2025-07-12 20:27:20,802 - FixWurx - INFO - Test results: Exit code 0

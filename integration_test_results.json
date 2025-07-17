@@ -1,0 +1,50 @@
+{
+  "conversational_interface": {
+    "status": "passed",
+    "details": [
+      "Successfully processed input"
+    ]
+  },
+  "planning_engine": {
+    "status": "passed",
+    "details": [
+      "Successfully generated plan"
+    ]
+  },
+  "command_executor": {
+    "status": "passed",
+    "details": [
+      "Successfully executed command"
+    ]
+  },
+  "script_library": {
+    "status": "skipped",
+    "details": [
+      "Script library not available"
+    ]
+  },
+  "conversation_logger": {
+    "status": "skipped",
+    "details": [
+      "Conversation logger not available"
+    ]
+  },
+  "launchpad": {
+    "status": "passed",
+    "details": [
+      "Launchpad initialized successfully"
+    ]
+  },
+  "collaborative_improvement": {
+    "status": "skipped",
+    "details": [
+      "Pattern detector not available"
+    ]
+  },
+  "overall": {
+    "status": "partial",
+    "details": [
+      "Passed 4 tests, skipped 3 tests"
+    ]
+  }
+}

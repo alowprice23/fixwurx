@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 45
+details:
+  message: Test error 45
+error_id: ERR-20250713022316-21dc1b2d
+error_type: TEST_ERROR_1
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: LOW
+status: OPEN
+timestamp: '2025-07-13T02:23:16.130339'

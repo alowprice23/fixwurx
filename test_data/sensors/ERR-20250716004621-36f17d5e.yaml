@@ -1,0 +1,13 @@
+component_name: ObligationLedger
+context:
+  obligations_count: 0
+details:
+  message: No obligations found in ledger
+error_id: ERR-20250716004621-36f17d5e
+error_type: EMPTY_OBLIGATIONS
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: HIGH
+status: OPEN
+timestamp: '2025-07-16T00:46:21.545468'

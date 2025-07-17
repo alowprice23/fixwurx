@@ -1,0 +1,32 @@
+{
+  "id": "group_1752394824_Cache_RESOURCE_EXHAUSTION",
+  "component": "Cache",
+  "error_type": "RESOURCE_EXHAUSTION",
+  "severity": "CRITICAL",
+  "first_seen": 1752394824.0571218,
+  "last_updated": 1752394824.0571218,
+  "count": 1,
+  "reports": [
+    {
+      "timestamp": 1752394824.0571218,
+      "component": "Cache",
+      "sensor_id": "cache_sensor",
+      "error_type": "RESOURCE_EXHAUSTION",
+      "severity": "CRITICAL",
+      "details": {
+        "message": "Cache memory exhausted",
+        "used_mb": 980,
+        "total_mb": 1024
+      },
+      "context": {
+        "cache_keys": 15000,
+        "eviction_count": 500
+      }
+    }
+  ],
+  "context": {
+    "cache_keys": 15000,
+    "eviction_count": 500
+  },
+  "status": "active"
+}

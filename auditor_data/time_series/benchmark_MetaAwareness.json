@@ -1,0 +1,15 @@
+{
+  "name": "benchmark_MetaAwareness",
+  "description": "Benchmark results for MetaAwareness",
+  "unit": "various",
+  "points": [
+    {
+      "timestamp": "2025-07-13T02:21:49.381757",
+      "values": {}
+    },
+    {
+      "timestamp": "2025-07-13T02:23:16.009499",
+      "values": {}
+    }
+  ]
+}

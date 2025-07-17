@@ -1,0 +1,21 @@
+{
+  "id": "30b7660f-b048-454a-848f-1db74706922d",
+  "user_id": "test_user",
+  "start_time": 1752621607.4131036,
+  "end_time": 1752621607.414104,
+  "messages": [
+    {
+      "id": "5313cd8d-8c73-4085-a0eb-80675142ac4c",
+      "sender": "test_user",
+      "content": "Hello",
+      "timestamp": 1752621607.4131036
+    },
+    {
+      "id": "f75ec1b7-5dc0-4fc7-829c-d9b80f5f866b",
+      "sender": "system",
+      "content": "Hi there!",
+      "timestamp": 1752621607.4131036
+    }
+  ],
+  "summary": "test_user: Hello\nsystem: Hi there!"
+}

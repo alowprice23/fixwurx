@@ -1,0 +1,15 @@
+{
+  "start_time": "2025-07-12 20:01:48",
+  "end_time": "2025-07-12 20:02:25",
+  "elapsed_seconds": 37.68806,
+  "files_analyzed": 1,
+  "total_issues_fixed": 9,
+  "success_reports": [
+    {
+      "file": "calculator/ui/cli.py",
+      "issues_fixed": 9,
+      "time": "2025-07-12 20:02:25"
+    }
+  ],
+  "error_reports": []
+}

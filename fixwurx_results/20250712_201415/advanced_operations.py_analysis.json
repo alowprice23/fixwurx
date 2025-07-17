@@ -1,0 +1,19 @@
+{
+  "file": "calculator/operations/advanced_operations.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "random_operation accepts `bool` values because `bool` is a subclass of `int`.",
+        "reason": "Passing `True` or `False` will silently be treated as `1` or `0`, which is almost never what users intend and can hide logic errors.",
+        "fix": "Explicitly reject `bool` by ensuring the argument\u2019s *type* is `int` (not merely `isinstance(..., int)`)."
+      },
+      {
+        "description": "Error-message wording is slightly ambiguous when the type check fails.",
+        "reason": "A user seeing the message should immediately understand that a boolean was supplied or that the value is not a *pure* integer.",
+        "fix": "Clarify the `TypeError` message so it explicitly states that booleans are not accepted."
+      }
+    ],
+    "fixed_code": "from __future__ import annotations\n\"\"\"\nAdvanced mathematical operations for the calculator application.\n\"\"\"\nimport math\nimport random\nfrom typing import Union\n\nNumber = Union[int, float]\n\ndef square_root(x: Number) -> float:\n    \"\"\"Calculate the square root of a non-negative number.\"\"\"\n    if not isinstance(x, (int, float)) or isinstance(x, bool):\n        raise TypeError(\"Input must be a real number (int or float, bool not allowed).\")\n    if x < 0:\n        raise ValueError(\"Cannot compute the square root of a negative number.\")\n    return math.sqrt(x)\n\ndef factorial(n: int) -> int:\n    \"\"\"Return *n*! for non-negative integer *n*.\"\"\"\n    if not isinstance(n, int) or isinstance(n, bool):\n        raise TypeError(\"n must be an integer (bool not allowed).\")\n    if n < 0:\n        raise ValueError(\"n must be non-negative.\")\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n\ndef logarithm(x: Number, base: Number = 10) -> float:\n    \"\"\"Compute log_base(x).\"\"\"\n    if x <= 0:\n        raise ValueError(\"x must be positive for logarithm.\")\n    if base <= 0 or base == 1:\n        raise ValueError(\"base must be positive and not equal to 1.\")\n    return math.log(x, base)\n\ndef sine(angle_degrees: Number) -> float:\n    \"\"\"Return the sine of *angle_degrees*.\"\"\"\n    angle_radians = math.radians(angle_degrees)\n    return math.sin(angle_radians)\n\ndef random_operation(min_val: int, max_val: int) -> int:\n    \"\"\"Return a random integer N such that min_val \u2264 N \u2264 max_val (inclusive).\n\n    Parameters\n    ----------\n    min_val : int\n        Lower bound (inclusive) of the random range.\n    max_val : int\n        Upper bound (inclusive) of the random range.\n\n    Returns\n    -------\n    int\n        A pseudo-random integer between *min_val* and *max_val*.\n\n    Raises\n    ------\n    TypeError\n        If *min_val* or *max_val* are not integers (bool explicitly disallowed).\n    ValueError\n        If *min_val* > *max_val*.\n    \"\"\"\n    if not isinstance(min_val, int) or isinstance(min_val, bool):\n        raise TypeError(\"min_val must be an integer (bool is not allowed).\")\n    if not isinstance(max_val, int) or isinstance(max_val, bool):\n        raise TypeError(\"max_val must be an integer (bool is not allowed).\")\n    if min_val > max_val:\n        raise ValueError(\"min_val cannot be greater than max_val.\")\n    return random.randint(min_val, max_val)\n"
+  },
+  "time_taken": 21.501107692718506
+}

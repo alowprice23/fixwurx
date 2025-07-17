@@ -1,0 +1,10 @@
+{
+  "allowed_roots": ["C:\\"],
+  "read_only": [
+      "C:\\Windows\\**",
+      "C:\\Program Files\\**",
+      "C:\\Program Files (x86)\\**"
+  ],
+  "write_guard": false,
+  "max_copy_size_mb": 500
+}

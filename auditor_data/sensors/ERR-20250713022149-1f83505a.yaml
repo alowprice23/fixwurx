@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 21
+details:
+  message: Test error 21
+error_id: ERR-20250713022149-1f83505a
+error_type: TEST_ERROR_3
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: MEDIUM
+status: OPEN
+timestamp: '2025-07-13T02:21:49.584757'

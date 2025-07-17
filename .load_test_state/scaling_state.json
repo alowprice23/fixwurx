@@ -1,0 +1,50 @@
+{
+  "timestamp": 1752210425.2027996,
+  "workers": {
+    "worker-DESKTOP-0JNE0TN-1752210330": {
+      "worker_id": "worker-DESKTOP-0JNE0TN-1752210330",
+      "hostname": "DESKTOP-0JNE0TN",
+      "port": 0,
+      "state": "ready",
+      "total_agents": 24,
+      "free_agents": 24,
+      "cpu_cores": 2,
+      "memory_mb": 2048,
+      "last_heartbeat": 1752210330.961125,
+      "metrics": {}
+    },
+    "forced-worker-1752210423-5960": {
+      "worker_id": "forced-worker-1752210423-5960",
+      "hostname": "worker-forced-worker-1752210423-5960-host",
+      "port": 8438,
+      "state": "READY",
+      "total_agents": 9,
+      "free_agents": 9,
+      "active_bugs": [],
+      "last_heartbeat": 1752210423.0382235
+    },
+    "worker-1752210423": {
+      "worker_id": "worker-1752210423",
+      "hostname": "worker-4",
+      "port": 8003,
+      "state": "ready",
+      "total_agents": 9,
+      "free_agents": 9,
+      "cpu_cores": 2,
+      "memory_mb": 2048,
+      "last_heartbeat": 1752210423.0382235,
+      "metrics": {}
+    },
+    "forced-worker-1752210425-1898": {
+      "worker_id": "forced-worker-1752210425-1898",
+      "hostname": "worker-forced-worker-1752210425-1898-host",
+      "port": 8106,
+      "state": "READY",
+      "total_agents": 9,
+      "free_agents": 9,
+      "active_bugs": [],
+      "last_heartbeat": 1752210425.0392995
+    }
+  },
+  "local_worker_id": "worker-DESKTOP-0JNE0TN-1752210330"
+}

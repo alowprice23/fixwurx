@@ -1,0 +1,6545 @@
+[
+  {
+    "timestamp": 1752210332.9736855,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 21,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.0255835,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 18,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.0768273,
+    "worker_count": 2,
+    "active_bugs": 3,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 15,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.1286116,
+    "worker_count": 2,
+    "active_bugs": 4,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 12,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.1806746,
+    "worker_count": 2,
+    "active_bugs": 5,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 9,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.2320147,
+    "worker_count": 2,
+    "active_bugs": 6,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 6,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.2828777,
+    "worker_count": 2,
+    "active_bugs": 7,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 3,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.3339734,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.385838,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.4373748,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.487844,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.53828,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.589474,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.640601,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.693734,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.7459986,
+    "worker_count": 3,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.7966726,
+    "worker_count": 3,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.8470738,
+    "worker_count": 3,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.8975923,
+    "worker_count": 3,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210333.9490092,
+    "worker_count": 3,
+    "active_bugs": 8,
+    "completed_bugs": 0,
+    "total_agents": 24,
+    "free_agents": 0,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.0033572,
+    "worker_count": 3,
+    "active_bugs": 9,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.0552366,
+    "worker_count": 3,
+    "active_bugs": 10,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.1069527,
+    "worker_count": 3,
+    "active_bugs": 11,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.1618829,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.2150156,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 27,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.2664235,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.518767,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210334.7713187,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210335.0235357,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210335.275543,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210335.5274682,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210335.77978,
+    "worker_count": 4,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210336.0311344,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 0,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210336.0819285,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 0,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210336.1348524,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 0,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210336.1881742,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210336.4405785,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210336.69233,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210336.9462094,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210337.1975791,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210337.4494936,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210337.7005959,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210337.952657,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210338.203819,
+    "worker_count": 1,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210338.4570067,
+    "worker_count": 1,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210338.7086337,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210338.961491,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210339.2139807,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210339.4659564,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210339.7175965,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 0,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210339.969436,
+    "worker_count": 2,
+    "active_bugs": 16,
+    "completed_bugs": 1,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210340.2221832,
+    "worker_count": 2,
+    "active_bugs": 16,
+    "completed_bugs": 1,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210340.4754722,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 1,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210340.7265956,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 4,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210340.9798849,
+    "worker_count": 4,
+    "active_bugs": 13,
+    "completed_bugs": 4,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.033064,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 5,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.0867963,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 5,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.1385028,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 5,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.1907039,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 6,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.2428017,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 6,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.2964733,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 6,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.5487945,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 6,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.5994468,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 8,
+    "total_agents": 51,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.6515276,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 8,
+    "total_agents": 51,
+    "free_agents": 27,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.9035468,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 8,
+    "total_agents": 51,
+    "free_agents": 27,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210341.9544406,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 10,
+    "total_agents": 51,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210342.2082477,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 10,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210342.262399,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 13,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210342.5153644,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 13,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210342.5669565,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 14,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210342.8188808,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 14,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210342.87099,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 15,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210343.122527,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 15,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210343.1733675,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 16,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210343.4273996,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 16,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210343.679199,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 16,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210343.9317322,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 16,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210344.1833217,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 16,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210344.4347959,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 16,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210344.6870432,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 16,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210344.9394968,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 17,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210344.990921,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 17,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210345.2436278,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 17,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210345.4957936,
+    "worker_count": 4,
+    "active_bugs": 14,
+    "completed_bugs": 17,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210345.7497265,
+    "worker_count": 4,
+    "active_bugs": 14,
+    "completed_bugs": 17,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210346.0017998,
+    "worker_count": 4,
+    "active_bugs": 14,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210346.0535305,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210346.10562,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210346.1576025,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210346.409159,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210346.661524,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210346.912734,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210347.1652336,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210347.4166808,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210347.6694014,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210347.9205298,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210348.1724257,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 17,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210348.42376,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 19,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210348.6760528,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 20,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210348.9284708,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 20,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.180181,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 20,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.2339098,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 21,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.4879274,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 21,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.5411386,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 23,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.5933957,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 23,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.8467855,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 23,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.901036,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 26,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210349.9539647,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 26,
+    "total_agents": 42,
+    "free_agents": 27,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210350.0080433,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 26,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210350.2601461,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 26,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210350.3143947,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 27,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210350.3671904,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 28,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210350.6192958,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 28,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210350.8714569,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 28,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210350.9249802,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 29,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210351.1777613,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 29,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210351.231468,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 29,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210351.284583,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 29,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210351.3362863,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 29,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210351.5880282,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 29,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210351.8399158,
+    "worker_count": 4,
+    "active_bugs": 17,
+    "completed_bugs": 29,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210351.891223,
+    "worker_count": 4,
+    "active_bugs": 17,
+    "completed_bugs": 30,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210352.143132,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 30,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210352.3958423,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 30,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210352.449455,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 31,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210352.7024345,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 31,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210352.9538343,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 31,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210353.2080562,
+    "worker_count": 2,
+    "active_bugs": 16,
+    "completed_bugs": 32,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210353.4595492,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 33,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210353.7116237,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 33,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210353.96415,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 33,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210354.2152274,
+    "worker_count": 1,
+    "active_bugs": 15,
+    "completed_bugs": 33,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210354.4675384,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 34,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210354.7205672,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 34,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210354.9756079,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 34,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210355.2292767,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 34,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210355.4832242,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 34,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210355.7365732,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 34,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210355.9882185,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 35,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210356.2400155,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 35,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210356.491875,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 35,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210356.745942,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 36,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210356.9996467,
+    "worker_count": 4,
+    "active_bugs": 11,
+    "completed_bugs": 37,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.0527163,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 37,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.1040046,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 37,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.155486,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 38,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.209912,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 38,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.2619085,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 38,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.315928,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 38,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.3718407,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 38,
+    "total_agents": 51,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.4261062,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 39,
+    "total_agents": 51,
+    "free_agents": 27,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.480307,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 40,
+    "total_agents": 51,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.7331197,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 40,
+    "total_agents": 51,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210357.9862359,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 40,
+    "total_agents": 51,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210358.2375727,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 41,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210358.491745,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 42,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210358.7435281,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 42,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210358.795522,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 44,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210359.0469139,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 44,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210359.2984889,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 44,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210359.550015,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 44,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210359.8018682,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 44,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210359.853489,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 45,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210359.9055786,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 46,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210360.158723,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 46,
+    "total_agents": 24,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210360.4109707,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 47,
+    "total_agents": 24,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210360.6622808,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 47,
+    "total_agents": 24,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210360.9134262,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 24,
+    "free_agents": 24,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210361.1653554,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210361.4186263,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210361.6708484,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210361.923904,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210362.1767604,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210362.4282014,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210362.6810672,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210362.9338222,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.1852875,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 48,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.2370143,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 48,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.2890098,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 48,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.3410144,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 48,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.3930092,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 48,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.4450092,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 48,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.497009,
+    "worker_count": 3,
+    "active_bugs": 18,
+    "completed_bugs": 48,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.748811,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 49,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210363.7993996,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 50,
+    "total_agents": 51,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210364.0534203,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 50,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210364.3047738,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 50,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210364.5563948,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 50,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210364.808613,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 51,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210365.0600746,
+    "worker_count": 1,
+    "active_bugs": 15,
+    "completed_bugs": 52,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210365.312402,
+    "worker_count": 1,
+    "active_bugs": 15,
+    "completed_bugs": 52,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210365.5639658,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 53,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210365.614614,
+    "worker_count": 1,
+    "active_bugs": 13,
+    "completed_bugs": 55,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210365.6670587,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 55,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210365.9193485,
+    "worker_count": 1,
+    "active_bugs": 14,
+    "completed_bugs": 55,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210366.172843,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 55,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210366.4258506,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 58,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210366.6783307,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 58,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210366.930111,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 58,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210367.1815917,
+    "worker_count": 3,
+    "active_bugs": 11,
+    "completed_bugs": 58,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210367.2351167,
+    "worker_count": 3,
+    "active_bugs": 11,
+    "completed_bugs": 59,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210367.287936,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 59,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210367.3416224,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 59,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210367.3939795,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 59,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210367.6459968,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 59,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210367.8971715,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 59,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210368.150309,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 59,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210368.2025943,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210368.2564728,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210368.3099542,
+    "worker_count": 3,
+    "active_bugs": 16,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210368.3621511,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210368.6413245,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210368.8948064,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210369.1474771,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210369.4004054,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210369.6527312,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 60,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210369.7050908,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 61,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210369.9569445,
+    "worker_count": 3,
+    "active_bugs": 17,
+    "completed_bugs": 61,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210370.2084117,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 61,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210370.4602115,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 61,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210370.71182,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 61,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210370.9638708,
+    "worker_count": 2,
+    "active_bugs": 17,
+    "completed_bugs": 61,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210371.216256,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 64,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210371.468029,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 64,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210371.521724,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 65,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210371.7739837,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 65,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210372.0266533,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 65,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210372.081005,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 66,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210372.3330903,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 66,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210372.3870664,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 67,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210372.639771,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 67,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210372.8917286,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 67,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210373.1431909,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 67,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_up"
+  },
+  {
+    "timestamp": 1752210373.194469,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 68,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210373.2964141,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 68,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210373.3973536,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 68,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210373.4985218,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 68,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210373.5991144,
+    "worker_count": 4,
+    "active_bugs": 15,
+    "completed_bugs": 68,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210373.7004323,
+    "worker_count": 4,
+    "active_bugs": 15,
+    "completed_bugs": 69,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210373.8007867,
+    "worker_count": 4,
+    "active_bugs": 15,
+    "completed_bugs": 69,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210373.9024138,
+    "worker_count": 4,
+    "active_bugs": 15,
+    "completed_bugs": 69,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.004624,
+    "worker_count": 4,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.10494,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.2058284,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.306247,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.4072714,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.5078695,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.6088011,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.709406,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.8099036,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 70,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210374.9124026,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 72,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.0134342,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 72,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.1160338,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 72,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.2176218,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 72,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.3208516,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 72,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.4229932,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 72,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.5249639,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 74,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.6258178,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 75,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.7276726,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 75,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.8285277,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 75,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210375.9297645,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 75,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.0318558,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 75,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.1327984,
+    "worker_count": 1,
+    "active_bugs": 13,
+    "completed_bugs": 76,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.2345936,
+    "worker_count": 1,
+    "active_bugs": 13,
+    "completed_bugs": 76,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.3368645,
+    "worker_count": 1,
+    "active_bugs": 13,
+    "completed_bugs": 76,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.4378583,
+    "worker_count": 1,
+    "active_bugs": 13,
+    "completed_bugs": 76,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.5385609,
+    "worker_count": 1,
+    "active_bugs": 12,
+    "completed_bugs": 77,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.639991,
+    "worker_count": 1,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.7416663,
+    "worker_count": 1,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.843613,
+    "worker_count": 1,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210376.9442072,
+    "worker_count": 1,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.0462968,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.1476543,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.2486963,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.3501613,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 78,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.4541533,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 79,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.5554364,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 79,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.6573517,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 79,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.7579865,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 79,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.8599312,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 80,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210377.9607275,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 80,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.063025,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 80,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.165912,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 80,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.267898,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 80,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.3699164,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 80,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.4722757,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 81,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.572901,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 81,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.6749523,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 81,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.7771356,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 82,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.8778768,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 82,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210378.9785652,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 82,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.0818048,
+    "worker_count": 4,
+    "active_bugs": 12,
+    "completed_bugs": 82,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.1837807,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 83,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.2874238,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 83,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.3897235,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 83,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.4925811,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 83,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.594357,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 83,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.6948166,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 83,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.79555,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 84,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.8975196,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 84,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210379.9989552,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 84,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.1000001,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 85,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.20054,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 85,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.3014114,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 85,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.4023058,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 85,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.5035295,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 85,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.604185,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 85,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.7048705,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 86,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.8070867,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 87,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210380.9110382,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 88,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.0157762,
+    "worker_count": 4,
+    "active_bugs": 14,
+    "completed_bugs": 89,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.1175554,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 89,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.2188032,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 89,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.3201456,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 89,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.420464,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 89,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.5218225,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 89,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.6226757,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 89,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.7267745,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 90,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.8284876,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 90,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210381.9297824,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 90,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.030558,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 90,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.1315734,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 90,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.232511,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 90,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.3333542,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 91,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.4340324,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 91,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.5357168,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 91,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.6369007,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 91,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.7387497,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 91,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.8408558,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 91,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210382.9426596,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 92,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.0456402,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 92,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.1481938,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 92,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.250095,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 92,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.3521588,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 92,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.4540384,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 93,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.554843,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 95,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.658711,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 95,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.75941,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 95,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.8619356,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 95,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210383.964538,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 96,
+    "total_agents": 42,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.0650702,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 96,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.1664333,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 98,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.2685015,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 98,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.3712475,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 98,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.4727654,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 98,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.5750046,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 98,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.676079,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 98,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.7807388,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 100,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.8837569,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 100,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210384.9852457,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 100,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.0892148,
+    "worker_count": 4,
+    "active_bugs": 12,
+    "completed_bugs": 100,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.1905446,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 100,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.2950008,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 100,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.398418,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 101,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.5004163,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 101,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.6028788,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 102,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.704619,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 103,
+    "total_agents": 51,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.8051429,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 103,
+    "total_agents": 51,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210385.9074268,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 51,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.0089135,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 51,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.109668,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.2106624,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.3116004,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.412766,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.5139885,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.6151698,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.7161796,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.817759,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210386.918205,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.018704,
+    "worker_count": 4,
+    "active_bugs": 15,
+    "completed_bugs": 104,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.1190944,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 105,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.2202158,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 105,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.3209205,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 105,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.4216723,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 105,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.5227606,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 105,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.6237998,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 105,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.724902,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 105,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.8271549,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 106,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210387.9292805,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.0301619,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.1321824,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.2324705,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.3337417,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.4345193,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.5356624,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.6367896,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.7377243,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.8381066,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210388.9386997,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 107,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.0422604,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 109,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.143834,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 109,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.244974,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 109,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.3468509,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 111,
+    "total_agents": 42,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.449148,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 111,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.551179,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 111,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.6538675,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 111,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.7560258,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 111,
+    "total_agents": 42,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.857905,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 112,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210389.9592228,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 112,
+    "total_agents": 42,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.060085,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 113,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.1620855,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 115,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.2641566,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 115,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.3666203,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 115,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.4692316,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 115,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.573271,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 116,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.6776521,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 117,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.7786276,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 117,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.8819487,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 117,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210390.9840257,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 117,
+    "total_agents": 33,
+    "free_agents": 27,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.0886629,
+    "worker_count": 4,
+    "active_bugs": 12,
+    "completed_bugs": 117,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.1909447,
+    "worker_count": 3,
+    "active_bugs": 12,
+    "completed_bugs": 118,
+    "total_agents": 51,
+    "free_agents": 45,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.2946174,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 118,
+    "total_agents": 51,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.399025,
+    "worker_count": 3,
+    "active_bugs": 13,
+    "completed_bugs": 119,
+    "total_agents": 51,
+    "free_agents": 39,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.503822,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 119,
+    "total_agents": 51,
+    "free_agents": 36,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.606623,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 119,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.7068503,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 119,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.807757,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 119,
+    "total_agents": 51,
+    "free_agents": 33,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210391.9087572,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 51,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.0101848,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 51,
+    "free_agents": 30,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.1106915,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.21146,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.3120713,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.4130747,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.5140712,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.614525,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.7155707,
+    "worker_count": 3,
+    "active_bugs": 15,
+    "completed_bugs": 120,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.8180892,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 121,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210392.920194,
+    "worker_count": 3,
+    "active_bugs": 14,
+    "completed_bugs": 121,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210393.0211976,
+    "worker_count": 4,
+    "active_bugs": 14,
+    "completed_bugs": 121,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210393.122196,
+    "worker_count": 4,
+    "active_bugs": 15,
+    "completed_bugs": 121,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "stable"
+  },
+  {
+    "timestamp": 1752210393.2242408,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 121,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210393.3258731,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 121,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210393.426663,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 121,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210393.5272439,
+    "worker_count": 2,
+    "active_bugs": 15,
+    "completed_bugs": 121,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210393.628031,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 122,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210393.7294052,
+    "worker_count": 2,
+    "active_bugs": 14,
+    "completed_bugs": 122,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210393.8307426,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210393.9319165,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.0331805,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.1350226,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.2357383,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.336217,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.4376345,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.538791,
+    "worker_count": 2,
+    "active_bugs": 13,
+    "completed_bugs": 123,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.6394348,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 124,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.7405922,
+    "worker_count": 2,
+    "active_bugs": 12,
+    "completed_bugs": 124,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.8425963,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 125,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210394.944346,
+    "worker_count": 2,
+    "active_bugs": 11,
+    "completed_bugs": 125,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.0448735,
+    "worker_count": 3,
+    "active_bugs": 10,
+    "completed_bugs": 126,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.1468012,
+    "worker_count": 2,
+    "active_bugs": 10,
+    "completed_bugs": 126,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.2482169,
+    "worker_count": 2,
+    "active_bugs": 10,
+    "completed_bugs": 126,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.35039,
+    "worker_count": 2,
+    "active_bugs": 10,
+    "completed_bugs": 126,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.4514616,
+    "worker_count": 2,
+    "active_bugs": 9,
+    "completed_bugs": 127,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.5526335,
+    "worker_count": 2,
+    "active_bugs": 9,
+    "completed_bugs": 127,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.6540463,
+    "worker_count": 2,
+    "active_bugs": 9,
+    "completed_bugs": 127,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.7552235,
+    "worker_count": 2,
+    "active_bugs": 9,
+    "completed_bugs": 127,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.856565,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 128,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210395.9578578,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 128,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.0585475,
+    "worker_count": 2,
+    "active_bugs": 8,
+    "completed_bugs": 128,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.1590185,
+    "worker_count": 2,
+    "active_bugs": 7,
+    "completed_bugs": 129,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.259701,
+    "worker_count": 2,
+    "active_bugs": 7,
+    "completed_bugs": 129,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.3610864,
+    "worker_count": 2,
+    "active_bugs": 7,
+    "completed_bugs": 129,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.4617405,
+    "worker_count": 2,
+    "active_bugs": 5,
+    "completed_bugs": 131,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.562554,
+    "worker_count": 2,
+    "active_bugs": 5,
+    "completed_bugs": 131,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.6628668,
+    "worker_count": 2,
+    "active_bugs": 5,
+    "completed_bugs": 131,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.764317,
+    "worker_count": 2,
+    "active_bugs": 4,
+    "completed_bugs": 132,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.8648605,
+    "worker_count": 2,
+    "active_bugs": 3,
+    "completed_bugs": 133,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210396.9654703,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 134,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.0674047,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.1684551,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.2702487,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.3711348,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.4717784,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.573049,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.6745124,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.7750633,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.8759985,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210397.977335,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.0791073,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.1796086,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.2807145,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.3814003,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.481904,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.582957,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.6842668,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.7856028,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.8861392,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210398.9865594,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 135,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.0882585,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.1893923,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.290394,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.391357,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.492358,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.5928533,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.6941357,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.7958126,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.8970926,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210399.9976735,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.0983148,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.1989427,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.299768,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.4005773,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.5015044,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.6025567,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.7032619,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.8047218,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210400.9064968,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.00673,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.1072278,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.207789,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.3084188,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.4090176,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.5098057,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.6108289,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.7113826,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.8123891,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210401.9141257,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.0150669,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.1155207,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.2166557,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 136,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.317596,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.41872,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.5196862,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.621549,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.7234588,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.8242426,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210402.9255779,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.0275044,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.1278589,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.2288976,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.3301458,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 137,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.4316509,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.532123,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.6330812,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.7341135,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.835566,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210403.936654,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.038397,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.1390865,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.239843,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.3404863,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.442784,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.5438838,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.644838,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.7453496,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.8465962,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210404.9471722,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.0478535,
+    "worker_count": 4,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.1482627,
+    "worker_count": 4,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.248747,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.3494687,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.449862,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.5503595,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.6507123,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.752851,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.8536906,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210405.9543283,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.055438,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.1568017,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.261507,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.3625038,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.463664,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.5642629,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.6646974,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.7659545,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.866998,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 138,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210406.968217,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 139,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.0686157,
+    "worker_count": 4,
+    "active_bugs": 1,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.1690075,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.2695189,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.3699684,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.4713492,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.5717728,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.6727734,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.773912,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.8759816,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210407.9765098,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 139,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.0795991,
+    "worker_count": 2,
+    "active_bugs": 3,
+    "completed_bugs": 139,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.181021,
+    "worker_count": 2,
+    "active_bugs": 3,
+    "completed_bugs": 139,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.2816715,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.382295,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.4841864,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.585311,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.6859503,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.7870438,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.8881738,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210408.9893088,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.0911646,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.192421,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.293678,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.394883,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.4954891,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.5979338,
+    "worker_count": 2,
+    "active_bugs": 3,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.6994393,
+    "worker_count": 2,
+    "active_bugs": 3,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.8002326,
+    "worker_count": 2,
+    "active_bugs": 3,
+    "completed_bugs": 140,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210409.9013968,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 141,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.0024312,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 141,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.1034691,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 141,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.2046676,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 141,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.3066547,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 141,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.4084666,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 141,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.5103881,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 141,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.6120768,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 142,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.7126102,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 142,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.813764,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 142,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210410.9154487,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 142,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.0167472,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 142,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.1198714,
+    "worker_count": 4,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.2212617,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.322261,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.4232605,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.5242598,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.6252596,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.7260814,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.8266501,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210411.927312,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.0284574,
+    "worker_count": 3,
+    "active_bugs": 2,
+    "completed_bugs": 142,
+    "total_agents": 51,
+    "free_agents": 48,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.1290348,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.2300344,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.3310337,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.4320362,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.533035,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.6340342,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.7350342,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.8358653,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210412.9368653,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.0375087,
+    "worker_count": 4,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.138515,
+    "worker_count": 4,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.2395217,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.340517,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.4413538,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.5423543,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 143,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.6433547,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 144,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.7446012,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 144,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.8458898,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 144,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210413.9470935,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 144,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.0485175,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.149861,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.2504704,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.3509336,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.4526575,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.5532658,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.6544375,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.755532,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.8576643,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210414.9586718,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.059764,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.161854,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.2624915,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.3632882,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.4643805,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.5655923,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.6660905,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.7675796,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.8681803,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210415.969038,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.0703092,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.1714494,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.2722206,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.373525,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.4745839,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 144,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.5756319,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.6762931,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.7769744,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.8773947,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210416.9786751,
+    "worker_count": 2,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.0791523,
+    "worker_count": 4,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.1798332,
+    "worker_count": 4,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.2802815,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.3807817,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.4815674,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.582093,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.6831415,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.7849083,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.8854127,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210417.986578,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.0873046,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.1885045,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.2891912,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.3906236,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.4915075,
+    "worker_count": 3,
+    "active_bugs": 0,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.5936122,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.6949532,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.7961276,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.896496,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210418.9975417,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.0985699,
+    "worker_count": 4,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.199553,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.3000906,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.4010084,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.5017285,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.6023138,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.7036855,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.8043365,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210419.9055169,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.0065093,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.1074455,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.2079332,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.3114421,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.4141364,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.5158372,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.617811,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.719118,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.8193974,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210420.9213974,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.022464,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 145,
+    "total_agents": 33,
+    "free_agents": 30,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.1231964,
+    "worker_count": 3,
+    "active_bugs": 1,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.2242835,
+    "worker_count": 2,
+    "active_bugs": 1,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 42,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.325244,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.4262455,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.5272572,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.6282465,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.7296097,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.8306103,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210421.9316125,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.0319884,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 42,
+    "free_agents": 39,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.1330435,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.2340426,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.3344164,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.435775,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.537502,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.6386132,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.7397668,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.840936,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210422.9417782,
+    "worker_count": 2,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210423.0422661,
+    "worker_count": 4,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 33,
+    "free_agents": 33,
+    "phase": "scale_down"
+  },
+  {
+    "timestamp": 1752210423.1427467,
+    "worker_count": 4,
+    "active_bugs": 2,
+    "completed_bugs": 146,
+    "total_agents": 51,
+    "free_agents": 51,
+    "phase": "scale_down"
+  }
+]

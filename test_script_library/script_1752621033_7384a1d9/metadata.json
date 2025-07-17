@@ -1,0 +1,10 @@
+{
+  "name": "test_script",
+  "description": "Test script for integration testing",
+  "author": "integration_test",
+  "version": "1.0",
+  "tags": [
+    "test",
+    "integration"
+  ]
+}

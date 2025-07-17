@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 26
+details:
+  message: Test error 26
+error_id: ERR-20250713022316-ac65a4f8
+error_type: TEST_ERROR_3
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: HIGH
+status: OPEN
+timestamp: '2025-07-13T02:23:16.186340'

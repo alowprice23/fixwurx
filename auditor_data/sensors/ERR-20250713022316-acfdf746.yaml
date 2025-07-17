@@ -1,0 +1,13 @@
+component_name: TestComponent3
+context:
+  test_id: 34
+details:
+  message: Test error 34
+error_id: ERR-20250713022316-acfdf746
+error_type: TEST_ERROR_1
+recommendations: []
+related_errors: []
+sensor_id: obligation_ledger_sensor
+severity: MEDIUM
+status: OPEN
+timestamp: '2025-07-13T02:23:16.128339'

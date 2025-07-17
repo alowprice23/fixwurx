@@ -1,0 +1,54 @@
+{
+  "file": "calculator/ui/cli.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "Missing mapping for the `random` operation.",
+        "reason": "The CLI exposes fewer operations than are actually implemented in the `advanced_operations` module, so the user cannot invoke the random operation even though it exists in the code base.",
+        "fix": "Add the `'random': advanced_operations.random_operation` entry to the `operations` dictionary."
+      },
+      {
+        "description": "`get_operation()` does not handle unknown operation names.",
+        "reason": "Using `self.operations[operation_name]` on an unknown key raises `KeyError`, which will later be caught by the generic `except`-clause in `calculate()` and turned into the vague message `Error: ...`. The user gets no clear hint what went wrong.",
+        "fix": "Wrap the lookup in a `try/except KeyError` block and raise a more meaningful `ValueError` such as `Unsupported operation '<name>'`."
+      },
+      {
+        "description": "Inputs are never validated before being passed to the underlying math functions.",
+        "reason": "Invalid values (e.g. strings, `None`, division by zero cases, negative numbers for factorial, etc.) reach the operation layer where they may raise low-level exceptions or produce incorrect results.",
+        "fix": "Centralise validation logic (via `calculator.utils.validation`) in a helper method like `_validate_operands()` and call it from `calculate()` before executing the operation."
+      },
+      {
+        "description": "`calculate()` silently assumes that two-operand operations always receive a second argument.",
+        "reason": "If the caller forgets to supply `b` for a binary operation the function proceeds with `None`, which will almost certainly crash in the math routine.",
+        "fix": "Detect the missing second operand (`b is None`) for two-argument operations and raise a clear `ValueError` with an explanatory message."
+      },
+      {
+        "description": "History is only recorded for two-operand operations.",
+        "reason": "Single-operand calculations (`sqrt`, `factorial`, `sin`) are excluded from history, so the feature behaves inconsistently from the user\u2019s standpoint.",
+        "fix": "Always add the performed calculation to history regardless of the number of operands."
+      },
+      {
+        "description": "`calculate()` swallows every exception and returns a string containing the error.",
+        "reason": "Mixing data types (`float` vs. `str`) in the return value forces callers to perform manual type checks and hides the real exception type / stack trace that would help with debugging.",
+        "fix": "Remove the broad `try/except` or catch only specific, well-known exceptions, re-raising everything else so that callers (or higher-level error handlers) can deal with it properly."
+      },
+      {
+        "description": "The menu presented by `display_menu()` lacks basic usage instructions.",
+        "reason": "Users do not know the required input format (order of parameters, optional vs. mandatory operands).",
+        "fix": "Add concise examples and explain that single-operand operations only need one number while the rest require two."
+      },
+      {
+        "description": "`parse_input()` gives only `None` on every error and does not differentiate between format problems and conversion failures.",
+        "reason": "The calling code cannot tell *why* parsing failed, which hampers user feedback and troubleshooting.",
+        "fix": "Raise meaningful `ValueError`s that describe the exact problem (empty input, unsupported operation, invalid or missing operands)."
+      },
+      {
+        "description": "A literal list of single-parameter operations is duplicated across the class.",
+        "reason": "Duplicated knowledge is error-prone; when a new single-operand command is added it must be changed in several places.",
+        "fix": "Store the set of single-operand operation names in a class-level constant (e.g. `SINGLE_ARG_OPERATIONS`) and reference it everywhere."
+      }
+    ],
+    "fixed_code": "from calculator.operations import basic_operations, advanced_operations\nfrom calculator.utils import validation, memory\n\n\nclass CalculatorCLI:\n    \"\"\"Command-line interface for the calculator.\"\"\"\n\n    # Operations that take exactly one numeric argument\n    SINGLE_ARG_OPERATIONS = {\"sqrt\", \"factorial\", \"sin\"}\n\n    def __init__(self):\n        \"\"\"Initialise a new calculator CLI instance with its own history.\"\"\"\n        self.history = memory.CalculationHistory()\n        self.operations = {\n            \"add\": basic_operations.add,\n            \"subtract\": basic_operations.subtract,\n            \"multiply\": basic_operations.multiply,\n            \"divide\": basic_operations.divide,\n            \"power\": basic_operations.power,\n            \"modulus\": basic_operations.modulus,\n            \"sqrt\": advanced_operations.square_root,\n            \"factorial\": advanced_operations.factorial,\n            \"log\": advanced_operations.logarithm,\n            \"sin\": advanced_operations.sine,\n            \"random\": advanced_operations.random_operation,  # newly exposed\n        }\n\n    # ------------------------------------------------------------------\n    # Internal helpers\n    # ------------------------------------------------------------------\n    def get_operation(self, operation_name):\n        \"\"\"Return the function associated with *operation_name*.\n\n        Raises\n        ------\n        ValueError\n            If the operation name is not recognised.\n        \"\"\"\n        try:\n            return self.operations[operation_name]\n        except KeyError as exc:\n            raise ValueError(f\"Unsupported operation '{operation_name}'.\") from exc\n\n    def _validate_operands(self, op_name, a, b):\n        \"\"\"Validate and return a tuple of operands suitable for *op_name*.\"\"\"\n        if op_name in self.SINGLE_ARG_OPERATIONS:\n            # Single-value operations\n            validation.validate_number(a)\n            return (a,)\n\n        # All other operations need exactly two numeric operands\n        if b is None:\n            raise ValueError(f\"Operation '{op_name}' requires two operands.\")\n        validation.validate_numbers(a, b)\n        return (a, b)\n\n    # ------------------------------------------------------------------\n    # Public API\n    # ------------------------------------------------------------------\n    def calculate(self, operation_name, a, b=None):\n        \"\"\"Perform *operation_name* on the supplied operands and store the result.\n\n        Returns the numeric result. All validation is done up-front so unhandled\n        exceptions almost exclusively come from the math implementation itself.\n        \"\"\"\n        operation = self.get_operation(operation_name)\n        operands = self._validate_operands(operation_name, a, b)\n\n        # The actual calculation may still raise, e.g. division by zero.\n        result = operation(*operands)\n\n        # Record every calculation uniformly.\n        self.history.add_calculation(operation_name, *operands, result)\n        return result\n\n    # ------------------------------------------------------------------\n    # User-facing helpers\n    # ------------------------------------------------------------------\n    def display_menu(self):\n        \"\"\"Print a friendly help/usage screen to the console.\"\"\"\n        print(\"=== Calculator Menu ===\")\n        print(\"Enter commands in the following format:\\n\")\n        print(\"    <operation> <number1> [<number2>]\\n\")\n        print(\"Examples:\")\n        print(\"    add 5 10        \u2192 15\")\n        print(\"    sqrt 9          \u2192 3\\n\")\n        print(\"Available operations:\")\n        for op in sorted(self.operations):\n            req = \"1 arg\" if op in self.SINGLE_ARG_OPERATIONS else \"2 args\"\n            print(f\" - {op:<10} ({req})\")\n\n    def parse_input(self, user_input):\n        \"\"\"Parse *user_input* and return *(operation, a, b)*.\n\n        Raises\n        ------\n        ValueError\n            For any syntactic or semantic problem in the input string.\n        \"\"\"\n        parts = user_input.strip().split()\n        if not parts:\n            raise ValueError(\"Empty input.\")\n\n        operation = parts[0].lower()\n        if operation not in self.operations:\n            raise ValueError(f\"Unsupported operation '{operation}'.\")\n\n        # First operand ---------------------------------------------------\n        try:\n            a = float(parts[1])\n        except IndexError:\n            raise ValueError(\"Missing first operand.\")\n        except ValueError as exc:\n            raise ValueError(\"First operand is not a valid number.\") from exc\n\n        # Second operand (if required) ------------------------------------\n        b = None\n        if operation not in self.SINGLE_ARG_OPERATIONS:\n            try:\n                b = float(parts[2])\n            except IndexError:\n                raise ValueError(f\"Operation '{operation}' requires two operands.\")\n            except ValueError as exc:\n                raise ValueError(\"Second operand is not a valid number.\") from exc\n\n        return operation, a, b\n"
+  },
+  "time_taken": 32.9030921459198
+}

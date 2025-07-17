@@ -1,0 +1,49 @@
+{
+  "file": "calculator/utils/memory.py",
+  "analysis": {
+    "issues": [
+      {
+        "description": "Inconsistent attribute name (`self.size` vs `max_size`).",
+        "reason": "Using a different name from the constructor argument is confusing and error-prone; if other parts of the code (or callers) expect `max_size` they will break.",
+        "fix": "Store the limit in `self.max_size` (or rename the parameter), and reference that name throughout the class."
+      },
+      {
+        "description": "`max_size` is not validated.",
+        "reason": "A non-positive `max_size` makes the class unusable or causes logic errors when trimming the history.",
+        "fix": "Raise `ValueError` if `max_size` is less than 1."
+      },
+      {
+        "description": "No timestamp recorded for each calculation.",
+        "reason": "Without a timestamp the chronological order (especially after trimming) cannot be reconstructed and audits are impossible.",
+        "fix": "Add `datetime.utcnow()` (or `datetime.now()`) to every stored record."
+      },
+      {
+        "description": "History trimming logic missing.",
+        "reason": "If `add_calculation` is called more than `max_size` times the list grows unbounded, defeating the purpose of the limit and wasting memory.",
+        "fix": "After appending, check `len(self.history) > self.max_size` and delete the oldest entries."
+      },
+      {
+        "description": "`add_calculation` performs no input validation.",
+        "reason": "Passing unexpected types (e.g., `operation=None`) can lead to subtle bugs in `get_calculations_by_operation`.",
+        "fix": "Ensure `operation` is a string and, optionally, that `a`, `b`, and `result` are numeric (or at least not `None`). Raise descriptive errors when invalid."
+      },
+      {
+        "description": "`get_last_calculation` raises `IndexError` on empty history.",
+        "reason": "Consumers must wrap every call in `try/except`; returning `None` (or raising a custom error) is safer and clearer.",
+        "fix": "Return `None` if the history is empty (or raise a custom `HistoryEmptyError`)."
+      },
+      {
+        "description": "Inefficient clearing of history (`self.history = self.history[len(self.history):]`).",
+        "reason": "Creates an unnecessary slice and intermediate list; `list.clear()` (or assigning `[]`) is clearer and faster.",
+        "fix": "Use `self.history.clear()`."
+      },
+      {
+        "description": "`get_all_calculations` returns the internal list directly.",
+        "reason": "Callers can mutate the internal state accidentally (`history.get_all_calculations().append(...)`).",
+        "fix": "Return a shallow copy `list(self.history)` (or `self.history.copy()`)."
+      }
+    ],
+    "fixed_code": "from __future__ import annotations\nfrom datetime import datetime\nfrom typing import Any, Dict, List, Optional\n\nclass CalculationHistory:\n    \"\"\"Class to store and manage calculation history with a fixed maximum size.\"\"\"\n\n    def __init__(self, max_size: int = 10):\n        \"\"\"Initialise an empty history.\n\n        Parameters\n        ----------\n        max_size : int, optional\n            The maximum number of calculations to keep. Must be positive.\n        \"\"\"\n        if max_size <= 0:\n            raise ValueError(\"max_size must be a positive integer\")\n\n        self.max_size: int = max_size  # consistent name\n        self._history: List[Dict[str, Any]] = []  # underscore to signal private\n\n    # ------------------------------------------------------------------\n    # Public API\n    # ------------------------------------------------------------------\n    def add_calculation(self, operation: str, a: Any, b: Any, result: Any) -> None:\n        \"\"\"Add a calculation to the history, automatically trimming if needed.\"\"\"\n        if not isinstance(operation, str) or not operation:\n            raise ValueError(\"'operation' must be a non-empty string\")\n\n        calculation: Dict[str, Any] = {\n            \"timestamp\": datetime.utcnow(),\n            \"operation\": operation,\n            \"a\": a,\n            \"b\": b,\n            \"result\": result,\n        }\n\n        self._history.append(calculation)\n\n        # Trim to `max_size` \u2013 remove oldest entries first\n        if len(self._history) > self.max_size:\n            excess = len(self._history) - self.max_size\n            del self._history[:excess]\n\n    def get_last_calculation(self) -> Optional[Dict[str, Any]]:\n        \"\"\"Return the most recent calculation or ``None`` if history is empty.\"\"\"\n        if not self._history:\n            return None\n        # Return a shallow copy to prevent external mutations\n        return dict(self._history[-1])\n\n    def clear_history(self) -> None:\n        \"\"\"Remove all stored calculations.\"\"\"\n        self._history.clear()\n\n    def get_all_calculations(self) -> List[Dict[str, Any]]:\n        \"\"\"Return *copies* of all calculations in chronological order.\"\"\"\n        return [dict(calc) for calc in self._history]\n\n    def get_calculations_by_operation(self, operation: str) -> List[Dict[str, Any]]:\n        \"\"\"Return calculations whose `operation` field matches the supplied value.\"\"\"\n        return [dict(calc) for calc in self._history if calc[\"operation\"] == operation]\n\n    # ------------------------------------------------------------------\n    # Dunder methods for convenience\n    # ------------------------------------------------------------------\n    def __len__(self) -> int:  # allows len(history)\n        return len(self._history)\n\n    def __iter__(self):  # iterate over calculations safely\n        # iterate over a snapshot copy so callers can't mutate internal state\n        return iter(self.get_all_calculations())\n"
+  },
+  "time_taken": 23.287801027297974
+}

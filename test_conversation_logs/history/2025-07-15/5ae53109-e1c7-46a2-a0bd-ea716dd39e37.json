@@ -1,0 +1,21 @@
+{
+  "id": "5ae53109-e1c7-46a2-a0bd-ea716dd39e37",
+  "user_id": "user",
+  "start_time": 1752621984.696197,
+  "end_time": 1752621986.782225,
+  "messages": [
+    {
+      "id": "c4db25ce-9306-48f7-b2d4-852136719fe0",
+      "sender": "user",
+      "content": "Hello, world!",
+      "timestamp": 1752621984.6992018
+    },
+    {
+      "id": "c14c354a-52fc-49d9-9f70-ff55f5c24b60",
+      "sender": "system",
+      "content": "\n        I've generated a plan to accomplish: Hello, world!\n        \n        Here are the steps:\n        \n        \n        To execute this plan, you can use the generated script with the !execute command.\n        ",
+      "timestamp": 1752621984.700201
+    }
+  ],
+  "summary": "user: Hello, world!\nsystem: \n        I've generated a plan to accomplish: Hello, world!\n        \n        Here are the steps:\n        \n        \n        To execute this plan, you can use the generated s..."
+}

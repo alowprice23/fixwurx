@@ -1,0 +1,15 @@
+{
+  "name": "benchmark_ProofMetrics",
+  "description": "Benchmark results for ProofMetrics",
+  "unit": "various",
+  "points": [
+    {
+      "timestamp": "2025-07-13T02:21:49.370758",
+      "values": {}
+    },
+    {
+      "timestamp": "2025-07-13T02:23:16.000501",
+      "values": {}
+    }
+  ]
+}

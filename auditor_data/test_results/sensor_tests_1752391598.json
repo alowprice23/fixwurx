@@ -1,0 +1,167 @@
+{
+  "timestamp": 1752391598.108677,
+  "results": {
+    "ObligationLedgerSensor": {
+      "sensor_id": "obligation_ledger_sensor",
+      "component_name": "ObligationLedger",
+      "status": {
+        "sensor_id": "obligation_ledger_sensor",
+        "component_name": "ObligationLedger",
+        "enabled": true,
+        "sensitivity": 1.0,
+        "error_count": 0,
+        "last_check_time": null,
+        "monitor_frequency": 60,
+        "threshold_overrides": {}
+      },
+      "reports_count_no_data": 2,
+      "reports_count_with_data": 2,
+      "success": true
+    },
+    "GraphDatabaseSensor": {
+      "sensor_id": "graph_database_sensor",
+      "component_name": "GraphDatabase",
+      "status": {
+        "sensor_id": "graph_database_sensor",
+        "component_name": "GraphDatabase",
+        "last_check_time": null,
+        "node_count": 0,
+        "edge_count": 0,
+        "orphaned_nodes_count": 0,
+        "circular_refs_count": 0,
+        "avg_query_time_ms": 0.0
+      },
+      "reports_count_no_data": 1,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "MetaAwarenessSensor": {
+      "sensor_id": "meta_awareness_sensor",
+      "component_name": "AuditorMetaAwareness",
+      "status": {
+        "sensor_id": "meta_awareness_sensor",
+        "component_name": "AuditorMetaAwareness",
+        "last_check_time": null,
+        "health_score": 100.0,
+        "avg_consistency_score": 1.0,
+        "avg_hallucination_score": 0.0,
+        "avg_confidence_error": 0.0,
+        "avg_drift_score": 0.0,
+        "boundary_violations": 0,
+        "self_descriptions_count": 0
+      },
+      "reports_count_no_data": 0,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "PerformanceBenchmarkSensor": {
+      "sensor_id": "performance_benchmark_sensor",
+      "component_name": "AuditorPerformance",
+      "status": {
+        "sensor_id": "performance_benchmark_sensor",
+        "component_name": "AuditorPerformance",
+        "last_check_time": null,
+        "session_id": "session-20250713032637",
+        "metrics_count": 20,
+        "metrics_summary": {
+          "session_id": "session-20250713032637",
+          "duration_seconds": 0,
+          "bug_detection_recall": 0,
+          "bug_fix_yield": 0,
+          "test_pass_ratio": 0,
+          "energy_reduction_pct": 0,
+          "mttr": 0,
+          "lyapunov_descent_consistency": 0,
+          "aggregate_confidence_score": 0
+        }
+      },
+      "reports_count_no_data": 3,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "EnergyCalculatorSensor": {
+      "sensor_id": "energy_calculator_sensor",
+      "component_name": "SystemEnergy",
+      "status": {
+        "sensor_id": "energy_calculator_sensor",
+        "component_name": "SystemEnergy",
+        "last_check_time": null,
+        "health_score": 100.0,
+        "avg_cpu_percent": 0.0,
+        "avg_memory_percent": 0.0,
+        "avg_io_rate_mb": 0.0,
+        "energy_efficiency": 1.0,
+        "cumulative_energy_wh": 0.0,
+        "uptime_sec": 0.0004260540008544922,
+        "energy_per_fix": 0.0,
+        "bug_fixes": 0,
+        "optimizations_applied": 0
+      },
+      "reports_count_no_data": 1,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "ProofMetricsSensor": {
+      "sensor_id": "proof_metrics_sensor",
+      "component_name": "VerificationProofs",
+      "status": {
+        "sensor_id": "proof_metrics_sensor",
+        "component_name": "VerificationProofs",
+        "last_check_time": null,
+        "health_score": 60.0,
+        "proof_coverage": {
+          "total": 0.0,
+          "critical_paths": 0.0
+        },
+        "consistency_score": 1.0,
+        "soundness_score": 1.0,
+        "unproven_changes": 0,
+        "proof_count": 7
+      },
+      "reports_count_no_data": 3,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "TimeSeriesDatabaseSensor": {
+      "sensor_id": "time_series_database_sensor",
+      "component_name": "TimeSeriesDatabase",
+      "status": {
+        "sensor_id": "time_series_database_sensor",
+        "component_name": "TimeSeriesDatabase",
+        "last_check_time": null,
+        "health_score": 81.45185121901488,
+        "avg_query_time_ms": 77.24897592668447,
+        "avg_insertion_time_ms": 13.772377932418877,
+        "data_gaps_24h": 0,
+        "index_health": 1.0,
+        "storage_mb": 8191.944273090545
+      },
+      "reports_count_no_data": 2,
+      "reports_count_with_data": 0,
+      "success": true
+    },
+    "DocumentStoreSensor": {
+      "sensor_id": "document_store_sensor",
+      "component_name": "DocumentStore",
+      "status": {
+        "sensor_id": "document_store_sensor",
+        "component_name": "DocumentStore",
+        "last_check_time": null,
+        "health_score": 61.98862663845816,
+        "avg_query_time_ms": 82.80469972235544,
+        "avg_storage_time_ms": 108.8046716017438,
+        "avg_query_error_rate": 0.039244303535577854,
+        "avg_storage_error_rate": 0.023932284514479523,
+        "avg_index_latency_ms": 155.32175632898856,
+        "avg_index_fragmentation": 28.970423357372262,
+        "integrity_issues_24h": 0,
+        "total_docs": 16409,
+        "total_size_mb": 2014.964735997124
+      },
+      "reports_count_no_data": 2,
+      "reports_count_with_data": 0,
+      "success": true
+    }
+  },
+  "success_rate": "8/8"
+}

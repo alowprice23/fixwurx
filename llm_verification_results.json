@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-07-14 00:04:59",
+  "openai_api_key": "sk-proj-CP...x-PoA",
+  "success": true,
+  "agents": {
+    "meta": {
+      "llm_integration": true,
+      "passed": true
+    },
+    "planner": {
+      "llm_integration": true,
+      "passed": true
+    },
+    "observer": {
+      "llm_integration": true,
+      "passed": true
+    },
+    "analyst": {
+      "llm_integration": true,
+      "passed": true
+    },
+    "verifier": {
+      "llm_integration": true,
+      "passed": true
+    },
+    "launchpad": {
+      "llm_integration": true,
+      "passed": true
+    },
+    "auditor": {
+      "llm_integration": true,
+      "passed": true
+    }
+  }
+}

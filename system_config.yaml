@@ -1,0 +1,111 @@
+agents:
+  escalation-share: 0.33
+  llm:
+    api_key: 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
+    model: gpt-4o
+    provider: openai
+  per-bug: 3
+  total: 9
+alerts:
+  cooldown-seconds: 300
+  critical-thresholds:
+    active-agents: 0
+    entropy-reduction: 0.01
+    error-rate: 0.05
+    system-health: 0.1
+  default-severity: warning
+  enabled: true
+  history-size: 1000
+  webhook-endpoints:
+  - http://localhost:8081/api/notification
+canary:
+  smoke-max-tokens: 4096
+  timeout-s: 90
+  traffic-share: 0.05
+config-revision: 5
+context:
+  compressor:
+    target-ratio: 0.3
+  max-tokens-prompt: 4096
+llm:
+  api_key: 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
+  cost-budget-usd: 2.0
+  fallback-strategy: sequential
+  model: gpt-4o
+  models:
+    explanation: gpt-4o-mini
+    fallback: claude-3-sonnet
+    offline: codellama-13b
+    primary: gpt-4-turbo
+  preferred: openai
+  provider: openai
+  retry-attempts: 3
+  temperature: 0.1
+load_balancer:
+  affinity_weight: 0.3
+  auto_strategy_selection: false
+  enable_affinity_routing: true
+  enable_predictive_routing: true
+  hash_replicas: 100
+  health_check_interval_sec: 30
+  max_retries: 3
+  prediction_weight: 0.2
+  retry_delay_sec: 5
+  sticky_bugs: true
+  sticky_expiration_sec: 3600
+  strategy: weighted_capacity
+  strategy_update_interval_sec: 300
+metrics:
+  bus: fastapi-sse
+  tick-interval-ms: 1000
+optimiser:
+  algorithm: epsilon-greedy
+  buffer-capacity: 500
+  enabled: true
+  epsilon: 0.1
+  update-freq: 30
+planner:
+  enabled: true
+  fallback-threshold: 0.3
+  family-tree-path: .triangulum/family_tree.json
+  max-path-depth: 5
+  prompts:
+    fallback: 'Generate a fallback solution for bug: {bug_id}'
+    system: You are the Planner Agent, responsible for orchestrating bug fixes.
+    task: 'Generate a solution path for the following bug: {bug_description}'
+  solutions-per-bug: 3
+resource_optimization:
+  burst_factor: 1.2
+  burst_mode_exit_threshold: 0.7
+  burst_mode_threshold: 0.9
+  history_size: 60
+  interval_sec: 30
+  max_burst_duration_sec: 300
+  prediction_window: 5
+  target_utilization: 0.7
+review:
+  auto-approve-success-rate: 0.95
+  queue-db-path: .triangulum/reviews.sqlite
+scaling:
+  cool-down-sec: 300
+  coordinator:
+    discovery-method: static
+    heartbeat-timeout-sec: 30
+    static-workers:
+    - localhost:8080
+    sync-interval-sec: 10
+    worker-prefix: worker-
+  enabled: false
+  max-workers: 10
+  min-workers: 1
+  scale-down-threshold: 0.4
+  scale-up-threshold: 0.8
+security:
+  audit-logging: true
+  credential-timeout-mins: 60
+  hash-verification: true
+  permission-checks: true
+timers:
+  default-phase: 3
+  max: 4
+  min: 2
