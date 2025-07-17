@@ -21,7 +21,7 @@ agent:
   monitoring_interval_seconds: 300
 agents:
   llm:
-    api_key: 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
+    api_key: ${OPENAI_API_KEY}
     model: gpt-4o
     provider: openai
 benchmarking:
@@ -68,7 +68,7 @@ gap_analysis:
   path: auditor_data/gaps
   requirements_path: requirements
 llm:
-  api_key: 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
+  api_key: ${OPENAI_API_KEY}
   model: gpt-4o
   provider: openai
 llm_integration:

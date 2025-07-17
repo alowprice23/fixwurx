@@ -25,7 +25,14 @@ logging.basicConfig(
 logger = logging.getLogger("FixWurx")
 
 # Configure OpenAI API
-openai.api_key = "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"
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Use environment variable for API key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 MODEL = "o3"  # Using o3 model as specified
 
 class FixWurx:

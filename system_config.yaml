@@ -1,7 +1,7 @@
 agents:
   escalation-share: 0.33
   llm:
-    api_key: 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
+    api_key: ${OPENAI_API_KEY}
     model: gpt-4o
     provider: openai
   per-bug: 3
@@ -28,7 +28,7 @@ context:
     target-ratio: 0.3
   max-tokens-prompt: 4096
 llm:
-  api_key: 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
+  api_key: ${OPENAI_API_KEY}
   cost-budget-usd: 2.0
   fallback-strategy: sequential
   model: gpt-4o
