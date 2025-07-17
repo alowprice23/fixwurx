@@ -1,11 +1,11 @@
 agents:
   llm:
-    api_key: ${OPENAI_API_KEY}
+    api_key: ${API_KEY}
     model: gpt-4o
     provider: openai
-api_key: ${OPENAI_API_KEY}
+api_key: ${API_KEY}
 llm:
-  api_key: ${OPENAI_API_KEY}
+  api_key: ${API_KEY}
   model: gpt-4o
   provider: openai
 max_tokens: 2000

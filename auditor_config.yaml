@@ -21,7 +21,7 @@ agent:
   monitoring_interval_seconds: 300
 agents:
   llm:
-    api_key: ${OPENAI_API_KEY}
+    api_key: ${API_KEY}
     model: gpt-4o
     provider: openai
 benchmarking:
@@ -68,11 +68,11 @@ gap_analysis:
   path: auditor_data/gaps
   requirements_path: requirements
 llm:
-  api_key: ${OPENAI_API_KEY}
+  api_key: ${API_KEY}
   model: gpt-4o
   provider: openai
 llm_integration:
-  api_key_env: OPENAI_API_KEY
+  api_key_env: API_KEY
   custom_settings:
     error_contextualization:
       max_tokens: 500

@@ -33,7 +33,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Use environment variable for API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("API_KEY")
 MODEL = "o3"  # Using o3 model as specified
 
 class FixWurx:
